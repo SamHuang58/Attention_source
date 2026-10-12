@@ -1,0 +1,11 @@
+read_verilog -sv rtl/exp_lut.sv rtl/unsigned_divider.sv rtl/attention_ip.sv
+hierarchy -check -top attention_ip
+proc
+opt
+check -assert
+tee -o results/operator_stats.txt stat -width
+synth -top attention_ip -noabc
+check -assert
+tee -o results/synthesis_stats.json stat -json
+write_verilog -noattr build/attention_netlist.v
+write_json build/attention_netlist.json

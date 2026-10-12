@@ -1,0 +1,9 @@
+.............fatal: not a git repository (or any of the parent directories): .git
+.fatal: not a git repository (or any of the parent directories): .git
+.fatal: not a git repository (or any of the parent directories): .git
+..fatal: not a git repository (or any of the parent directories): .git
+.
+----------------------------------------------------------------------
+Ran 18 tests in 0.320s
+
+OK

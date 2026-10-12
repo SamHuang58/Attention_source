@@ -1,0 +1,1 @@
+{"state_cycles":[1206,10321,82838,18657,4657,18593,2318,85693,2310 ],"distance_bins_0_to_12_and_tail":[717,79,106,106,181,152,159,128,98,101,112,110,125,2426 ],"positive_outputs":1206,"negative_outputs":1075,"zero_outputs":19,"q_stall_cycles":7980,"kv_stall_cycles":64149,"busy_start_cycles":113005,"reset_states_checked":8,"partial_output_resets_checked":3}

@@ -1,0 +1,89 @@
+ INFO libsurfer::wave_source: Wave source is file
+ INFO libsurfer::translation: Looking for user decoders at /Users/samhuang/Library/Application Support/org.surfer-project.surfer/decoders
+ INFO libsurfer::translation: Looking for user decoders at .surfer/decoders
+ INFO libsurfer::translation: Looking for user mapping translators at /Users/samhuang/Library/Application Support/org.surfer-project.surfer/mappings
+ INFO libsurfer::translation: Looking for user mapping translators at .surfer/mappings
+ INFO libsurfer::translation::wasm_translator: Looking for translators in /.surfer/translators
+ INFO libsurfer::translation::wasm_translator: Looking for translators in /Users/samhuang/Library/Application Support/org.surfer-project.surfer/translators
+ INFO libsurfer::file_watcher: Watching file /Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/demo_20261008T121114_569553Z/demo/results/attention.vcd for changes
+ INFO libsurfer::batch_commands: Applying batch command: LoadFile("/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/demo_20261008T121114_569553Z/demo/results/attention.vcd", KeepAll)
+ INFO libsurfer::wave_source: Loading a waveform file: /Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/demo_20261008T121114_569553Z/demo/results/attention.vcd
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded the hierarchy and meta-data of /Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/demo_20261008T121114_569553Z/demo/results/attention.vcd in 596.791µs
+ INFO libsurfer::state: VCD file loaded
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded the body of /Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/demo_20261008T121114_569553Z/demo/results/attention.vcd in 227.676042ms
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 11 variables in 557.401625ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "clk", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 8.288709ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "rst_n", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 15.339125ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "start", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 5.769167ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "q_valid", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 15.009542ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "kv_valid", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 2.020083ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "data_ready", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 9.835917ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "q_in", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 10.601792ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "k_in", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 9.384ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "v_in", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 4.680375ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention", "dut"], id: None }, name: "state", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 11.927458ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention", "dut"], id: None }, name: "token", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 4.162916ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention", "dut"], id: None }, name: "dim", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 12.063375ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention", "dut"], id: None }, name: "weight_sum", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 4.042625ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "debug_acc0", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 13.421834ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "out_valid", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 3.37875ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "out_data", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 12.590958ms
+ INFO libsurfer::batch_commands: Applying batch command: AddVariables([VariableRef { path: ScopeRef { strs: ["tb_attention"], id: None }, name: "done", id: None, index: None }])
+ INFO libsurfer::async_util: Returning from perform work
+ INFO libsurfer::async_util: Starting async task
+ INFO libsurfer: Loaded 1 variables in 2.882ms
+ INFO libsurfer::batch_commands: Applying batch command: ZoomToFit { viewport_idx: 0 }

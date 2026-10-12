@@ -1,0 +1,2 @@
+FATAL: experiments/demo_20261008T121114_569553Z/source/tb/tb_attention.sv:106: output case=0 dim=0 got=3 exp=2
+       Time: 17887000  Scope: tb_attention.run_case

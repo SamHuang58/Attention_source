@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "cases": 575,
+  "outputs": 2300,
+  "max_abs_error": 28.97814299681957,
+  "mean_abs_error": 1.0879327990025167,
+  "rmse": 3.148317170854808,
+  "p99_abs_error": 13.281676573983521,
+  "worst_case": "lut_distance_4",
+  "worst_case_index": 13,
+  "worst_dimension": 0,
+  "decimal_precision": 80,
+  "sampled_validation_only": true,
+  "scope": "Sampled validation of supplied cases; no exhaustive input-domain proof.",
+  "independent_lut": [
+    16,
+    6,
+    2,
+    1
+  ],
+  "conservative_abs_error_bound": 128.0,
+  "conservative_abs_error_bound_decimal": "128.0",
+  "quantile_method": "nearest rank",
+  "convex_tolerance": 0.0,
+  "internal_reference_fields_checked": [
+    "scores",
+    "max_score",
+    "weights",
+    "L",
+    "acc",
+    "output_int"
+  ],
+  "rtl_fields_checked": [
+    "L",
+    "o0",
+    "o1",
+    "o2",
+    "o3"
+  ],
+  "metamorphic_relations_checked": 224,
+  "metamorphic_relation_counts": {
+    "constant_values": 32,
+    "key_translation": 32,
+    "qk_feature_permutation": 32,
+    "qk_negation": 32,
+    "token_permutation": 32,
+    "value_negation": 32,
+    "value_permutation": 32
+  },
+  "strata": {
+    "adversarial": {
+      "cases": 32,
+      "outputs": 128,
+      "max_abs_error": 28.97814299681957,
+      "mean_abs_error": 10.379797719225955,
+      "rmse": 11.184315742665152,
+      "p99_abs_error": 28.97814299681957,
+      "worst_case": "adversarial_000",
+      "worst_case_index": 543,
+      "worst_dimension": 0
+    },
+    "directed": {
+      "cases": 31,
+      "outputs": 124,
+      "max_abs_error": 28.97814299681957,
+      "mean_abs_error": 2.624221023936616,
+      "rmse": 6.510160729906922,
+      "p99_abs_error": 28.97814299681957,
+      "worst_case": "lut_distance_4",
+      "worst_case_index": 13,
+      "worst_dimension": 0
+    },
+    "metamorphic": {
+      "cases": 256,
+      "outputs": 1024,
+      "max_abs_error": 3.5265015851196746,
+      "mean_abs_error": 0.2644491120171595,
+      "rmse": 0.5979549905895514,
+      "p99_abs_error": 2.2857523281172805,
+      "worst_case": "metamorphic_024_token_permutation",
+      "worst_case_index": 480,
+      "worst_dimension": 2
+    },
+    "random_full_int8": {
+      "cases": 86,
+      "outputs": 344,
+      "max_abs_error": 1.8454056235106543e-22,
+      "mean_abs_error": 1.5602532806049383e-24,
+      "rmse": 1.5840958751206646e-23,
+      "p99_abs_error": 3.5088698475202585e-23,
+      "worst_case": "random_0_0141",
+      "worst_case_index": 172,
+      "worst_dimension": 1
+    },
+    "random_near_ties": {
+      "cases": 85,
+      "outputs": 340,
+      "max_abs_error": 6.3141114504245675,
+      "mean_abs_error": 0.8065779699984879,
+      "rmse": 1.1984465550938732,
+      "p99_abs_error": 3.7950217039852885,
+      "worst_case": "random_2_0020",
+      "worst_case_index": 51,
+      "worst_dimension": 1
+    },
+    "random_small_scores": {
+      "cases": 85,
+      "outputs": 340,
+      "max_abs_error": 8.628352854884591,
+      "mean_abs_error": 0.8917515357990251,
+      "rmse": 1.4101879844496625,
+      "p99_abs_error": 4.585327328424223,
+      "worst_case": "random_1_0196",
+      "worst_case_index": 227,
+      "worst_dimension": 0
+    }
+  },
+  "detailed_errors_file": "high_precision_errors.csv",
+  "metamorphic_checks_file": "metamorphic_checks.csv",
+  "failures": []
+}

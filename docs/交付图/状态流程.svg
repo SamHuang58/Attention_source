@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="1120" viewBox="0 0 1060 1120">
+<rect width="100%" height="100%" fill="#f7f9fc"/>
+<style>text{font-family:"PingFang SC",Arial,sans-serif;fill:#182b49;font-size:18px}</style><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#087d79"/></marker></defs>
+<text x="40" y="40" style="font-size:28px;font-weight:700">状态流程 · 当前 RTL 的真实执行顺序</text>
+<text x="40" y="72" style="font-size:16px">不是边收一组 K/V 边算完；先存全部输入，再按阶段处理。</text>
+<rect x="110" y="106" width="835" height="72" rx="12" fill="#e7eef8"/>
+<text x="134" y="133" style="font-weight:700">0 IDLE</text>
+<text x="134" y="160" style="font-size:17px">start=1 才进入装载；否则保持空闲</text>
+<path d="M525 178 V204" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<rect x="110" y="208" width="835" height="72" rx="12" fill="#e7eef8"/>
+<text x="134" y="235" style="font-weight:700">1 LOAD_Q</text>
+<text x="134" y="262" style="font-size:17px">q_valid=1 才接收；累计 4 项后进入 LOAD_KV</text>
+<path d="M525 280 V306" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<rect x="110" y="310" width="835" height="72" rx="12" fill="#e7eef8"/>
+<text x="134" y="337" style="font-weight:700">2 LOAD_KV</text>
+<text x="134" y="364" style="font-size:17px">kv_valid=1 才接收；累计 32 对后进入 DOT</text>
+<path d="M525 382 V408" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<rect x="110" y="412" width="835" height="72" rx="12" fill="#e7eef8"/>
+<text x="134" y="439" style="font-weight:700">3 DOT</text>
+<text x="134" y="466" style="font-size:17px">每组 4 拍，写 Score 并更新最大值；8 组完成后进入 EXP</text>
+<path d="M525 484 V510" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<rect x="110" y="514" width="835" height="72" rx="12" fill="#e7eef8"/>
+<text x="134" y="541" style="font-weight:700">4 EXP</text>
+<text x="134" y="568" style="font-size:17px">每拍查一项权重并累加 L；8 项完成后进入 UPDATE</text>
+<path d="M525 586 V612" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<rect x="110" y="616" width="835" height="72" rx="12" fill="#e7eef8"/>
+<text x="134" y="643" style="font-weight:700">5 UPDATE</text>
+<text x="134" y="670" style="font-size:17px">每拍累加一个 ACC 分量；32 次完成后开始除法</text>
+<path d="M525 688 V714" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<rect x="110" y="718" width="835" height="72" rx="12" fill="#e7eef8"/>
+<text x="134" y="745" style="font-weight:700">6 NORM_START</text>
+<text x="134" y="772" style="font-size:17px">启动一次除法，保存符号；下一拍进入 NORM_WAIT</text>
+<path d="M525 790 V816" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<rect x="110" y="820" width="835" height="72" rx="12" fill="#e7eef8"/>
+<text x="134" y="847" style="font-weight:700">7 NORM_WAIT</text>
+<text x="134" y="874" style="font-size:17px">等 divider_done；剩余分量回到启动，4 项齐全后向下输出</text>
+<path d="M525 892 V918" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<rect x="110" y="922" width="835" height="72" rx="12" fill="#e7eef8"/>
+<text x="134" y="949" style="font-weight:700">8 OUTPUT</text>
+<text x="134" y="976" style="font-size:17px">四拍依次输出；最后一拍 out_valid=done=1，并回到 IDLE</text>
+<path d="M945 856 H990 V754 H947" fill="none" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<path d="M110 958 H55 V142 H107" fill="none" stroke="#087d79" stroke-width="2" marker-end="url(#a)"/>
+<text x="110" y="1040">装载暂停：保持状态、位置与目标存储内容；内部计算阶段不提供暂停。</text>
+<text x="110" y="1075">所有状态：rst_n 拉低会放弃当前任务并回到 IDLE；重新启动须重装输入。</text>
+</svg>

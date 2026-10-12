@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="470" viewBox="0 0 1100 470">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#287b84"/></marker></defs>
+<rect width="1100" height="470" fill="#f7f9fc"/>
+<style>text{font:16px Arial,'PingFang SC',sans-serif;fill:#19324d}rect.box{fill:#e6eff6;stroke:#9ab3ca;rx:8}path.line{stroke:#287b84;stroke-width:2;fill:none;marker-end:url(#a)}</style>
+<text x="30" y="40" font-size="24">Attention：模块结构示意</text><text x="30" y="68">根据 RTL 绘制的学习图；不是综合网表。箭头表示数据流，整个计算分多个时钟周期完成。</text>
+<rect class="box" x="30" y="120" width="135" height="100"/><text x="47" y="151">Q / K / V</text><text x="47" y="177">输入存储</text><text x="47" y="203">4 + 32 + 32数</text>
+<rect class="box" x="200" y="120" width="145" height="100"/><text x="215" y="151">点积 + 最高分</text><text x="215" y="177">Score 存储</text><text x="215" y="203">8 个分数</text>
+<rect class="box" x="385" y="120" width="145" height="100"/><text x="400" y="151">减最高分 / 查表</text><text x="400" y="177">Weight 存储</text><text x="400" y="203">权重 / 累加 L</text>
+<rect class="box" x="570" y="120" width="150" height="100"/><text x="585" y="151">权重 × V</text><text x="585" y="177">4 路 ACC 累加</text><text x="585" y="203">每拍更新 1 维</text>
+<rect class="box" x="755" y="120" width="150" height="100"/><text x="770" y="151">除法 + 舍入</text><text x="770" y="177">round(ACC/L)</text><text x="770" y="203">4 个输出整数</text>
+<rect class="box" x="940" y="120" width="130" height="100"/><text x="954" y="151">输出接口</text><text x="954" y="177">out_valid</text><text x="954" y="203">done</text>
+<path class="line" d="M165 160H200"/><path class="line" d="M345 160H385"/><path class="line" d="M530 160H570"/><path class="line" d="M720 160H755"/><path class="line" d="M905 160H940"/>
+<path class="line" d="M100 220V265H640V220"/><text x="345" y="258">V 从存储直接送到加权乘法</text>
+<rect class="box" x="250" y="320" width="600" height="65"/><text x="278" y="347">状态机 + dim / token 计数器</text><text x="278" y="373">决定当前阶段、读写位置，以及何时启动计算与输出</text>
+<text x="30" y="436">clk：规定更新时刻　　rst_n：复位　　start：启动　　valid / ready：输入接收协议</text>
+</svg>

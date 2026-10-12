@@ -1,0 +1,2 @@
+DIVIDER EXHAUSTIVE PASS: W=2 cases=18 reset_positions=2
+experiments/step2_release/source/tb/tb_divider_exhaustive.sv:65: $finish called at 777000 (1ps)

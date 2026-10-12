@@ -1,0 +1,232 @@
+
+8. Printing statistics.
+
+=== attention_ip ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      355 wires
+     2043 wire bits
+      128 public wires
+     1222 public wire bits
+       12 ports
+       40 port bits
+      339 cells
+        1   $add_16
+        1   $add_18
+        1   $add_2
+        1   $add_3
+        1   $add_36
+        1   $add_8
+        2   $adff_1
+        1   $adffe_1
+        4   $adffe_16
+        2   $adffe_18
+        1   $adffe_2
+        1   $adffe_3
+        1   $adffe_4
+        2   $adffe_8
+        8   $dffe_18
+        8   $dffe_5
+       72   $dffe_8
+        3   $eq_2
+        7   $eq_3
+        8   $eq_4
+       31   $eq_5
+        1   $ge_36
+        1   $gt_18
+        1   $gt_36
+        1   $logic_not_2
+        1   $logic_not_3
+        1   $logic_not_4
+        1   $logic_not_5
+        1   $logic_or_1
+        1   $mul_14
+        1   $mul_16
+        3   $mux_1
+        6   $mux_16
+        5   $mux_18
+        6   $mux_2
+        4   $mux_3
+        1   $mux_36
+       14   $mux_4
+       23   $mux_8
+       17   $ne_2
+        1   $neg_36
+        1   $neg_8
+        4   $pmux_16_2
+        1   $pmux_16_4
+        2   $pmux_18_2
+        1   $pmux_18_8
+        1   $pmux_2_6
+        1   $pmux_3_4
+        1   $pmux_4_9
+        1   $pmux_5_8
+        1   $pmux_8_2
+        2   $pmux_8_32
+        2   $pmux_8_4
+        1   $reduce_and_13
+        2   $reduce_and_2
+       13   $reduce_and_3
+       49   $reduce_and_4
+        1   $reduce_and_6
+        3   $reduce_bool_2
+        1   $reduce_bool_5
+        1   $reduce_bool_8
+        1   $reduce_or_2
+        1   $reduce_or_3
+        1   $sub_19
+        2 submodules
+        1   $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+        1   exp_lut
+
+=== $paramod\unsigned_divider\W=s32'00000000000000000000000000100100 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       52 wires
+      784 wire bits
+       16 public wires
+      303 public wire bits
+        9 ports
+      114 port bits
+       46 cells
+        2   $adff_1
+        1   $adffe_1
+        3   $adffe_36
+        1   $adffe_37
+        1   $adffe_6
+        1   $eq_6
+        1   $ge_37
+        1   $logic_not_36
+        8   $mux_1
+        7   $mux_36
+        4   $mux_37
+        3   $mux_6
+        2   $ne_2
+        2   $not_1
+        1   $or_36
+        2   $reduce_and_2
+        2   $reduce_and_3
+        2   $reduce_bool_2
+        1   $sub_37
+        1   $sub_6
+
+=== exp_lut ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       28 wire bits
+        2 public wires
+       24 public wire bits
+        2 ports
+       24 port bits
+        5 cells
+        3   $eq_19
+        1   $logic_not_19
+        1   $pmux_5_4
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      390 attention_ip
+       46 $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+        5 exp_lut
+
+        +----------Count including submodules.
+        | 
+      413 wires
+     2855 wire bits
+      146 public wires
+     1549 public wire bits
+       23 ports
+      178 port bits
+        - memories
+        - memory bits
+        - processes
+      390 cells
+        1   $add_16
+        1   $add_18
+        1   $add_2
+        1   $add_3
+        1   $add_36
+        1   $add_8
+        4   $adff_1
+        2   $adffe_1
+        4   $adffe_16
+        2   $adffe_18
+        1   $adffe_2
+        1   $adffe_3
+        3   $adffe_36
+        1   $adffe_37
+        1   $adffe_4
+        1   $adffe_6
+        2   $adffe_8
+        8   $dffe_18
+        8   $dffe_5
+       72   $dffe_8
+        3   $eq_19
+        3   $eq_2
+        7   $eq_3
+        8   $eq_4
+       31   $eq_5
+        1   $eq_6
+        1   $ge_36
+        1   $ge_37
+        1   $gt_18
+        1   $gt_36
+        1   $logic_not_19
+        1   $logic_not_2
+        1   $logic_not_3
+        1   $logic_not_36
+        1   $logic_not_4
+        1   $logic_not_5
+        1   $logic_or_1
+        1   $mul_14
+        1   $mul_16
+       11   $mux_1
+        6   $mux_16
+        5   $mux_18
+        6   $mux_2
+        4   $mux_3
+        8   $mux_36
+        4   $mux_37
+       14   $mux_4
+        3   $mux_6
+       23   $mux_8
+       19   $ne_2
+        1   $neg_36
+        1   $neg_8
+        2   $not_1
+        1   $or_36
+        4   $pmux_16_2
+        1   $pmux_16_4
+        2   $pmux_18_2
+        1   $pmux_18_8
+        1   $pmux_2_6
+        1   $pmux_3_4
+        1   $pmux_4_9
+        1   $pmux_5_4
+        1   $pmux_5_8
+        1   $pmux_8_2
+        2   $pmux_8_32
+        2   $pmux_8_4
+        1   $reduce_and_13
+        4   $reduce_and_2
+       15   $reduce_and_3
+       49   $reduce_and_4
+        1   $reduce_and_6
+        5   $reduce_bool_2
+        1   $reduce_bool_5
+        1   $reduce_bool_8
+        1   $reduce_or_2
+        1   $reduce_or_3
+        1   $sub_19
+        1   $sub_37
+        1   $sub_6
+        2 submodules
+        1   $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+        1   exp_lut
+

@@ -1,0 +1,2 @@
+ATTENTION PASS: 575 cases, 2300 outputs, Score/Weight/L/ACC exact; 8 reset states; base latency=264
+experiments/step2_release/source/tb/tb_attention.sv:198: $finish called at 2266057000 (1ps)

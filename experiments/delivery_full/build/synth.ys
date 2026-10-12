@@ -1,0 +1,11 @@
+read_verilog -sv experiments/delivery_full/source/rtl/exp_lut.sv experiments/delivery_full/source/rtl/unsigned_divider.sv experiments/delivery_full/source/rtl/attention_ip.sv
+hierarchy -check -top attention_ip
+proc
+opt
+check -assert
+tee -o experiments/delivery_full/synthesis/operator_stats.txt stat -width
+synth -top attention_ip -noabc
+check -assert
+tee -o experiments/delivery_full/synthesis/synthesis_stats.json stat -json
+write_verilog -noattr experiments/delivery_full/build/attention_netlist.v
+write_json experiments/delivery_full/build/attention_netlist.json

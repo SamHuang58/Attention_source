@@ -1,0 +1,5 @@
+{
+  "run": "experiments/ppt_20261009_evidence",
+  "manifest_sha256": "987ffd85fd8e45e318970fddcd4103f374451f87fbc9dab72010ecd2a4c0d62d",
+  "scope": "RTL_ONLY"
+}

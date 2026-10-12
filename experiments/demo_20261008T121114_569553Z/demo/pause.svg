@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="610" viewBox="0 0 850 610">
+<rect width="100%" height="100%" fill="#f7f9fc"/>
+<style>text{font-family:Arial,"PingFang SC",sans-serif;fill:#182b49;font-size:13px}</style>
+<text x="24" y="32" style="font-size:21px">暂停三拍：q_valid=0 时，dim 保持为 1</text>
+<text x="24" y="57">真实 RTL 上升沿后 1ns 的采样图；完整连续波形请打开 attention.vcd。state/dim 为更新后的值。</text>
+<path d="M130 80V560" stroke="#dbe2ea"/>
+<text x="133" y="95">拍 270</text>
+<path d="M202 80V560" stroke="#dbe2ea"/>
+<text x="205" y="95">拍 271</text>
+<path d="M274 80V560" stroke="#dbe2ea"/>
+<text x="277" y="95">拍 272</text>
+<path d="M346 80V560" stroke="#dbe2ea"/>
+<text x="349" y="95">拍 273</text>
+<path d="M418 80V560" stroke="#dbe2ea"/>
+<text x="421" y="95">拍 274</text>
+<path d="M490 80V560" stroke="#dbe2ea"/>
+<text x="493" y="95">拍 275</text>
+<path d="M562 80V560" stroke="#dbe2ea"/>
+<text x="565" y="95">拍 276</text>
+<path d="M634 80V560" stroke="#dbe2ea"/>
+<text x="637" y="95">拍 277</text>
+<text x="20" y="140">start</text>
+<path d="M130 128V128H202" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M202 128V152H274" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M274 152V152H346" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M346 152V152H418" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M418 152V152H490" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M490 152V152H562" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M562 152V152H634" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M634 152V152H706" fill="none" stroke="#087d79" stroke-width="2"/>
+<text x="20" y="190">q_valid</text>
+<path d="M130 178V178H202" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M202 178V178H274" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M274 178V202H346" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M346 202V202H418" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M418 202V202H490" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M490 202V178H562" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M562 178V178H634" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M634 178V178H706" fill="none" stroke="#087d79" stroke-width="2"/>
+<text x="20" y="240">kv_valid</text>
+<path d="M130 228V228H202" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M202 228V252H274" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M274 252V252H346" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M346 252V252H418" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M418 252V252H490" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M490 252V252H562" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M562 252V252H634" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M634 252V252H706" fill="none" stroke="#087d79" stroke-width="2"/>
+<text x="20" y="290">ready</text>
+<path d="M130 278V278H202" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M202 278V278H274" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M274 278V278H346" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M346 278V278H418" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M418 278V278H490" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M490 278V278H562" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M562 278V278H634" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M634 278V278H706" fill="none" stroke="#087d79" stroke-width="2"/>
+<text x="20" y="340">state</text>
+<rect x="130" y="325" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="134" y="344" style="font-size:10px">LOAD_Q</text>
+<rect x="202" y="325" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="206" y="344" style="font-size:10px">LOAD_Q</text>
+<rect x="274" y="325" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="278" y="344" style="font-size:10px">LOAD_Q</text>
+<rect x="346" y="325" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="350" y="344" style="font-size:10px">LOAD_Q</text>
+<rect x="418" y="325" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="422" y="344" style="font-size:10px">LOAD_Q</text>
+<rect x="490" y="325" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="494" y="344" style="font-size:10px">LOAD_Q</text>
+<rect x="562" y="325" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="566" y="344" style="font-size:10px">LOAD_Q</text>
+<rect x="634" y="325" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="638" y="344" style="font-size:10px">LOAD_KV</text>
+<text x="20" y="390">dim</text>
+<rect x="130" y="375" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="134" y="394" style="font-size:10px">0</text>
+<rect x="202" y="375" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="206" y="394" style="font-size:10px">1</text>
+<rect x="274" y="375" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="278" y="394" style="font-size:10px">1</text>
+<rect x="346" y="375" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="350" y="394" style="font-size:10px">1</text>
+<rect x="418" y="375" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="422" y="394" style="font-size:10px">1</text>
+<rect x="490" y="375" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="494" y="394" style="font-size:10px">2</text>
+<rect x="562" y="375" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="566" y="394" style="font-size:10px">3</text>
+<rect x="634" y="375" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="638" y="394" style="font-size:10px">0</text>
+<text x="20" y="440">out_valid</text>
+<path d="M130 452V452H202" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M202 452V452H274" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M274 452V452H346" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M346 452V452H418" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M418 452V452H490" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M490 452V452H562" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M562 452V452H634" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M634 452V452H706" fill="none" stroke="#087d79" stroke-width="2"/>
+<text x="20" y="490">out_data</text>
+<rect x="130" y="475" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="134" y="494" style="font-size:10px">无效</text>
+<rect x="202" y="475" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="206" y="494" style="font-size:10px">无效</text>
+<rect x="274" y="475" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="278" y="494" style="font-size:10px">无效</text>
+<rect x="346" y="475" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="350" y="494" style="font-size:10px">无效</text>
+<rect x="418" y="475" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="422" y="494" style="font-size:10px">无效</text>
+<rect x="490" y="475" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="494" y="494" style="font-size:10px">无效</text>
+<rect x="562" y="475" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="566" y="494" style="font-size:10px">无效</text>
+<rect x="634" y="475" width="72" height="30" fill="#e6edf7" stroke="#fff"/>
+<text x="638" y="494" style="font-size:10px">无效</text>
+<text x="20" y="540">done</text>
+<path d="M130 552V552H202" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M202 552V552H274" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M274 552V552H346" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M346 552V552H418" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M418 552V552H490" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M490 552V552H562" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M562 552V552H634" fill="none" stroke="#087d79" stroke-width="2"/>
+<path d="M634 552V552H706" fill="none" stroke="#087d79" stroke-width="2"/>
+</svg>

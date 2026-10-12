@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="820" viewBox="0 0 1100 820">
+<rect width="100%" height="100%" fill="#f7f9fc"/>
+<style>text{font-family:"PingFang SC",Arial,sans-serif;fill:#182b49;font-size:18px}</style><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#087d79"/></marker></defs>
+<text x="40" y="40" style="font-size:28px;font-weight:700">一轮 264 拍 · 真实仿真采样核对</text>
+<text x="40" y="72" style="font-size:16px">start 被接受的边沿记为第 0 拍；无输入暂停；按边沿前状态统计。</text>
+<text x="40" y="128" style="font-weight:700">相对拍号</text>
+<text x="200" y="128" style="font-weight:700">状态</text>
+<text x="510" y="128" style="font-weight:700">拍数</text>
+<text x="650" y="128" style="font-weight:700">执行内容</text>
+<rect x="28" y="152" width="1044" height="56" rx="7" fill="#e7eef8"/>
+<text x="40" y="187">1–4</text>
+<text x="200" y="187">LOAD_Q</text>
+<text x="510" y="187">4</text>
+<text x="650" y="187">4 个 Q 分量</text>
+<rect x="28" y="217" width="1044" height="56" rx="7" fill="#e7eef8"/>
+<text x="40" y="252">5–36</text>
+<text x="200" y="252">LOAD_KV</text>
+<text x="510" y="252">32</text>
+<text x="650" y="252">32 对 K/V 分量</text>
+<rect x="28" y="282" width="1044" height="56" rx="7" fill="#e7eef8"/>
+<text x="40" y="317">37–68</text>
+<text x="200" y="317">DOT</text>
+<text x="510" y="317">32</text>
+<text x="650" y="317">8 组 × 4 维点积</text>
+<rect x="28" y="347" width="1044" height="56" rx="7" fill="#e7eef8"/>
+<text x="40" y="382">69–76</text>
+<text x="200" y="382">EXP</text>
+<text x="510" y="382">8</text>
+<text x="650" y="382">8 个权重，同时累加 L</text>
+<rect x="28" y="412" width="1044" height="56" rx="7" fill="#e7eef8"/>
+<text x="40" y="447">77–108</text>
+<text x="200" y="447">UPDATE</text>
+<text x="510" y="447">32</text>
+<text x="650" y="447">8 组 × 4 个 ACC 分量</text>
+<rect x="28" y="477" width="1044" height="56" rx="7" fill="#e1f0ee"/>
+<text x="40" y="512">109–260</text>
+<text x="200" y="512">NORM_START / WAIT</text>
+<text x="510" y="512">152</text>
+<text x="650" y="512">4 次 ×（1 拍启动＋37 拍等待）</text>
+<rect x="28" y="542" width="1044" height="56" rx="7" fill="#e7eef8"/>
+<text x="40" y="577">261–264</text>
+<text x="200" y="577">OUTPUT</text>
+<text x="510" y="577">4</text>
+<text x="650" y="577">4 个输出，最后一拍 done=1</text>
+<text x="40" y="660" style="font-size:24px;font-weight:700">4 + 32 + 32 + 8 + 32 + 152 + 4 = 264 拍</text>
+<text x="40" y="702">暂停示例：Q 暂停 3 拍＋KV 暂停 3 拍 → 270 拍；输出仍是 [3, 1, -1, 1]。</text>
+<text x="40" y="744">最早下一轮 start 在第 265 拍被接受。仿真 10ns 时钟不等于物理频率验证。</text>
+<text x="40" y="784" style="font-size:15px">来源：experiments/delivery_full/demo/results/cycle_trace.csv；除法等待累计 148 拍。</text>
+</svg>

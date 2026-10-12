@@ -1,0 +1,2 @@
+DIVIDER EXHAUSTIVE PASS: W=4 cases=260 reset_positions=4
+experiments/delivery_full/source/tb/tb_divider_exhaustive.sv:65: $finish called at 15327000 (1ps)

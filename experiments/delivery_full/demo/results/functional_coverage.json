@@ -1,0 +1,1 @@
+{"state_cycles":[5,11,67,64,16,64,8,296,8 ],"distance_bins_0_to_12_and_tail":[2,2,2,2,2,2,2,2,0,0,0,0,0,0 ],"positive_outputs":6,"negative_outputs":2,"zero_outputs":0,"q_stall_cycles":3,"kv_stall_cycles":3,"busy_start_cycles":0,"reset_states_checked":0,"partial_output_resets_checked":0}

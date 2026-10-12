@@ -1,0 +1,2 @@
+FATAL: experiments/step2_release/source/tb/tb_attention.sv:45: load counters advanced without handshake
+       Time: 18066000  Scope: tb_attention

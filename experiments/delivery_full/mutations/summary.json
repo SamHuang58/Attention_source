@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "detected": [
+    {
+      "defect": "lut_entry",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "done_alignment",
+      "status": "DETECTED",
+      "expected_diagnostic": "done alignment"
+    },
+    {
+      "defect": "output_sign",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "output_rounding",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "lost_q",
+      "status": "DETECTED",
+      "expected_diagnostic": "Q data capture"
+    },
+    {
+      "defect": "lost_v",
+      "status": "DETECTED",
+      "expected_diagnostic": "KV data capture"
+    },
+    {
+      "defect": "ignore_q_valid",
+      "status": "DETECTED",
+      "expected_diagnostic": "load counters advanced without handshake"
+    },
+    {
+      "defect": "ignore_kv_valid",
+      "status": "DETECTED",
+      "expected_diagnostic": "load counters advanced without handshake"
+    },
+    {
+      "defect": "extra_output_at_final_input",
+      "status": "DETECTED"
+    },
+    {
+      "defect": "false_divide_by_zero_on_completion",
+      "status": "DETECTED"
+    }
+  ],
+  "qualification": "Ten selected defects; this is not comprehensive mutation coverage"
+}

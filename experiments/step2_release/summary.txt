@@ -1,0 +1,19 @@
+Attention RTL 验证：通过
+
+数值检查：通过（1725 个案例，中间结果及输出逐项一致）
+时序、输入接收、暂停和复位：通过
+错误检测：通过（10 种故意植入的错误全部发现）
+重复运行：通过（同一源码、输入、种子，输出/时序记录/覆盖统计一致）
+预期输出：[3, 1, -1, 1]
+实际输出：[3, 1, -1, 1]
+暂停版输出：[3, 1, -1, 1]
+周期数：[264, 270]（正常 / 加入 6 拍暂停）
+
+本轮为 RTL 仿真；不包含综合、物理时序或上板。
+以上通过结论限于所测案例；量化与真实浮点结果的误差另外记录。
+演示计算表：demo/result.txt
+暂停采样图：demo/pause.svg
+输出采样图：demo/output.svg
+原始波形：demo/results/attention.vcd
+完整验证记录：manifest.json
+本次目录：/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/step2_release

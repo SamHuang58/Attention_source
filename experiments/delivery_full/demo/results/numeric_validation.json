@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "cases": 2,
+  "outputs": 8,
+  "max_abs_error": 0.3045891090210517,
+  "mean_abs_error": 0.1998552444123547,
+  "rmse": 0.22983785144531504,
+  "p99_abs_error": 0.3045891090210517,
+  "worst_case": "demo_normal",
+  "worst_case_index": 0,
+  "worst_dimension": 2,
+  "decimal_precision": 80,
+  "sampled_validation_only": true,
+  "scope": "Sampled validation of supplied cases; no exhaustive input-domain proof.",
+  "independent_lut": [
+    16,
+    6,
+    2,
+    1
+  ],
+  "conservative_abs_error_bound": 128.0,
+  "conservative_abs_error_bound_decimal": "128.0",
+  "quantile_method": "nearest rank",
+  "convex_tolerance": 0.0,
+  "internal_reference_fields_checked": [
+    "scores",
+    "max_score",
+    "weights",
+    "L",
+    "acc",
+    "output_int"
+  ],
+  "rtl_fields_checked": [
+    "L",
+    "o0",
+    "o1",
+    "o2",
+    "o3"
+  ],
+  "metamorphic_relations_checked": 0,
+  "metamorphic_relation_counts": {},
+  "strata": {
+    "directed": {
+      "cases": 2,
+      "outputs": 8,
+      "max_abs_error": 0.3045891090210517,
+      "mean_abs_error": 0.1998552444123547,
+      "rmse": 0.22983785144531504,
+      "p99_abs_error": 0.3045891090210517,
+      "worst_case": "demo_normal",
+      "worst_case_index": 0,
+      "worst_dimension": 2
+    }
+  },
+  "detailed_errors_file": "high_precision_errors.csv",
+  "metamorphic_checks_file": "metamorphic_checks.csv",
+  "failures": []
+}

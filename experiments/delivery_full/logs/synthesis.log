@@ -1,0 +1,2536 @@
+
+-- Executing script file `experiments/delivery_full/build/synth.ys' --
+
+1. Executing Verilog-2005 frontend: experiments/delivery_full/source/rtl/exp_lut.sv
+Parsing SystemVerilog input from `experiments/delivery_full/source/rtl/exp_lut.sv' to AST representation.
+Generating RTLIL representation for module `\exp_lut'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: experiments/delivery_full/source/rtl/unsigned_divider.sv
+Parsing SystemVerilog input from `experiments/delivery_full/source/rtl/unsigned_divider.sv' to AST representation.
+Generating RTLIL representation for module `\unsigned_divider'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: experiments/delivery_full/source/rtl/attention_ip.sv
+Parsing SystemVerilog input from `experiments/delivery_full/source/rtl/attention_ip.sv' to AST representation.
+Generating RTLIL representation for module `\attention_ip'.
+Warning: Replacing memory \output_mem with list of registers. See experiments/delivery_full/source/rtl/attention_ip.sv:104
+Warning: Replacing memory \weights with list of registers. See experiments/delivery_full/source/rtl/attention_ip.sv:89
+Warning: Replacing memory \scores with list of registers. See experiments/delivery_full/source/rtl/attention_ip.sv:81
+Warning: Replacing memory \v_mem with list of registers. See experiments/delivery_full/source/rtl/attention_ip.sv:72
+Warning: Replacing memory \k_mem with list of registers. See experiments/delivery_full/source/rtl/attention_ip.sv:72
+Warning: Replacing memory \q_mem with list of registers. See experiments/delivery_full/source/rtl/attention_ip.sv:67
+Warning: Replacing memory \acc with list of registers. See experiments/delivery_full/source/rtl/attention_ip.sv:57
+Successfully finished Verilog frontend.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \attention_ip
+Used module:     \unsigned_divider
+Used module:     \exp_lut
+Parameter \W = 36
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\unsigned_divider'.
+Parameter \W = 36
+Generating RTLIL representation for module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+
+4.3. Analyzing design hierarchy..
+Top module:  \attention_ip
+Used module:     $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+Used module:     \exp_lut
+
+4.4. Analyzing design hierarchy..
+Top module:  \attention_ip
+Used module:     $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+Used module:     \exp_lut
+Removing unused module `\unsigned_divider'.
+Removed 1 unused modules.
+
+5. Executing PROC pass (convert processes to netlists).
+
+5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:36$202 in module attention_ip.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:36$202 in module attention_ip.
+Removed 1 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$199 in module attention_ip.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$199 in module attention_ip.
+Removed 1 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$196 in module attention_ip.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$196 in module attention_ip.
+Removed 1 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:34$193 in module attention_ip.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:34$193 in module attention_ip.
+Removed 1 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:33$190 in module attention_ip.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:33$190 in module attention_ip.
+Removed 1 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$187 in module attention_ip.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$187 in module attention_ip.
+Removed 1 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$184 in module attention_ip.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$184 in module attention_ip.
+Removed 1 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$181 in module attention_ip.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$181 in module attention_ip.
+Removed 1 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$178 in module attention_ip.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$178 in module attention_ip.
+Removed 3 dead cases from process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49 in module attention_ip.
+Marked 30 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49 in module attention_ip.
+Marked 3 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208 in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Marked 1 switch rules as full_case in process $proc$experiments/delivery_full/source/rtl/exp_lut.sv:9$1 in module exp_lut.
+Removed a total of 12 dead cases.
+
+5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 35 assignments to connections.
+
+5.4. Executing PROC_INIT pass (extract init attributes).
+
+5.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+Found async reset \rst_n in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+
+5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~44 debug messages>
+
+5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:36$202'.
+     1/1: $1$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:36$24_DATA[15:0]$204
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$199'.
+     1/1: $1$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:35$23_DATA[15:0]$201
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$196'.
+     1/1: $1$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:35$22_DATA[15:0]$198
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:34$193'.
+     1/1: $1$mem2reg_rd$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:34$21_DATA[7:0]$195
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:33$190'.
+     1/1: $1$mem2reg_rd$\weights$experiments/delivery_full/source/rtl/attention_ip.sv:33$20_DATA[4:0]$192
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$187'.
+     1/1: $1$mem2reg_rd$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:29$19_DATA[17:0]$189
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$184'.
+     1/1: $1$mem2reg_rd$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:29$18_DATA[17:0]$186
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$181'.
+     1/1: $1$mem2reg_rd$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:26$17_DATA[7:0]$183
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$178'.
+     1/1: $1$mem2reg_rd$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:26$16_DATA[7:0]$180
+Creating decoders for process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+     1/180: $3$mem2reg_rd$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:112$36_DATA[7:0]$175
+     2/180: $5$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_ADDR[1:0]$164
+     3/180: $5$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_DATA[7:0]$165
+     4/180: $5$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_DATA[7:0]$167
+     5/180: $5$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_ADDR[1:0]$166
+     6/180: $4$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_ADDR[1:0]$158
+     7/180: $4$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_DATA[7:0]$159
+     8/180: $4$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_DATA[7:0]$163
+     9/180: $4$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_ADDR[1:0]$162
+    10/180: $4$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_DATA[7:0]$161
+    11/180: $4$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_ADDR[1:0]$160
+    12/180: $3$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_DATA[7:0]$157
+    13/180: $3$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_ADDR[1:0]$156
+    14/180: $3$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_DATA[7:0]$155
+    15/180: $3$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_ADDR[1:0]$154
+    16/180: $3$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_DATA[7:0]$153
+    17/180: $3$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_ADDR[1:0]$152
+    18/180: $3$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:102$32_DATA[15:0]$151
+    19/180: $3$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$31_DATA[15:0]$145
+    20/180: $3$mem2reg_wr$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:81$28_ADDR[2:0]$136
+    21/180: $3$mem2reg_wr$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:81$28_DATA[17:0]$137
+    22/180: $3$mem2reg_wr$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$27_ADDR[4:0]$129
+    23/180: $3$mem2reg_wr$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$27_DATA[7:0]$130
+    24/180: $3$mem2reg_wr$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$26_ADDR[4:0]$127
+    25/180: $3$mem2reg_wr$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$26_DATA[7:0]$128
+    26/180: $3$mem2reg_wr$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:67$25_ADDR[1:0]$123
+    27/180: $3$mem2reg_wr$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:67$25_DATA[7:0]$124
+    28/180: $3\i[31:0]
+    29/180: $2\i[31:0]
+    30/180: $2$mem2reg_rd$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:112$36_DATA[7:0]$122
+    31/180: $2$mem2reg_rd$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:112$36_ADDR[1:0]$121
+    32/180: $2$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_DATA[7:0]$120
+    33/180: $2$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_ADDR[1:0]$119
+    34/180: $2$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_DATA[7:0]$118
+    35/180: $2$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_ADDR[1:0]$117
+    36/180: $2$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_DATA[7:0]$116
+    37/180: $2$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_ADDR[1:0]$115
+    38/180: $2$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:102$32_DATA[15:0]$114
+    39/180: $2$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:102$32_ADDR[1:0]$113
+    40/180: $2$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$31_DATA[15:0]$112
+    41/180: $2$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$31_ADDR[1:0]$111
+    42/180: $2$mem2reg_wr$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$30_DATA[15:0]$110
+    43/180: $2$mem2reg_wr$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$30_ADDR[1:0]$109
+    44/180: $2$mem2reg_wr$\weights$experiments/delivery_full/source/rtl/attention_ip.sv:89$29_DATA[4:0]$108
+    45/180: $2$mem2reg_wr$\weights$experiments/delivery_full/source/rtl/attention_ip.sv:89$29_ADDR[2:0]$107
+    46/180: $2$mem2reg_wr$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:81$28_DATA[17:0]$106
+    47/180: $2$mem2reg_wr$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:81$28_ADDR[2:0]$105
+    48/180: $2$mem2reg_wr$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$27_DATA[7:0]$104
+    49/180: $2$mem2reg_wr$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$27_ADDR[4:0]$103
+    50/180: $2$mem2reg_wr$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$26_DATA[7:0]$102
+    51/180: $2$mem2reg_wr$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$26_ADDR[4:0]$101
+    52/180: $2$mem2reg_wr$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:67$25_DATA[7:0]$100
+    53/180: $2$mem2reg_wr$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:67$25_ADDR[1:0]$99
+    54/180: $1$mem2reg_rd$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:112$36_DATA[7:0]$98
+    55/180: $1$mem2reg_rd$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:112$36_ADDR[1:0]$97
+    56/180: $1$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_DATA[7:0]$96
+    57/180: $1$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_ADDR[1:0]$95
+    58/180: $1$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_DATA[7:0]$94
+    59/180: $1$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_ADDR[1:0]$93
+    60/180: $1$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_DATA[7:0]$92
+    61/180: $1$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_ADDR[1:0]$91
+    62/180: $1$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:102$32_DATA[15:0]$90
+    63/180: $1$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:102$32_ADDR[1:0]$89
+    64/180: $1$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$31_DATA[15:0]$88
+    65/180: $1$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$31_ADDR[1:0]$87
+    66/180: $1$mem2reg_wr$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$30_DATA[15:0]$86
+    67/180: $1$mem2reg_wr$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$30_ADDR[1:0]$85
+    68/180: $1$mem2reg_wr$\weights$experiments/delivery_full/source/rtl/attention_ip.sv:89$29_DATA[4:0]$84
+    69/180: $1$mem2reg_wr$\weights$experiments/delivery_full/source/rtl/attention_ip.sv:89$29_ADDR[2:0]$83
+    70/180: $1$mem2reg_wr$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:81$28_DATA[17:0]$82
+    71/180: $1$mem2reg_wr$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:81$28_ADDR[2:0]$81
+    72/180: $1$mem2reg_wr$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$27_DATA[7:0]$80
+    73/180: $1$mem2reg_wr$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$27_ADDR[4:0]$79
+    74/180: $1$mem2reg_wr$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$26_DATA[7:0]$78
+    75/180: $1$mem2reg_wr$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$26_ADDR[4:0]$77
+    76/180: $1$mem2reg_wr$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:67$25_DATA[7:0]$76
+    77/180: $1$mem2reg_wr$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:67$25_ADDR[1:0]$75
+    78/180: $1\i[31:0]
+    79/180: $0\done[0:0]
+    80/180: $0\out_valid[0:0]
+    81/180: $0\output_mem[3][7:0]
+    82/180: $0\output_mem[2][7:0]
+    83/180: $0\output_mem[1][7:0]
+    84/180: $0\output_mem[0][7:0]
+    85/180: $0\weights[7][4:0]
+    86/180: $0\weights[6][4:0]
+    87/180: $0\weights[5][4:0]
+    88/180: $0\weights[4][4:0]
+    89/180: $0\weights[3][4:0]
+    90/180: $0\weights[2][4:0]
+    91/180: $0\weights[1][4:0]
+    92/180: $0\weights[0][4:0]
+    93/180: $0\scores[7][17:0]
+    94/180: $0\scores[6][17:0]
+    95/180: $0\scores[5][17:0]
+    96/180: $0\scores[4][17:0]
+    97/180: $0\scores[3][17:0]
+    98/180: $0\scores[2][17:0]
+    99/180: $0\scores[1][17:0]
+   100/180: $0\scores[0][17:0]
+   101/180: $0\v_mem[31][7:0]
+   102/180: $0\v_mem[30][7:0]
+   103/180: $0\v_mem[29][7:0]
+   104/180: $0\v_mem[28][7:0]
+   105/180: $0\v_mem[27][7:0]
+   106/180: $0\v_mem[26][7:0]
+   107/180: $0\v_mem[25][7:0]
+   108/180: $0\v_mem[24][7:0]
+   109/180: $0\v_mem[23][7:0]
+   110/180: $0\v_mem[22][7:0]
+   111/180: $0\v_mem[21][7:0]
+   112/180: $0\v_mem[20][7:0]
+   113/180: $0\v_mem[19][7:0]
+   114/180: $0\v_mem[18][7:0]
+   115/180: $0\v_mem[17][7:0]
+   116/180: $0\v_mem[16][7:0]
+   117/180: $0\v_mem[15][7:0]
+   118/180: $0\v_mem[14][7:0]
+   119/180: $0\v_mem[13][7:0]
+   120/180: $0\v_mem[12][7:0]
+   121/180: $0\v_mem[11][7:0]
+   122/180: $0\v_mem[10][7:0]
+   123/180: $0\v_mem[9][7:0]
+   124/180: $0\v_mem[8][7:0]
+   125/180: $0\v_mem[7][7:0]
+   126/180: $0\v_mem[6][7:0]
+   127/180: $0\v_mem[5][7:0]
+   128/180: $0\v_mem[4][7:0]
+   129/180: $0\v_mem[3][7:0]
+   130/180: $0\v_mem[2][7:0]
+   131/180: $0\v_mem[1][7:0]
+   132/180: $0\v_mem[0][7:0]
+   133/180: $0\k_mem[31][7:0]
+   134/180: $0\k_mem[30][7:0]
+   135/180: $0\k_mem[29][7:0]
+   136/180: $0\k_mem[28][7:0]
+   137/180: $0\k_mem[27][7:0]
+   138/180: $0\k_mem[26][7:0]
+   139/180: $0\k_mem[25][7:0]
+   140/180: $0\k_mem[24][7:0]
+   141/180: $0\k_mem[23][7:0]
+   142/180: $0\k_mem[22][7:0]
+   143/180: $0\k_mem[21][7:0]
+   144/180: $0\k_mem[20][7:0]
+   145/180: $0\k_mem[19][7:0]
+   146/180: $0\k_mem[18][7:0]
+   147/180: $0\k_mem[17][7:0]
+   148/180: $0\k_mem[16][7:0]
+   149/180: $0\k_mem[15][7:0]
+   150/180: $0\k_mem[14][7:0]
+   151/180: $0\k_mem[13][7:0]
+   152/180: $0\k_mem[12][7:0]
+   153/180: $0\k_mem[11][7:0]
+   154/180: $0\k_mem[10][7:0]
+   155/180: $0\k_mem[9][7:0]
+   156/180: $0\k_mem[8][7:0]
+   157/180: $0\k_mem[7][7:0]
+   158/180: $0\k_mem[6][7:0]
+   159/180: $0\k_mem[5][7:0]
+   160/180: $0\k_mem[4][7:0]
+   161/180: $0\k_mem[3][7:0]
+   162/180: $0\k_mem[2][7:0]
+   163/180: $0\k_mem[1][7:0]
+   164/180: $0\k_mem[0][7:0]
+   165/180: $0\q_mem[3][7:0]
+   166/180: $0\q_mem[2][7:0]
+   167/180: $0\q_mem[1][7:0]
+   168/180: $0\q_mem[0][7:0]
+   169/180: $0\acc[3][15:0]
+   170/180: $0\acc[2][15:0]
+   171/180: $0\acc[1][15:0]
+   172/180: $0\acc[0][15:0]
+   173/180: $0\norm_negative[0:0]
+   174/180: $0\weight_sum[7:0]
+   175/180: $0\max_score[17:0]
+   176/180: $0\dot_acc[17:0]
+   177/180: $0\dim[1:0]
+   178/180: $0\token[2:0]
+   179/180: $0\state[3:0]
+   180/180: $0\out_data[7:0]
+Creating decoders for process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+     1/8: $0\done[0:0]
+     2/8: $0\count[5:0]
+     3/8: $0\remainder[36:0]
+     4/8: $0\divisor[35:0]
+     5/8: $0\q_work[35:0]
+     6/8: $0\divide_by_zero[0:0]
+     7/8: $0\busy[0:0]
+     8/8: $0\quotient[35:0]
+Creating decoders for process `\exp_lut.$proc$experiments/delivery_full/source/rtl/exp_lut.sv:9$1'.
+     1/1: $1\weight[4:0]
+
+5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\attention_ip.$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:36$24_DATA' from process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:36$202'.
+No latch inferred for signal `\attention_ip.$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:35$23_DATA' from process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$199'.
+No latch inferred for signal `\attention_ip.$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:35$22_DATA' from process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$196'.
+No latch inferred for signal `\attention_ip.$mem2reg_rd$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:34$21_DATA' from process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:34$193'.
+No latch inferred for signal `\attention_ip.$mem2reg_rd$\weights$experiments/delivery_full/source/rtl/attention_ip.sv:33$20_DATA' from process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:33$190'.
+No latch inferred for signal `\attention_ip.$mem2reg_rd$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:29$19_DATA' from process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$187'.
+No latch inferred for signal `\attention_ip.$mem2reg_rd$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:29$18_DATA' from process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$184'.
+No latch inferred for signal `\attention_ip.$mem2reg_rd$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:26$17_DATA' from process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$181'.
+No latch inferred for signal `\attention_ip.$mem2reg_rd$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:26$16_DATA' from process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$178'.
+No latch inferred for signal `\exp_lut.\weight' from process `\exp_lut.$proc$experiments/delivery_full/source/rtl/exp_lut.sv:9$1'.
+
+5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\attention_ip.\i' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3388' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\done' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3393' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\out_data' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3398' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\out_valid' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3403' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\state' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3408' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\token' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3413' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\dim' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3418' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\dot_acc' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3423' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\max_score' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3428' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\weight_sum' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3433' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\norm_negative' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3438' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\acc[0]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3443' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\acc[1]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3448' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\acc[2]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3453' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\acc[3]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$3458' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.\q_mem[0]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3465' with positive edge clock.
+Creating register for signal `\attention_ip.\q_mem[1]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3472' with positive edge clock.
+Creating register for signal `\attention_ip.\q_mem[2]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3479' with positive edge clock.
+Creating register for signal `\attention_ip.\q_mem[3]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3486' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[0]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3493' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[1]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3500' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[2]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3507' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[3]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3514' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[4]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3521' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[5]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3528' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[6]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3535' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[7]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3542' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[8]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3549' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[9]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3556' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[10]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3563' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[11]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3570' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[12]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3577' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[13]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3584' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[14]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3591' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[15]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3598' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[16]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3605' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[17]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3612' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[18]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3619' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[19]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3626' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[20]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3633' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[21]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3640' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[22]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3647' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[23]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3654' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[24]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3661' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[25]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3668' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[26]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3675' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[27]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3682' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[28]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3689' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[29]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3696' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[30]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3703' with positive edge clock.
+Creating register for signal `\attention_ip.\k_mem[31]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3710' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[0]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3717' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[1]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3724' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[2]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3731' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[3]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3738' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[4]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3745' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[5]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3752' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[6]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3759' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[7]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3766' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[8]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3773' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[9]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3780' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[10]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3787' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[11]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3794' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[12]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3801' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[13]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3808' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[14]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3815' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[15]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3822' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[16]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3829' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[17]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3836' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[18]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3843' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[19]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3850' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[20]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3857' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[21]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3864' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[22]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3871' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[23]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3878' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[24]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3885' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[25]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3892' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[26]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3899' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[27]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3906' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[28]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3913' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[29]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3920' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[30]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3927' with positive edge clock.
+Creating register for signal `\attention_ip.\v_mem[31]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3934' with positive edge clock.
+Creating register for signal `\attention_ip.\scores[0]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3941' with positive edge clock.
+Creating register for signal `\attention_ip.\scores[1]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3948' with positive edge clock.
+Creating register for signal `\attention_ip.\scores[2]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3955' with positive edge clock.
+Creating register for signal `\attention_ip.\scores[3]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3962' with positive edge clock.
+Creating register for signal `\attention_ip.\scores[4]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3969' with positive edge clock.
+Creating register for signal `\attention_ip.\scores[5]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3976' with positive edge clock.
+Creating register for signal `\attention_ip.\scores[6]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3983' with positive edge clock.
+Creating register for signal `\attention_ip.\scores[7]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3990' with positive edge clock.
+Creating register for signal `\attention_ip.\weights[0]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$3997' with positive edge clock.
+Creating register for signal `\attention_ip.\weights[1]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4004' with positive edge clock.
+Creating register for signal `\attention_ip.\weights[2]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4011' with positive edge clock.
+Creating register for signal `\attention_ip.\weights[3]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4018' with positive edge clock.
+Creating register for signal `\attention_ip.\weights[4]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4025' with positive edge clock.
+Creating register for signal `\attention_ip.\weights[5]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4032' with positive edge clock.
+Creating register for signal `\attention_ip.\weights[6]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4039' with positive edge clock.
+Creating register for signal `\attention_ip.\weights[7]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4046' with positive edge clock.
+Creating register for signal `\attention_ip.\output_mem[0]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4053' with positive edge clock.
+Creating register for signal `\attention_ip.\output_mem[1]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4060' with positive edge clock.
+Creating register for signal `\attention_ip.\output_mem[2]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4067' with positive edge clock.
+Creating register for signal `\attention_ip.\output_mem[3]' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $dff cell `$procdff$4074' with positive edge clock.
+Creating register for signal `\attention_ip.$mem2reg_wr$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:67$25_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4079' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:67$25_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4084' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$26_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4089' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$26_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4094' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$27_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4099' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:72$27_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4104' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:81$28_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4109' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\scores$experiments/delivery_full/source/rtl/attention_ip.sv:81$28_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4114' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\weights$experiments/delivery_full/source/rtl/attention_ip.sv:89$29_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4119' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\weights$experiments/delivery_full/source/rtl/attention_ip.sv:89$29_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4124' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$30_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4129' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$30_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4134' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$31_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4139' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:95$31_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4144' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:102$32_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4149' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:102$32_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4154' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4159' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:104$33_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4164' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4169' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:106$34_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4174' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4179' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_wr$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:107$35_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4184' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_rd$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:112$36_ADDR' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4189' with positive edge clock and positive level reset.
+Creating register for signal `\attention_ip.$mem2reg_rd$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:112$36_DATA' using process `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+  created $adff cell `$procdff$4194' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.\quotient' using process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+  created $adff cell `$procdff$4199' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.\busy' using process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+  created $adff cell `$procdff$4204' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.\done' using process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+  created $adff cell `$procdff$4209' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.\divide_by_zero' using process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+  created $adff cell `$procdff$4214' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.\q_work' using process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+  created $adff cell `$procdff$4219' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.\divisor' using process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+  created $adff cell `$procdff$4224' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.\remainder' using process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+  created $adff cell `$procdff$4229' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.\count' using process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+  created $adff cell `$procdff$4234' with positive edge clock and positive level reset.
+
+5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:36$202'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:36$202'.
+Found and cleaned up 1 empty switch in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$199'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$199'.
+Found and cleaned up 1 empty switch in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$196'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:35$196'.
+Found and cleaned up 1 empty switch in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:34$193'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:34$193'.
+Found and cleaned up 1 empty switch in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:33$190'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:33$190'.
+Found and cleaned up 1 empty switch in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$187'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$187'.
+Found and cleaned up 1 empty switch in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$184'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:29$184'.
+Found and cleaned up 1 empty switch in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$181'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$181'.
+Found and cleaned up 1 empty switch in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$178'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:26$178'.
+Found and cleaned up 30 empty switches in `\attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+Removing empty process `attention_ip.$proc$experiments/delivery_full/source/rtl/attention_ip.sv:51$49'.
+Found and cleaned up 4 empty switches in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+Removing empty process `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$proc$experiments/delivery_full/source/rtl/unsigned_divider.sv:19$208'.
+Found and cleaned up 1 empty switch in `\exp_lut.$proc$experiments/delivery_full/source/rtl/exp_lut.sv:9$1'.
+Removing empty process `exp_lut.$proc$experiments/delivery_full/source/rtl/exp_lut.sv:9$1'.
+Cleaned up 44 empty switches.
+
+5.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+<suppressed ~288 debug messages>
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+<suppressed ~27 debug messages>
+Optimizing module exp_lut.
+<suppressed ~1 debug messages>
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 1220 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 711 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+<suppressed ~1527 debug messages>
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 52 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 44 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+<suppressed ~24 debug messages>
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 517 cells.
+
+6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$782.
+    dead port 2/2 on $mux $procmux$782.
+    dead port 1/2 on $mux $procmux$772.
+    dead port 2/2 on $mux $procmux$772.
+    dead port 1/2 on $mux $procmux$762.
+    dead port 2/2 on $mux $procmux$762.
+    dead port 1/2 on $mux $procmux$753.
+    dead port 2/2 on $mux $procmux$753.
+    dead port 1/2 on $mux $procmux$744.
+    dead port 2/2 on $mux $procmux$744.
+    dead port 1/2 on $mux $procmux$735.
+    dead port 2/2 on $mux $procmux$735.
+    dead port 1/2 on $mux $procmux$726.
+    dead port 2/2 on $mux $procmux$726.
+    dead port 1/2 on $mux $procmux$718.
+    dead port 2/2 on $mux $procmux$718.
+    dead port 1/2 on $mux $procmux$710.
+    dead port 2/2 on $mux $procmux$710.
+    dead port 1/2 on $mux $procmux$703.
+    dead port 2/2 on $mux $procmux$703.
+    dead port 1/2 on $mux $procmux$696.
+    dead port 2/2 on $mux $procmux$696.
+    dead port 1/2 on $mux $procmux$690.
+    dead port 2/2 on $mux $procmux$690.
+    dead port 1/2 on $mux $procmux$684.
+    dead port 2/2 on $mux $procmux$684.
+    dead port 1/2 on $mux $procmux$678.
+    dead port 2/2 on $mux $procmux$678.
+    dead port 1/2 on $mux $procmux$672.
+    dead port 2/2 on $mux $procmux$672.
+    dead port 1/2 on $mux $procmux$667.
+    dead port 2/2 on $mux $procmux$667.
+    dead port 1/2 on $mux $procmux$662.
+    dead port 2/2 on $mux $procmux$662.
+    dead port 1/2 on $mux $procmux$658.
+    dead port 2/2 on $mux $procmux$658.
+    dead port 1/2 on $mux $procmux$654.
+    dead port 2/2 on $mux $procmux$654.
+    dead port 1/2 on $mux $procmux$650.
+    dead port 2/2 on $mux $procmux$650.
+    dead port 1/2 on $mux $procmux$646.
+    dead port 2/2 on $mux $procmux$646.
+    dead port 1/2 on $mux $procmux$642.
+    dead port 2/2 on $mux $procmux$642.
+    dead port 1/2 on $mux $procmux$638.
+    dead port 2/2 on $mux $procmux$638.
+    dead port 1/2 on $mux $procmux$635.
+    dead port 2/2 on $mux $procmux$635.
+    dead port 2/2 on $mux $procmux$621.
+    dead port 1/2 on $mux $procmux$607.
+    dead port 2/2 on $mux $procmux$607.
+    dead port 1/2 on $mux $procmux$605.
+    dead port 2/2 on $mux $procmux$605.
+    dead port 1/2 on $mux $procmux$594.
+    dead port 2/2 on $mux $procmux$594.
+    dead port 1/2 on $mux $procmux$592.
+    dead port 2/2 on $mux $procmux$592.
+    dead port 1/2 on $mux $procmux$581.
+    dead port 2/2 on $mux $procmux$581.
+    dead port 1/2 on $mux $procmux$579.
+    dead port 2/2 on $mux $procmux$579.
+    dead port 1/2 on $mux $procmux$569.
+    dead port 2/2 on $mux $procmux$569.
+    dead port 1/2 on $mux $procmux$567.
+    dead port 2/2 on $mux $procmux$567.
+    dead port 1/2 on $mux $procmux$557.
+    dead port 2/2 on $mux $procmux$557.
+    dead port 1/2 on $mux $procmux$555.
+    dead port 2/2 on $mux $procmux$555.
+    dead port 1/2 on $mux $procmux$545.
+    dead port 2/2 on $mux $procmux$545.
+    dead port 1/2 on $mux $procmux$543.
+    dead port 2/2 on $mux $procmux$543.
+    dead port 1/2 on $mux $procmux$533.
+    dead port 2/2 on $mux $procmux$533.
+    dead port 1/2 on $mux $procmux$531.
+    dead port 2/2 on $mux $procmux$531.
+    dead port 1/2 on $mux $procmux$522.
+    dead port 2/2 on $mux $procmux$522.
+    dead port 1/2 on $mux $procmux$520.
+    dead port 2/2 on $mux $procmux$520.
+    dead port 2/2 on $mux $procmux$500.
+    dead port 1/2 on $mux $procmux$490.
+    dead port 2/2 on $mux $procmux$490.
+    dead port 1/2 on $mux $procmux$488.
+    dead port 2/2 on $mux $procmux$488.
+    dead port 1/2 on $mux $procmux$483.
+    dead port 2/2 on $mux $procmux$483.
+    dead port 1/2 on $mux $procmux$481.
+    dead port 2/2 on $mux $procmux$481.
+    dead port 1/2 on $mux $procmux$476.
+    dead port 2/2 on $mux $procmux$476.
+    dead port 1/2 on $mux $procmux$474.
+    dead port 2/2 on $mux $procmux$474.
+    dead port 1/2 on $mux $procmux$469.
+    dead port 2/2 on $mux $procmux$469.
+    dead port 1/2 on $mux $procmux$467.
+    dead port 2/2 on $mux $procmux$467.
+    dead port 1/2 on $mux $procmux$462.
+    dead port 2/2 on $mux $procmux$462.
+    dead port 1/2 on $mux $procmux$460.
+    dead port 2/2 on $mux $procmux$460.
+    dead port 1/2 on $mux $procmux$455.
+    dead port 2/2 on $mux $procmux$455.
+    dead port 1/2 on $mux $procmux$453.
+    dead port 2/2 on $mux $procmux$453.
+    dead port 1/2 on $mux $procmux$448.
+    dead port 2/2 on $mux $procmux$448.
+    dead port 1/2 on $mux $procmux$446.
+    dead port 2/2 on $mux $procmux$446.
+    dead port 1/2 on $mux $procmux$444.
+    dead port 2/2 on $mux $procmux$444.
+    dead port 1/2 on $mux $procmux$438.
+    dead port 2/2 on $mux $procmux$438.
+    dead port 1/2 on $mux $procmux$436.
+    dead port 2/2 on $mux $procmux$436.
+    dead port 1/2 on $mux $procmux$434.
+    dead port 2/2 on $mux $procmux$434.
+    dead port 1/2 on $mux $procmux$428.
+    dead port 2/2 on $mux $procmux$428.
+    dead port 1/2 on $mux $procmux$426.
+    dead port 2/2 on $mux $procmux$426.
+    dead port 1/2 on $mux $procmux$424.
+    dead port 2/2 on $mux $procmux$424.
+    dead port 1/2 on $mux $procmux$418.
+    dead port 2/2 on $mux $procmux$418.
+    dead port 1/2 on $mux $procmux$416.
+    dead port 2/2 on $mux $procmux$416.
+    dead port 1/2 on $mux $procmux$414.
+    dead port 2/2 on $mux $procmux$414.
+    dead port 1/2 on $mux $procmux$408.
+    dead port 2/2 on $mux $procmux$408.
+    dead port 1/2 on $mux $procmux$406.
+    dead port 2/2 on $mux $procmux$406.
+    dead port 1/2 on $mux $procmux$404.
+    dead port 2/2 on $mux $procmux$404.
+    dead port 1/2 on $mux $procmux$398.
+    dead port 2/2 on $mux $procmux$398.
+    dead port 1/2 on $mux $procmux$396.
+    dead port 2/2 on $mux $procmux$396.
+    dead port 1/2 on $mux $procmux$394.
+    dead port 2/2 on $mux $procmux$394.
+    dead port 1/2 on $mux $procmux$388.
+    dead port 2/2 on $mux $procmux$388.
+    dead port 1/2 on $mux $procmux$386.
+    dead port 2/2 on $mux $procmux$386.
+    dead port 1/2 on $mux $procmux$384.
+    dead port 2/2 on $mux $procmux$384.
+    dead port 1/2 on $mux $procmux$381.
+    dead port 2/2 on $mux $procmux$381.
+    dead port 1/2 on $mux $procmux$375.
+    dead port 2/2 on $mux $procmux$375.
+    dead port 1/2 on $mux $procmux$373.
+    dead port 2/2 on $mux $procmux$373.
+    dead port 1/2 on $mux $procmux$371.
+    dead port 2/2 on $mux $procmux$371.
+    dead port 1/2 on $mux $procmux$368.
+    dead port 2/2 on $mux $procmux$368.
+    dead port 1/2 on $mux $procmux$362.
+    dead port 2/2 on $mux $procmux$362.
+    dead port 1/2 on $mux $procmux$360.
+    dead port 2/2 on $mux $procmux$360.
+    dead port 1/2 on $mux $procmux$358.
+    dead port 2/2 on $mux $procmux$358.
+    dead port 1/2 on $mux $procmux$355.
+    dead port 2/2 on $mux $procmux$355.
+    dead port 1/2 on $mux $procmux$349.
+    dead port 2/2 on $mux $procmux$349.
+    dead port 1/2 on $mux $procmux$347.
+    dead port 2/2 on $mux $procmux$347.
+    dead port 1/2 on $mux $procmux$345.
+    dead port 2/2 on $mux $procmux$345.
+    dead port 1/2 on $mux $procmux$342.
+    dead port 2/2 on $mux $procmux$342.
+    dead port 2/2 on $mux $procmux$336.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$3358: \busy -> 1'1
+      Replacing known input bits on port A of cell $procmux$3364: \busy -> 1'0
+      Replacing known input bits on port B of cell $procmux$3362: \busy -> 1'0
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 175 multiplexer ports.
+<suppressed ~611 debug messages>
+
+6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+Performed a total of 0 changes.
+
+6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 622 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 609 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 607 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+<suppressed ~45 debug messages>
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 44 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 15 cells.
+
+6.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$3647 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[22]).
+Adding EN signal on $procdff$4053 ($dff) from module attention_ip (D = $procmux$881_Y, Q = \output_mem[0]).
+Adding EN signal on $procdff$3654 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[23]).
+Adding EN signal on $procdff$3920 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[29]).
+Adding EN signal on $procdff$3661 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[24]).
+Adding EN signal on $procdff$3843 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[18]).
+Adding EN signal on $procdff$3668 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[25]).
+Adding EN signal on $procdff$3675 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[26]).
+Adding EN signal on $procdff$4060 ($dff) from module attention_ip (D = $procmux$853_Y, Q = \output_mem[1]).
+Adding EN signal on $procdff$3682 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[27]).
+Adding EN signal on $procdff$3850 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[19]).
+Adding EN signal on $procdff$3689 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[28]).
+Adding EN signal on $procdff$3927 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[30]).
+Adding EN signal on $procdff$3696 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[29]).
+Adding EN signal on $procdff$3857 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[20]).
+Adding EN signal on $procdff$3703 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[30]).
+Adding EN signal on $procdff$3612 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[17]).
+Adding EN signal on $procdff$4067 ($dff) from module attention_ip (D = $procmux$828_Y, Q = \output_mem[2]).
+Adding EN signal on $procdff$3710 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[31]).
+Adding EN signal on $procdff$3962 ($dff) from module attention_ip (D = $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38_Y, Q = \scores[3]).
+Adding EN signal on $procdff$3717 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[0]).
+Adding EN signal on $procdff$3864 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[21]).
+Adding EN signal on $procdff$3913 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[28]).
+Adding EN signal on $procdff$3619 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[18]).
+Adding EN signal on $procdff$4046 ($dff) from module attention_ip (D = \lut_weight, Q = \weights[7]).
+Adding EN signal on $procdff$3626 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[19]).
+Adding EN signal on $procdff$3724 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[1]).
+Adding EN signal on $procdff$3829 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[16]).
+Adding EN signal on $procdff$3955 ($dff) from module attention_ip (D = $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38_Y, Q = \scores[2]).
+Adding EN signal on $procdff$3633 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[20]).
+Adding EN signal on $procdff$3388 ($adff) from module attention_ip (D = $3\i[31:0], Q = \i).
+Adding EN signal on $procdff$3731 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[2]).
+Adding EN signal on $procdff$3934 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[31]).
+Adding EN signal on $procdff$3983 ($dff) from module attention_ip (D = $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38_Y, Q = \scores[6]).
+Adding EN signal on $procdff$3640 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[21]).
+Adding EN signal on $procdff$3398 ($adff) from module attention_ip (D = $3$mem2reg_rd$\output_mem$experiments/delivery_full/source/rtl/attention_ip.sv:112$36_DATA[7:0]$175, Q = \out_data).
+Adding EN signal on $procdff$4074 ($dff) from module attention_ip (D = $procmux$806_Y, Q = \output_mem[3]).
+Adding EN signal on $procdff$3738 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[3]).
+Adding EN signal on $procdff$3836 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[17]).
+Adding EN signal on $procdff$3408 ($adff) from module attention_ip (D = $procmux$3259_Y, Q = \state).
+Adding EN signal on $procdff$3871 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[22]).
+Adding EN signal on $procdff$3413 ($adff) from module attention_ip (D = $procmux$3228_Y, Q = \token).
+Adding EN signal on $procdff$3990 ($dff) from module attention_ip (D = $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38_Y, Q = \scores[7]).
+Adding EN signal on $procdff$3418 ($adff) from module attention_ip (D = $procmux$3179_Y, Q = \dim).
+Adding EN signal on $procdff$3745 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[4]).
+Adding EN signal on $procdff$3423 ($adff) from module attention_ip (D = $procmux$3169_Y, Q = \dot_acc).
+Adding EN signal on $procdff$3428 ($adff) from module attention_ip (D = $procmux$3154_Y, Q = \max_score).
+Adding EN signal on $procdff$3752 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[5]).
+Adding EN signal on $procdff$3433 ($adff) from module attention_ip (D = $procmux$3137_Y, Q = \weight_sum).
+Adding EN signal on $procdff$3997 ($dff) from module attention_ip (D = \lut_weight, Q = \weights[0]).
+Adding EN signal on $procdff$3438 ($adff) from module attention_ip (D = $3$mem2reg_rd$\acc$experiments/delivery_full/source/rtl/attention_ip.sv:102$32_DATA[15:0]$151 [15], Q = \norm_negative).
+Adding EN signal on $procdff$3878 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[23]).
+Adding EN signal on $procdff$3443 ($adff) from module attention_ip (D = $procmux$3121_Y, Q = \acc[0]).
+Adding EN signal on $procdff$3759 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[6]).
+Adding EN signal on $procdff$3448 ($adff) from module attention_ip (D = $procmux$3106_Y, Q = \acc[1]).
+Adding EN signal on $procdff$3941 ($dff) from module attention_ip (D = $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38_Y, Q = \scores[0]).
+Adding EN signal on $procdff$3453 ($adff) from module attention_ip (D = $procmux$3092_Y, Q = \acc[2]).
+Adding EN signal on $procdff$4004 ($dff) from module attention_ip (D = \lut_weight, Q = \weights[1]).
+Adding EN signal on $procdff$3458 ($adff) from module attention_ip (D = $procmux$3079_Y, Q = \acc[3]).
+Adding EN signal on $procdff$3766 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[7]).
+Adding EN signal on $procdff$3465 ($dff) from module attention_ip (D = \q_in, Q = \q_mem[0]).
+Adding EN signal on $procdff$3885 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[24]).
+Adding EN signal on $procdff$3472 ($dff) from module attention_ip (D = \q_in, Q = \q_mem[1]).
+Adding EN signal on $procdff$3773 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[8]).
+Adding EN signal on $procdff$3479 ($dff) from module attention_ip (D = \q_in, Q = \q_mem[2]).
+Adding EN signal on $procdff$4011 ($dff) from module attention_ip (D = \lut_weight, Q = \weights[2]).
+Adding EN signal on $procdff$3486 ($dff) from module attention_ip (D = \q_in, Q = \q_mem[3]).
+Adding EN signal on $procdff$3493 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[0]).
+Adding EN signal on $procdff$3780 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[9]).
+Adding EN signal on $procdff$3500 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[1]).
+Adding EN signal on $procdff$3892 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[25]).
+Adding EN signal on $procdff$3507 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[2]).
+Adding EN signal on $procdff$4018 ($dff) from module attention_ip (D = \lut_weight, Q = \weights[3]).
+Adding EN signal on $procdff$3514 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[3]).
+Adding EN signal on $procdff$3787 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[10]).
+Adding EN signal on $procdff$3521 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[4]).
+Adding EN signal on $procdff$3948 ($dff) from module attention_ip (D = $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38_Y, Q = \scores[1]).
+Adding EN signal on $procdff$3528 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[5]).
+Adding EN signal on $procdff$3794 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[11]).
+Adding EN signal on $procdff$3535 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[6]).
+Adding EN signal on $procdff$4025 ($dff) from module attention_ip (D = \lut_weight, Q = \weights[4]).
+Adding EN signal on $procdff$3542 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[7]).
+Adding EN signal on $procdff$3899 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[26]).
+Adding EN signal on $procdff$3549 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[8]).
+Adding EN signal on $procdff$3801 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[12]).
+Adding EN signal on $procdff$3969 ($dff) from module attention_ip (D = $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38_Y, Q = \scores[4]).
+Adding EN signal on $procdff$3556 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[9]).
+Adding EN signal on $procdff$3563 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[10]).
+Adding EN signal on $procdff$4032 ($dff) from module attention_ip (D = \lut_weight, Q = \weights[5]).
+Adding EN signal on $procdff$3570 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[11]).
+Adding EN signal on $procdff$3808 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[13]).
+Adding EN signal on $procdff$3577 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[12]).
+Adding EN signal on $procdff$3906 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[27]).
+Adding EN signal on $procdff$3584 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[13]).
+Adding EN signal on $procdff$3815 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[14]).
+Adding EN signal on $procdff$3591 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[14]).
+Adding EN signal on $procdff$3976 ($dff) from module attention_ip (D = $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38_Y, Q = \scores[5]).
+Adding EN signal on $procdff$4039 ($dff) from module attention_ip (D = \lut_weight, Q = \weights[6]).
+Adding EN signal on $procdff$3598 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[15]).
+Adding EN signal on $procdff$3605 ($dff) from module attention_ip (D = \k_in, Q = \k_mem[16]).
+Adding EN signal on $procdff$3822 ($dff) from module attention_ip (D = \v_in, Q = \v_mem[15]).
+Setting constant 0-bit at position 0 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 1 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 2 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 3 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 4 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 5 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 6 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 7 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 8 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 9 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 10 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 11 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 12 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 13 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 14 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 15 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 16 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 17 on $procdff$4114 ($adff) from module attention_ip.
+Setting constant 0-bit at position 0 on $procdff$4124 ($adff) from module attention_ip.
+Setting constant 0-bit at position 1 on $procdff$4124 ($adff) from module attention_ip.
+Setting constant 0-bit at position 2 on $procdff$4124 ($adff) from module attention_ip.
+Setting constant 0-bit at position 3 on $procdff$4124 ($adff) from module attention_ip.
+Setting constant 0-bit at position 4 on $procdff$4124 ($adff) from module attention_ip.
+Setting constant 0-bit at position 0 on $procdff$4129 ($adff) from module attention_ip.
+Setting constant 0-bit at position 1 on $procdff$4129 ($adff) from module attention_ip.
+Setting constant 0-bit at position 0 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 1 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 2 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 3 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 4 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 5 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 6 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 7 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 8 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 9 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 10 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 11 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 12 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 13 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 14 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 15 on $procdff$4154 ($adff) from module attention_ip.
+Setting constant 0-bit at position 0 on $procdff$4119 ($adff) from module attention_ip.
+Setting constant 0-bit at position 1 on $procdff$4119 ($adff) from module attention_ip.
+Setting constant 0-bit at position 2 on $procdff$4119 ($adff) from module attention_ip.
+Setting constant 0-bit at position 0 on $procdff$4194 ($adff) from module attention_ip.
+Setting constant 0-bit at position 1 on $procdff$4194 ($adff) from module attention_ip.
+Setting constant 0-bit at position 2 on $procdff$4194 ($adff) from module attention_ip.
+Setting constant 0-bit at position 3 on $procdff$4194 ($adff) from module attention_ip.
+Setting constant 0-bit at position 4 on $procdff$4194 ($adff) from module attention_ip.
+Setting constant 0-bit at position 5 on $procdff$4194 ($adff) from module attention_ip.
+Setting constant 0-bit at position 6 on $procdff$4194 ($adff) from module attention_ip.
+Setting constant 0-bit at position 7 on $procdff$4194 ($adff) from module attention_ip.
+Adding EN signal on $procdff$4229 ($adff) from module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100 (D = $procmux$3335_Y, Q = \remainder).
+Adding EN signal on $procdff$4219 ($adff) from module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100 (D = $procmux$3351_Y, Q = \q_work).
+Adding EN signal on $procdff$4234 ($adff) from module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100 (D = $procmux$3327_Y, Q = \count).
+Adding EN signal on $procdff$4199 ($adff) from module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100 (D = $procmux$3376_Y, Q = \quotient).
+Adding EN signal on $procdff$4214 ($adff) from module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100 (D = $eq$experiments/delivery_full/source/rtl/unsigned_divider.sv:27$211_Y, Q = \divide_by_zero).
+Adding EN signal on $procdff$4224 ($adff) from module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100 (D = \denominator, Q = \divisor).
+
+6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+Removed 355 unused cells and 1581 unused wires.
+<suppressed ~359 debug messages>
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+<suppressed ~13 debug messages>
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+<suppressed ~5 debug messages>
+Optimizing module exp_lut.
+
+6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $ternary$experiments/delivery_full/source/rtl/attention_ip.sv:36$42: { \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15] \acc_extended [15:0] } -> { 21'000000000000000000000 \acc_extended [14:0] }
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~164 debug messages>
+
+6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+    New ctrl vector for $pmux cell $procmux$3228: { $auto$opt_reduce.cc:137:opt_pmux$4673 $procmux$3138_CMP $eq$experiments/delivery_full/source/rtl/attention_ip.sv:49$47_Y $procmux$3084_CMP }
+    New ctrl vector for $pmux cell $procmux$3179: { $auto$opt_reduce.cc:137:opt_pmux$4675 $procmux$3187_CMP $procmux$3138_CMP $eq$experiments/delivery_full/source/rtl/attention_ip.sv:49$47_Y $eq$experiments/delivery_full/source/rtl/attention_ip.sv:49$46_Y $procmux$3084_CMP }
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+Performed a total of 2 changes.
+
+6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 396 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 341 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+<suppressed ~165 debug messages>
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 54 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 48 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 46 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+<suppressed ~24 debug messages>
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 63 cells.
+
+6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+Removed 0 unused cells and 67 unused wires.
+<suppressed ~2 debug messages>
+
+6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+6.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~162 debug messages>
+
+6.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+Performed a total of 0 changes.
+
+6.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 341 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 46 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+6.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+6.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+6.23. Finished fast OPT passes. (There is nothing left to do.)
+
+7. Executing CHECK pass (checking for obvious problems).
+Checking module attention_ip...
+Checking module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100...
+Checking module exp_lut...
+Found and reported 0 problems.
+
+8. Printing statistics.
+
+=== attention_ip ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      355 wires
+     2043 wire bits
+      128 public wires
+     1222 public wire bits
+       12 ports
+       40 port bits
+      339 cells
+        1   $add_16
+        1   $add_18
+        1   $add_2
+        1   $add_3
+        1   $add_36
+        1   $add_8
+        2   $adff_1
+        1   $adffe_1
+        4   $adffe_16
+        2   $adffe_18
+        1   $adffe_2
+        1   $adffe_3
+        1   $adffe_4
+        2   $adffe_8
+        8   $dffe_18
+        8   $dffe_5
+       72   $dffe_8
+        3   $eq_2
+        7   $eq_3
+        8   $eq_4
+       31   $eq_5
+        1   $ge_36
+        1   $gt_18
+        1   $gt_36
+        1   $logic_not_2
+        1   $logic_not_3
+        1   $logic_not_4
+        1   $logic_not_5
+        1   $logic_or_1
+        1   $mul_14
+        1   $mul_16
+        3   $mux_1
+        6   $mux_16
+        5   $mux_18
+        6   $mux_2
+        4   $mux_3
+        1   $mux_36
+       14   $mux_4
+       23   $mux_8
+       17   $ne_2
+        1   $neg_36
+        1   $neg_8
+        4   $pmux_16_2
+        1   $pmux_16_4
+        2   $pmux_18_2
+        1   $pmux_18_8
+        1   $pmux_2_6
+        1   $pmux_3_4
+        1   $pmux_4_9
+        1   $pmux_5_8
+        1   $pmux_8_2
+        2   $pmux_8_32
+        2   $pmux_8_4
+        1   $reduce_and_13
+        2   $reduce_and_2
+       13   $reduce_and_3
+       49   $reduce_and_4
+        1   $reduce_and_6
+        3   $reduce_bool_2
+        1   $reduce_bool_5
+        1   $reduce_bool_8
+        1   $reduce_or_2
+        1   $reduce_or_3
+        1   $sub_19
+        2 submodules
+        1   $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+        1   exp_lut
+
+=== $paramod\unsigned_divider\W=s32'00000000000000000000000000100100 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       52 wires
+      784 wire bits
+       16 public wires
+      303 public wire bits
+        9 ports
+      114 port bits
+       46 cells
+        2   $adff_1
+        1   $adffe_1
+        3   $adffe_36
+        1   $adffe_37
+        1   $adffe_6
+        1   $eq_6
+        1   $ge_37
+        1   $logic_not_36
+        8   $mux_1
+        7   $mux_36
+        4   $mux_37
+        3   $mux_6
+        2   $ne_2
+        2   $not_1
+        1   $or_36
+        2   $reduce_and_2
+        2   $reduce_and_3
+        2   $reduce_bool_2
+        1   $sub_37
+        1   $sub_6
+
+=== exp_lut ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       28 wire bits
+        2 public wires
+       24 public wire bits
+        2 ports
+       24 port bits
+        5 cells
+        3   $eq_19
+        1   $logic_not_19
+        1   $pmux_5_4
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      390 attention_ip
+       46 $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+        5 exp_lut
+
+        +----------Count including submodules.
+        | 
+      413 wires
+     2855 wire bits
+      146 public wires
+     1549 public wire bits
+       23 ports
+      178 port bits
+        - memories
+        - memory bits
+        - processes
+      390 cells
+        1   $add_16
+        1   $add_18
+        1   $add_2
+        1   $add_3
+        1   $add_36
+        1   $add_8
+        4   $adff_1
+        2   $adffe_1
+        4   $adffe_16
+        2   $adffe_18
+        1   $adffe_2
+        1   $adffe_3
+        3   $adffe_36
+        1   $adffe_37
+        1   $adffe_4
+        1   $adffe_6
+        2   $adffe_8
+        8   $dffe_18
+        8   $dffe_5
+       72   $dffe_8
+        3   $eq_19
+        3   $eq_2
+        7   $eq_3
+        8   $eq_4
+       31   $eq_5
+        1   $eq_6
+        1   $ge_36
+        1   $ge_37
+        1   $gt_18
+        1   $gt_36
+        1   $logic_not_19
+        1   $logic_not_2
+        1   $logic_not_3
+        1   $logic_not_36
+        1   $logic_not_4
+        1   $logic_not_5
+        1   $logic_or_1
+        1   $mul_14
+        1   $mul_16
+       11   $mux_1
+        6   $mux_16
+        5   $mux_18
+        6   $mux_2
+        4   $mux_3
+        8   $mux_36
+        4   $mux_37
+       14   $mux_4
+        3   $mux_6
+       23   $mux_8
+       19   $ne_2
+        1   $neg_36
+        1   $neg_8
+        2   $not_1
+        1   $or_36
+        4   $pmux_16_2
+        1   $pmux_16_4
+        2   $pmux_18_2
+        1   $pmux_18_8
+        1   $pmux_2_6
+        1   $pmux_3_4
+        1   $pmux_4_9
+        1   $pmux_5_4
+        1   $pmux_5_8
+        1   $pmux_8_2
+        2   $pmux_8_32
+        2   $pmux_8_4
+        1   $reduce_and_13
+        4   $reduce_and_2
+       15   $reduce_and_3
+       49   $reduce_and_4
+        1   $reduce_and_6
+        5   $reduce_bool_2
+        1   $reduce_bool_5
+        1   $reduce_bool_8
+        1   $reduce_or_2
+        1   $reduce_or_3
+        1   $sub_19
+        1   $sub_37
+        1   $sub_6
+        2 submodules
+        1   $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+        1   exp_lut
+
+9. Executing SYNTH pass.
+
+9.1. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1.1. Analyzing design hierarchy..
+Top module:  \attention_ip
+Used module:     $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+Used module:     \exp_lut
+
+9.1.2. Analyzing design hierarchy..
+Top module:  \attention_ip
+Used module:     $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+Used module:     \exp_lut
+Removed 0 unused modules.
+
+9.2. Executing PROC pass (convert processes to netlists).
+
+9.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+9.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+9.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+9.2.4. Executing PROC_INIT pass (extract init attributes).
+
+9.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+9.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+9.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+9.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+9.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+9.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+9.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+9.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.5. Executing CHECK pass (checking for obvious problems).
+Checking module attention_ip...
+Checking module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100...
+Checking module exp_lut...
+Found and reported 0 problems.
+
+9.6. Executing OPT pass (performing simple optimizations).
+
+9.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 341 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 46 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~162 debug messages>
+
+9.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+Performed a total of 0 changes.
+
+9.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 341 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 46 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.6.9. Finished fast OPT passes. (There is nothing left to do.)
+
+9.7. Executing FSM pass (extract and optimize FSM).
+
+9.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+9.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+9.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+9.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+9.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+9.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+9.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+9.8. Executing OPT pass (performing simple optimizations).
+
+9.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 341 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 46 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~162 debug messages>
+
+9.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+Performed a total of 0 changes.
+
+9.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 341 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 46 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.8.9. Finished fast OPT passes. (There is nothing left to do.)
+
+9.9. Executing WREDUCE pass (reducing word size of cells).
+Converting cell attention_ip.$sub$experiments/delivery_full/source/rtl/attention_ip.sv:30$39 ($sub) from unsigned to signed.
+Removed top 1 bits (of 19) from port A of cell attention_ip.$sub$experiments/delivery_full/source/rtl/attention_ip.sv:30$39 ($sub).
+Removed top 1 bits (of 19) from port B of cell attention_ip.$sub$experiments/delivery_full/source/rtl/attention_ip.sv:30$39 ($sub).
+Removed top 20 bits (of 36) from port A of cell attention_ip.$neg$experiments/delivery_full/source/rtl/attention_ip.sv:36$41 ($neg).
+Removed top 29 bits (of 36) from port B of cell attention_ip.$add$experiments/delivery_full/source/rtl/attention_ip.sv:40$44 ($add).
+Removed top 3 bits (of 8) from port B of cell attention_ip.$add$experiments/delivery_full/source/rtl/attention_ip.sv:90$142 ($add).
+Removed top 28 bits (of 36) from port B of cell attention_ip.$ge$experiments/delivery_full/source/rtl/attention_ip.sv:106$168 ($ge).
+Removed top 29 bits (of 36) from port B of cell attention_ip.$gt$experiments/delivery_full/source/rtl/attention_ip.sv:107$171 ($gt).
+Removed top 1 bits (of 3) from port B of cell attention_ip.$procmux$1057_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell attention_ip.$procmux$1075_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell attention_ip.$procmux$1094_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell attention_ip.$procmux$2432_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell attention_ip.$procmux$2463_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell attention_ip.$procmux$2495_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell attention_ip.$procmux$2528_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell attention_ip.$procmux$2562_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell attention_ip.$procmux$2597_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell attention_ip.$procmux$2633_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell attention_ip.$procmux$2670_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell attention_ip.$procmux$2708_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell attention_ip.$procmux$2747_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell attention_ip.$procmux$2787_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell attention_ip.$procmux$2828_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell attention_ip.$procmux$2870_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell attention_ip.$procmux$2913_CMP0 ($eq).
+Removed top 4 bits (of 5) from port B of cell attention_ip.$procmux$2957_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell attention_ip.$procmux$3105_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell attention_ip.$procmux$3267_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell attention_ip.$procmux$3268_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell attention_ip.$procmux$3275_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell attention_ip.$procmux$3279_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell attention_ip.$procmux$3286_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell attention_ip.$procmux$3296_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell attention_ip.$procmux$3303_CMP0 ($eq).
+Removed top 1 bits (of 6) from wire attention_ip.positive_weight.
+Removed top 1 bits (of 2) from port B of cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$auto$simple.cc:194:make_patterns_logic$4657 ($ne).
+Removed top 1 bits (of 37) from FF cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$auto$ff.cc:337:slice$4630 ($adffe).
+Removed top 1 bits (of 37) from port B of cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$ge$experiments/delivery_full/source/rtl/unsigned_divider.sv:15$205 ($ge).
+Removed top 35 bits (of 36) from port B of cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$or$experiments/delivery_full/source/rtl/unsigned_divider.sv:18$207 ($or).
+Removed top 1 bits (of 37) from port B of cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:35$213 ($sub).
+Removed top 5 bits (of 6) from port B of cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$eq$experiments/delivery_full/source/rtl/unsigned_divider.sv:38$216 ($eq).
+Removed top 1 bits (of 37) from mux cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$procmux$3335 ($mux).
+Removed top 1 bits (of 37) from mux cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$ternary$experiments/delivery_full/source/rtl/unsigned_divider.sv:35$214 ($mux).
+Removed top 1 bits (of 37) from mux cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$procmux$3333 ($mux).
+Removed top 1 bits (of 37) from port Y of cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:35$213 ($sub).
+Removed top 1 bits (of 37) from port A of cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:35$213 ($sub).
+Removed top 1 bits (of 37) from mux cell $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$procmux$3331 ($mux).
+Removed top 1 bits (of 37) from wire $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$procmux$3331_Y.
+Removed top 1 bits (of 37) from wire $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$procmux$3333_Y.
+Removed top 1 bits (of 37) from wire $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$ternary$experiments/delivery_full/source/rtl/unsigned_divider.sv:35$214_Y.
+Removed top 1 bits (of 37) from wire $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:35$213_Y.
+Removed top 1 bits (of 37) from wire $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.$0\remainder[36:0].
+Removed top 1 bits (of 37) from wire $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.remainder.
+Removed top 17 bits (of 19) from port B of cell exp_lut.$procmux$3380_CMP0 ($eq).
+Removed top 17 bits (of 19) from port B of cell exp_lut.$procmux$3381_CMP0 ($eq).
+Removed top 18 bits (of 19) from port B of cell exp_lut.$procmux$3382_CMP0 ($eq).
+
+9.10. Executing PEEPOPT pass (run peephole optimizers).
+
+9.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~2 debug messages>
+
+9.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module attention_ip:
+  creating $macc model for $add$experiments/delivery_full/source/rtl/attention_ip.sv:114$177 ($add).
+  creating $macc model for $neg$experiments/delivery_full/source/rtl/attention_ip.sv:106$169 ($neg).
+  creating $macc model for $add$experiments/delivery_full/source/rtl/attention_ip.sv:99$149 ($add).
+  creating $macc model for $add$experiments/delivery_full/source/rtl/attention_ip.sv:95$146 ($add).
+  creating $macc model for $add$experiments/delivery_full/source/rtl/attention_ip.sv:90$142 ($add).
+  creating $macc model for $add$experiments/delivery_full/source/rtl/attention_ip.sv:40$44 ($add).
+  creating $macc model for $neg$experiments/delivery_full/source/rtl/attention_ip.sv:36$41 ($neg).
+  creating $macc model for $mul$experiments/delivery_full/source/rtl/attention_ip.sv:34$40 ($mul).
+  creating $macc model for $sub$experiments/delivery_full/source/rtl/attention_ip.sv:30$39 ($sub).
+  creating $macc model for $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38 ($add).
+  creating $macc model for $mul$experiments/delivery_full/source/rtl/attention_ip.sv:26$37 ($mul).
+  creating $alu model for $macc $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38.
+  creating $alu model for $macc $sub$experiments/delivery_full/source/rtl/attention_ip.sv:30$39.
+  creating $alu model for $macc $add$experiments/delivery_full/source/rtl/attention_ip.sv:40$44.
+  creating $alu model for $macc $add$experiments/delivery_full/source/rtl/attention_ip.sv:90$142.
+  creating $alu model for $macc $add$experiments/delivery_full/source/rtl/attention_ip.sv:95$146.
+  creating $alu model for $macc $add$experiments/delivery_full/source/rtl/attention_ip.sv:99$149.
+  creating $alu model for $macc $neg$experiments/delivery_full/source/rtl/attention_ip.sv:106$169.
+  creating $alu model for $macc $add$experiments/delivery_full/source/rtl/attention_ip.sv:114$177.
+  creating $macc cell for $neg$experiments/delivery_full/source/rtl/attention_ip.sv:36$41: $auto$alumacc.cc:399:replace_macc$4683
+  creating $macc cell for $mul$experiments/delivery_full/source/rtl/attention_ip.sv:34$40: $auto$alumacc.cc:399:replace_macc$4684
+  creating $macc cell for $mul$experiments/delivery_full/source/rtl/attention_ip.sv:26$37: $auto$alumacc.cc:399:replace_macc$4685
+  creating $alu model for $gt$experiments/delivery_full/source/rtl/attention_ip.sv:107$171 ($gt): new $alu
+  creating $alu model for $ge$experiments/delivery_full/source/rtl/attention_ip.sv:106$168 ($ge): new $alu
+  creating $alu model for $gt$experiments/delivery_full/source/rtl/attention_ip.sv:82$138 ($gt): new $alu
+  creating $alu cell for $gt$experiments/delivery_full/source/rtl/attention_ip.sv:82$138: $auto$alumacc.cc:548:replace_alu$4689
+  creating $alu cell for $ge$experiments/delivery_full/source/rtl/attention_ip.sv:106$168: $auto$alumacc.cc:548:replace_alu$4702
+  creating $alu cell for $gt$experiments/delivery_full/source/rtl/attention_ip.sv:107$171: $auto$alumacc.cc:548:replace_alu$4715
+  creating $alu cell for $add$experiments/delivery_full/source/rtl/attention_ip.sv:114$177: $auto$alumacc.cc:548:replace_alu$4726
+  creating $alu cell for $neg$experiments/delivery_full/source/rtl/attention_ip.sv:106$169: $auto$alumacc.cc:548:replace_alu$4729
+  creating $alu cell for $add$experiments/delivery_full/source/rtl/attention_ip.sv:99$149: $auto$alumacc.cc:548:replace_alu$4732
+  creating $alu cell for $add$experiments/delivery_full/source/rtl/attention_ip.sv:95$146: $auto$alumacc.cc:548:replace_alu$4735
+  creating $alu cell for $add$experiments/delivery_full/source/rtl/attention_ip.sv:90$142: $auto$alumacc.cc:548:replace_alu$4738
+  creating $alu cell for $add$experiments/delivery_full/source/rtl/attention_ip.sv:40$44: $auto$alumacc.cc:548:replace_alu$4741
+  creating $alu cell for $sub$experiments/delivery_full/source/rtl/attention_ip.sv:30$39: $auto$alumacc.cc:548:replace_alu$4744
+  creating $alu cell for $add$experiments/delivery_full/source/rtl/attention_ip.sv:27$38: $auto$alumacc.cc:548:replace_alu$4747
+  created 11 $alu and 3 $macc cells.
+Extracting $alu and $macc cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100:
+  creating $macc model for $sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:37$215 ($sub).
+  creating $macc model for $sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:35$213 ($sub).
+  creating $alu model for $macc $sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:35$213.
+  creating $alu model for $macc $sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:37$215.
+  creating $alu model for $ge$experiments/delivery_full/source/rtl/unsigned_divider.sv:15$205 ($ge): new $alu
+  creating $alu model for $eq$experiments/delivery_full/source/rtl/unsigned_divider.sv:38$216 ($eq): merged with $sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:37$215.
+  creating $alu cell for $ge$experiments/delivery_full/source/rtl/unsigned_divider.sv:15$205: $auto$alumacc.cc:548:replace_alu$4751
+  creating $alu cell for $sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:37$215, $eq$experiments/delivery_full/source/rtl/unsigned_divider.sv:38$216: $auto$alumacc.cc:548:replace_alu$4764
+  creating $alu cell for $sub$experiments/delivery_full/source/rtl/unsigned_divider.sv:35$213: $auto$alumacc.cc:548:replace_alu$4769
+  created 3 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module exp_lut:
+  created 0 $alu and 0 $macc cells.
+
+9.13. Executing SHARE pass (SAT-based resource sharing).
+
+9.14. Executing OPT pass (performing simple optimizations).
+
+9.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 355 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 51 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~162 debug messages>
+
+9.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+Performed a total of 0 changes.
+
+9.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 355 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 51 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+Removed 1 unused cells and 6 unused wires.
+<suppressed ~3 debug messages>
+
+9.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~162 debug messages>
+
+9.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+Performed a total of 0 changes.
+
+9.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 354 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 51 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.14.16. Finished fast OPT passes. (There is nothing left to do.)
+
+9.15. Executing MEMORY pass.
+
+9.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+9.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+9.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+9.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+9.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+9.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+9.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+9.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+9.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.17. Executing OPT pass (performing simple optimizations).
+
+9.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+<suppressed ~63 debug messages>
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+<suppressed ~15 debug messages>
+Optimizing module exp_lut.
+
+9.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 316 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 310 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 307 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+<suppressed ~27 debug messages>
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 40 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 39 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 10 cells.
+
+9.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+Removed 2 unused cells and 75 unused wires.
+<suppressed ~4 debug messages>
+
+9.17.5. Finished fast OPT passes.
+
+9.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+9.19. Executing OPT pass (performing simple optimizations).
+
+9.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 305 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 39 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~68 debug messages>
+
+9.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+    Consolidated identical input bits for $mux cell $procmux$3263:
+      Old ports: A=4'0110, B=4'1000, Y=$procmux$3263_Y
+      New ports: A=2'01, B=2'10, Y={ $procmux$3263_Y [3] $procmux$3263_Y [1] }
+      New connections: { $procmux$3263_Y [2] $procmux$3263_Y [0] } = { $procmux$3263_Y [1] 1'0 }
+    New ctrl vector for $pmux cell $procmux$3259: { $procmux$3187_CMP $eq$experiments/delivery_full/source/rtl/attention_ip.sv:45$45_Y $procmux$3080_CMP $procmux$3138_CMP $procmux$1013_CMP $eq$experiments/delivery_full/source/rtl/attention_ip.sv:49$47_Y $eq$experiments/delivery_full/source/rtl/attention_ip.sv:49$46_Y $procmux$3084_CMP }
+    New ctrl vector for $pmux cell $procmux$3228: { $procmux$3084_CMP $procmux$3138_CMP }
+    New ctrl vector for $pmux cell $procmux$3179: $auto$opt_reduce.cc:137:opt_pmux$4787
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+    Consolidated identical input bits for $pmux cell $procmux$3379:
+      Old ports: A=5'00000, B=20'10000001100001000001, Y=\weight
+      New ports: A=4'0000, B=16'1000011000100001, Y={ \weight [4] \weight [2:0] }
+      New connections: \weight [3] = 1'0
+  Optimizing cells in module \exp_lut.
+Performed a total of 5 changes.
+
+9.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 306 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 39 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.19.6. Executing OPT_SHARE pass.
+
+9.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$4388 ($adffe) from module attention_ip (D = $0\token[2:0], Q = \token).
+
+9.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~57 debug messages>
+
+9.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+    New input vector for $reduce_and cell $auto$simple.cc:211:make_patterns_logic$4792: { $auto$simple.cc:193:make_patterns_logic$4357 $auto$simple.cc:193:make_patterns_logic$4361 $auto$simple.cc:193:make_patterns_logic$4393 $auto$simple.cc:193:make_patterns_logic$4789 }
+    New ctrl vector for $pmux cell $procmux$3228: $procmux$3084_CMP
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+Performed a total of 2 changes.
+
+9.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 307 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 39 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.19.14. Executing OPT_SHARE pass.
+
+9.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+Removed 1 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+
+9.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.19.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.19.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \attention_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exp_lut..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~54 debug messages>
+
+9.19.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \attention_ip.
+  Optimizing cells in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+  Optimizing cells in module \exp_lut.
+Performed a total of 0 changes.
+
+9.19.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 306 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 39 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 5 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Removed a total of 0 cells.
+
+9.19.22. Executing OPT_SHARE pass.
+
+9.19.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.19.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+
+9.19.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+Optimizing module exp_lut.
+
+9.19.26. Finished fast OPT passes. (There is nothing left to do.)
+
+9.20. Executing TECHMAP pass (map to technology primitives).
+
+9.20.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+9.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $pmux.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$9fb24bf0faa43f804d3c379242188667e42c235c\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$a04dd9d4d8b430140c4ff94b50470fb380fda2a0\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$2123abe9ee9ae70bb6041181d61bad43dd296e00\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100101 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000110 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100100 for cells of type $lcu.
+Using template $paramod$12350b8c8422a70d10b7db4eaae1202a7148b784\_90_alu for cells of type $alu.
+Using template $paramod$2d75df049ab3e532f3f00ff9c1c4e2e6fb51b90f\_90_alu for cells of type $alu.
+Using template $paramod$3875aa4cfc52c4e807b467debcbfad885f2f2742\_90_alu for cells of type $alu.
+Using template $paramod$cc48387a3f2cae79a81035f3d5a9b4758cb77854\_90_alu for cells of type $alu.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_90_alu for cells of type $alu.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
+Using template $paramod$fd7bfb1a4f3a7c2ac1a35670d0fa64ccc7b91841\_90_alu for cells of type $alu.
+Using template $paramod$175e67c02b86e96b1288b9dc100122520d7240d8\_90_alu for cells of type $alu.
+Using template $paramod$deceb32d6fdb2359d88944138c7ee7fccee301f0\_90_alu for cells of type $alu.
+Using template $paramod$b15d28721ac58edd44c77fb51c9f8c001a741924\_90_alu for cells of type $alu.
+Using template $paramod$fbcf46ed94b87f5a0d4aa07686f54f8c76ced033\_90_alu for cells of type $alu.
+Using extmapper maccmap for cells of type $macc_v2.
+  add $0$mem2reg_rd$\q_mem$experiments/delivery_full/source/rtl/attention_ip.sv:26$16_DATA[7:0]$179 * $0$mem2reg_rd$\k_mem$experiments/delivery_full/source/rtl/attention_ip.sv:26$17_DATA[7:0]$182 (8x8 bits, signed)
+  add $0$mem2reg_rd$\v_mem$experiments/delivery_full/source/rtl/attention_ip.sv:34$21_DATA[7:0]$194 * { 1'0 \positive_weight } (8x6 bits, signed)
+  sub \acc_extended [15:0] (16 bits, signed)
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $logic_or.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001110 for cells of type $fa.
+Using template $paramod$091610cd349a68bd5539cffd7126f0d76e9bca00\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010000 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010010 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010010 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011101 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000010 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010011 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001110 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~3605 debug messages>
+
+9.21. Executing OPT pass (performing simple optimizations).
+
+9.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module attention_ip.
+<suppressed ~2474 debug messages>
+Optimizing module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100.
+<suppressed ~389 debug messages>
+Optimizing module exp_lut.
+<suppressed ~84 debug messages>
+
+9.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\attention_ip'.
+Computing hashes of 5573 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 5206 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 5060 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 5003 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 4984 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 4974 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 4968 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+Computing hashes of 4965 cells of `\attention_ip'.
+Finding duplicate cells in `\attention_ip'.
+<suppressed ~1824 debug messages>
+Finding identical cells in module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 1036 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 979 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 899 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 860 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 832 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 820 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 808 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 803 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 795 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 791 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 782 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 777 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 764 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 756 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 738 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 728 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 714 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 709 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 703 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 702 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Computing hashes of 701 cells of `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Finding duplicate cells in `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+<suppressed ~1005 debug messages>
+Finding identical cells in module `\exp_lut'.
+Computing hashes of 88 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Computing hashes of 62 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Computing hashes of 50 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+Computing hashes of 47 cells of `\exp_lut'.
+Finding duplicate cells in `\exp_lut'.
+<suppressed ~123 debug messages>
+Removed a total of 984 cells.
+
+9.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \attention_ip..
+Finding unused cells or wires in module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100..
+Finding unused cells or wires in module \exp_lut..
+Removed 361 unused cells and 1889 unused wires.
+<suppressed ~364 debug messages>
+
+9.21.5. Finished fast OPT passes.
+
+9.22. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `attention_ip'. Setting top module to attention_ip.
+
+9.22.1. Analyzing design hierarchy..
+Top module:  \attention_ip
+Used module:     $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+Used module:     \exp_lut
+
+9.22.2. Analyzing design hierarchy..
+Top module:  \attention_ip
+Used module:     $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+Used module:     \exp_lut
+Removed 0 unused modules.
+
+9.23. Printing statistics.
+
+=== attention_ip ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1978 wires
+     5630 wire bits
+      128 public wires
+     1221 public wire bits
+       12 ports
+       40 port bits
+     4607 cells
+     1731   $_AND_
+      125   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+      760   $_DFFE_PP_
+        2   $_DFF_PN0_
+      230   $_MUX_
+      163   $_NOT_
+     1131   $_OR_
+      464   $_XOR_
+        2 submodules
+        1   $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+        1   exp_lut
+
+=== $paramod\unsigned_divider\W=s32'00000000000000000000000000100100 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      163 wires
+      851 wire bits
+       16 public wires
+      302 public wire bits
+        9 ports
+      114 port bits
+      696 cells
+      154   $_AND_
+      151   $_DFFE_PN0P_
+        2   $_DFF_PN0_
+      152   $_MUX_
+       49   $_NOT_
+      112   $_OR_
+       76   $_XOR_
+
+=== exp_lut ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       30 wires
+      108 wire bits
+        2 public wires
+       24 public wire bits
+        2 ports
+       24 port bits
+       47 cells
+        4   $_MUX_
+        6   $_NOT_
+       37   $_OR_
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+     5350 attention_ip
+      696 $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+       47 exp_lut
+
+        +----------Count including submodules.
+        | 
+     2171 wires
+     6589 wire bits
+      146 public wires
+     1547 public wire bits
+       23 ports
+      178 port bits
+        - memories
+        - memory bits
+        - processes
+     5350 cells
+     1885   $_AND_
+      276   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+      760   $_DFFE_PP_
+        4   $_DFF_PN0_
+      386   $_MUX_
+      218   $_NOT_
+     1280   $_OR_
+      540   $_XOR_
+        2 submodules
+        1   $paramod\unsigned_divider\W=s32'00000000000000000000000000100100
+        1   exp_lut
+
+9.24. Executing CHECK pass (checking for obvious problems).
+Checking module attention_ip...
+Checking module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100...
+Checking module exp_lut...
+Found and reported 0 problems.
+
+10. Executing CHECK pass (checking for obvious problems).
+Checking module attention_ip...
+Checking module $paramod\unsigned_divider\W=s32'00000000000000000000000000100100...
+Checking module exp_lut...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.69+post (git sha1 143eb14f9cc55d6f8927e68523b0c9d2166ed02c, Release, AppleClang clang++ 21.0.0.21000101)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\attention_ip": {
+         "num_wires":         1978,
+         "num_wire_bits":     5630,
+         "num_pub_wires":     128,
+         "num_pub_wire_bits": 1221,
+         "num_ports":         12,
+         "num_port_bits":     40,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         4607,
+         "num_submodules":       2,
+         "num_cells_by_type": {
+            "$_AND_": 1731,
+            "$_DFFE_PN0P_": 125,
+            "$_DFFE_PN1P_": 1,
+            "$_DFFE_PP_": 760,
+            "$_DFF_PN0_": 2,
+            "$_MUX_": 230,
+            "$_NOT_": 163,
+            "$_OR_": 1131,
+            "$_XOR_": 464,
+            "$paramod\\unsigned_divider\\W=s32'00000000000000000000000000100100": 1,
+            "exp_lut": 1
+         }
+      },
+      "$paramod\\unsigned_divider\\W=s32'00000000000000000000000000100100": {
+         "num_wires":         163,
+         "num_wire_bits":     851,
+         "num_pub_wires":     16,
+         "num_pub_wire_bits": 302,
+         "num_ports":         9,
+         "num_port_bits":     114,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         696,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 154,
+            "$_DFFE_PN0P_": 151,
+            "$_DFF_PN0_": 2,
+            "$_MUX_": 152,
+            "$_NOT_": 49,
+            "$_OR_": 112,
+            "$_XOR_": 76
+         }
+      },
+      "\\exp_lut": {
+         "num_wires":         30,
+         "num_wire_bits":     108,
+         "num_pub_wires":     2,
+         "num_pub_wire_bits": 24,
+         "num_ports":         2,
+         "num_port_bits":     24,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         47,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_MUX_": 4,
+            "$_NOT_": 6,
+            "$_OR_": 37
+         }
+      }
+   },
+      "design": {
+         "num_wires":         2171,
+         "num_wire_bits":     6589,
+         "num_pub_wires":     146,
+         "num_pub_wire_bits": 1547,
+         "num_ports":         23,
+         "num_port_bits":     178,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5350,
+         "num_submodules":       2,
+         "num_cells_by_type": {
+            "$_AND_": 1885,
+            "$_DFFE_PN0P_": 276,
+            "$_DFFE_PN1P_": 1,
+            "$_DFFE_PP_": 760,
+            "$_DFF_PN0_": 4,
+            "$_MUX_": 386,
+            "$_NOT_": 218,
+            "$_OR_": 1280,
+            "$_XOR_": 540,
+            "$paramod\\unsigned_divider\\W=s32'00000000000000000000000000100100": 1,
+            "exp_lut": 1
+         }
+      }
+}
+
+11. Executing Verilog backend.
+
+11.1. Executing BMUXMAP pass.
+
+11.2. Executing DEMUXMAP pass.
+Dumping module `$paramod\unsigned_divider\W=s32'00000000000000000000000000100100'.
+Dumping module `\attention_ip'.
+Dumping module `\exp_lut'.
+
+12. Executing JSON backend.

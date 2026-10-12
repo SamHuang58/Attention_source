@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "cases": 575,
+  "outputs": 2300,
+  "base_cycles": 264,
+  "min_cycles": 264,
+  "max_cycles": 428,
+  "max_abs_error": 28.97814299681957,
+  "mean_abs_error": 1.1645609490075262,
+  "netlist_cases": 575,
+  "seed": 20260910,
+  "reset_states": 8,
+  "replay": "PASS",
+  "clock_period_ns": 10,
+  "reference": "Independent 80-digit decimal audit; project-defined LUT",
+  "synthesis": "PASS: generic, zero-delay only"
+}

@@ -1,0 +1,2 @@
+FATAL: experiments/ppt_20261009_evidence/source/tb/tb_attention.sv:45: load counters advanced without handshake
+       Time: 17946000  Scope: tb_attention

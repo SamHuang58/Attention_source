@@ -1,0 +1,3 @@
+VCD info: dumpfile experiments/step2_verified/seed_20260910/results/attention.vcd opened for output.
+ATTENTION PASS: 575 cases, 2300 outputs, Score/Weight/L/ACC exact; 8 reset states; base latency=264
+experiments/step2_verified/source/tb/tb_attention.sv:198: $finish called at 2266057000 (1ps)

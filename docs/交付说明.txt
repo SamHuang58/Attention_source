@@ -1,0 +1,58 @@
+Attention v2：可交付文件说明
+
+本次已完成电路源码、验证证据、8 页设计报告及 12 页答辩 PPT。
+最终成品文件夹按答辩材料、设计报告、工程源码、验证证据、使用说明分类。
+
+一、已经完成
+1. RTL、Python 整数参考、独立高精度参考的数值核对。
+2. 1725 个 RTL 案例、6900 个输出；同条件重跑的输出、周期采样、覆盖记录完全一致。
+3. 1725 个综合后网表案例，与同样输入/暂停条件下的 RTL 端口结果一致。
+4. 10 类错误注入全部被检测：计算错误、丢数据、无效输入被接收、过早输出、done 错位等。
+5. 指数表全部 524288 个地址检查；除法器小位宽穷举、大位宽定向与随机检查。
+6. 原始 VCD 波形、暂停/输出采样图、状态流程图、各阶段周期表。
+7. 通用综合资源统计、存储分析，以及 S=256、d=4 的扩展估算。
+8. 完整运行日志、源码快照、文件哈希与 Git 记录。
+
+二、文件在哪里
+docs/设计分析.txt                 结构、周期、存储、扩展与边界
+docs/交付图/                     状态流程、周期表、暂停与输出图（SVG/PNG）
+docs/delivery_validation.json     本次验证摘要与原始证据哈希
+experiments/delivery_full/manifest.json    完整验证记录
+experiments/delivery_full/demo/result.txt  示例输入与计算过程
+experiments/delivery_full/demo/results/attention.vcd  原始连续波形
+experiments/delivery_full/demo/signals.sucl          Surfer 信号配置
+experiments/delivery_full/build/attention_netlist.v  实际综合网表
+experiments/delivery_full/synthesis/                综合统计
+experiments/delivery_full/logs/                     逐项日志
+
+完整交付 ZIP 包含上述实验文件及源码。普通 Git 检出不包含 experiments 下的生成文件；
+它们可通过下方命令重建。交付包中的历史记录文件保留了本地 Git 修改记录。
+
+三、如何重新验证
+在 Attention_source 目录运行（每次使用新的实验名）：
+python3 scripts/run_research.py --name delivery_rerun --input docs/learning_input.json
+
+需要 Python 3.10+、Icarus Verilog 和 Yosys；查看 VCD 另需 Surfer。
+本次使用 Icarus Verilog 13.0、Yosys 0.69+post，具体版本和哈希见 manifest。
+本机已经准备好工具；交付包不包含仿真器及其运行环境，不是免安装离线包。
+必须同时看到 status=PASS 与 verification_scope=RTL_AND_NETLIST，才能声称完整验证通过。
+“开始验证.command”保留为日常 RTL 演示入口，它不运行综合后网表。
+
+四、结论的范围
+综合采用通用逻辑单元，未映射指定 FPGA 型号或工艺库。
+网表仿真为零延迟功能仿真，没有做布局布线、物理时序、功耗或上板测试。
+264 拍是当前电路的仿真周期数；仿真中设置 10ns 时钟不证明实际能跑 100MHz。
+S=256 的内容是设计估算，当前 RTL 仍固定 S=8、d=4。
+4 位小数权重量化与理想浮点 softmax 存在误差；本轮极端案例最大误差约 28.978。
+整数模型一致性通过，不等于浮点误差很小，也不等于已经通过出题方隐藏样例。
+
+五、波形图片的来源
+暂停图和输出图由真实 RTL 上升沿后 1ns 采样生成，原始数据同时保留。
+它们不是 Surfer 窗口截图；连续时序应查看 VCD。
+本机 Surfer 先前已通过日志确认加载 VCD 和信号；窗口自动化未能稳定显示波形，
+因此不声明已完成原生窗口截图验收。交付图均单独渲染检查。
+
+六、交付边界
+报告和 PPT 已完成；真实 FPGA 上板、器件资源/时序实测不在本次基础实现范围。
+原生 Surfer 窗口截图仍未完成验收；真实 VCD、采样波形图和日志已保留。
+如果最终考核提交还要求姓名学号、指定模板或指定工具工程，需要按实际要求填写/补充。

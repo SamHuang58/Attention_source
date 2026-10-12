@@ -1,0 +1,206 @@
+{
+  "status": "PASS",
+  "git_commit": "977fffec5825ba0eeb639de28a14e5a61c795f3b",
+  "git_dirty": false,
+  "verification_scope": "RTL_AND_NETLIST",
+  "parameters": {
+    "input": "docs/learning_input.json",
+    "name": "delivery_full",
+    "seeds": [
+      20260910,
+      20260922,
+      8675309
+    ],
+    "random": 256,
+    "groups": 32,
+    "max_stall": 7,
+    "netlist_stall": 2,
+    "timeout": 900,
+    "skip_netlist": false,
+    "skip_mutations": false
+  },
+  "simulator": "Icarus Verilog version 13.0 (stable) (v13_0)",
+  "synthesis_tool": "Yosys 0.69+post (git sha1 143eb14f9cc55d6f8927e68523b0c9d2166ed02c, Release, AppleClang clang++ 21.0.0.21000101)",
+  "synthesis": {
+    "status": "PASS",
+    "generic_cells": 5350,
+    "register_bits": 1041,
+    "qualification": "Generic synthesis, not device LUT usage, physical timing or board measurement"
+  },
+  "attention_cases": 1725,
+  "attention_outputs": 6900,
+  "netlist_cases": 1725,
+  "mutation_checks": [
+    {
+      "defect": "lut_entry",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "done_alignment",
+      "status": "DETECTED",
+      "expected_diagnostic": "done alignment"
+    },
+    {
+      "defect": "output_sign",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "output_rounding",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "lost_q",
+      "status": "DETECTED",
+      "expected_diagnostic": "Q data capture"
+    },
+    {
+      "defect": "lost_v",
+      "status": "DETECTED",
+      "expected_diagnostic": "KV data capture"
+    },
+    {
+      "defect": "ignore_q_valid",
+      "status": "DETECTED",
+      "expected_diagnostic": "load counters advanced without handshake"
+    },
+    {
+      "defect": "ignore_kv_valid",
+      "status": "DETECTED",
+      "expected_diagnostic": "load counters advanced without handshake"
+    },
+    {
+      "defect": "extra_output_at_final_input",
+      "status": "DETECTED"
+    },
+    {
+      "defect": "false_divide_by_zero_on_completion",
+      "status": "DETECTED"
+    }
+  ],
+  "arithmetic": {
+    "lut_addresses": 524288,
+    "divider_widths": {
+      "1": {
+        "cases": 5,
+        "reset_positions": 1,
+        "all_operand_pairs": true
+      },
+      "2": {
+        "cases": 18,
+        "reset_positions": 2,
+        "all_operand_pairs": true
+      },
+      "4": {
+        "cases": 260,
+        "reset_positions": 4,
+        "all_operand_pairs": true
+      },
+      "8": {
+        "cases": 65544,
+        "reset_positions": 8,
+        "all_operand_pairs": true
+      },
+      "16": {
+        "cases": 2100,
+        "reset_positions": 16,
+        "all_operand_pairs": false
+      },
+      "36": {
+        "cases": 2160,
+        "reset_positions": 36,
+        "all_operand_pairs": false
+      }
+    }
+  },
+  "demo": {
+    "status": "PASS",
+    "folder": "experiments/delivery_full/demo",
+    "input_sha256": "9ffec45203344305317bc13a970da0d30403d84c4cecc2cad4caed77b83df113",
+    "expected": [
+      3,
+      1,
+      -1,
+      1
+    ],
+    "actual": [
+      [
+        3,
+        1,
+        -1,
+        1
+      ],
+      [
+        3,
+        1,
+        -1,
+        1
+      ]
+    ],
+    "cycles": [
+      264,
+      270
+    ]
+  },
+  "max_abs_error": 28.97814299681957,
+  "source_sha256": {
+    "rtl/attention_ip.sv": "a929662f81737c8df96dbb9e6e25cbe98332e0e7c5a6d25874712682faf7c966",
+    "rtl/exp_lut.sv": "df4de33a409d8356c94d53d95430fd5ae88cd9d1b7414405bf8b2c13193f58a7",
+    "rtl/unsigned_divider.sv": "84f498693c967dfa55fe9b20a95a090f60dc7bc1863078ac626a9114b35e1fed",
+    "tb/tb_attention.sv": "497709918073e59d084dbd7cd33756e2bc7f289357b4d91c0a009f6753de1e60",
+    "tb/tb_divider.sv": "168f2e8982e5f47bcd202a4e30582e4c4706b3e83f491cbb47a852cacd95912d",
+    "tb/tb_divider_exhaustive.sv": "6c9c09cd3e53ac03ab782abd99792fdd115a0f7b018c49d29c00818106421690",
+    "tb/tb_exp_exhaustive.sv": "0b29156239cd996e84cdbfa6c68e551c10549aa9c3c166304c2a10c791cb195c",
+    "tb/tb_netlist.sv": "cd2c8665451a449176bf0ee8e8822616e8dbefd375093324d5a6293be9cd20e9",
+    "model/golden.py": "20c76b1c1cc62d68ad2b352436fabe9813363c61300af25d1b916ab467c96b7d",
+    "model/research_validation.py": "d9d43d384710e7f2ead2c08fa3c91ee4c264ea7b527ed6363753584882989d69",
+    "scripts/demo.py": "ae27d8e897a4fc373610c5c43eae465156cd7aec8a46f9c22c2077658ccc0f04",
+    "scripts/demo_artifacts.py": "90eed6a9bc8b837864c9370fa8d7185eef125e5403cb60bcbfafa3a899c5363b",
+    "scripts/fetch_iverilog.py": "7cb316485146400b9bb995ff711952dde53c26ec7993ceb43df3c2fd5edbde12",
+    "scripts/launch.py": "5349edd80c7e0dc4cffe88c8279dfdbf049a111e39552dd4890a17d70c5d6e1d",
+    "scripts/run.py": "023a4031f9d3c881e19ce2c2b4b7d9c5768d517264d056e8e757b5293c41fdca",
+    "scripts/run_research.py": "5773a9c8fe8e23d903f67c76ce5a995b5781858e0b463c287623df530d80343b",
+    "scripts/setup_simulation.ps1": "12769a58a6909d6472c47d5b0d4e0406a498f99ed21ea875fd3d7b02bb86a168",
+    "scripts/synth.ys": "47bf59849479b1f35d8547e729a5049f58654f64c5179480d6fc39c86af3b5fc",
+    "tests/test_demo.py": "5f08869b4afe48af92992b3e0d9075a0416af888157b3903317ac55c537de102",
+    "tests/test_reference.py": "b9cd5d33c3d656fa7086399d71bb46f5651c94035381ceae379c866535f8129b",
+    "tests/test_runner.py": "128cceb3d30601170b39a5e35bdfa1e6fa9681b444e2cc446fc62781e61b0469",
+    "requirements-simulation.lock.txt": "f260119c89ea65c71e05d799a7e993222f636baa504b99ef844353feb4146b1a"
+  },
+  "experiment": "experiments/delivery_full",
+  "manifest_sha256": "a460d885e4bb1088cb453700726b306343b5f2b5109c7c5dfab13f2fd4fd7aff",
+  "observed_state_cycles": {
+    "1": 4,
+    "2": 32,
+    "3": 32,
+    "4": 8,
+    "5": 32,
+    "6": 4,
+    "7": 148,
+    "8": 4
+  },
+  "sampled_figures_source_sha256": "c10c0f1c504ebdbbfcea2d492075b35e5419426cf016e063f8f54e574fd1d52c",
+  "replay": [
+    {
+      "seed": 20260910,
+      "status": "PASS"
+    },
+    {
+      "seed": 20260922,
+      "status": "PASS"
+    },
+    {
+      "seed": 8675309,
+      "status": "PASS"
+    }
+  ],
+  "native_viewer_screenshot_verified": false,
+  "limitations": [
+    "Generic synthesis only; no FPGA mapping, physical timing or board run",
+    "Sampled waveform figures are not native viewer screenshots",
+    "S=256 analysis only; RTL remains S=8,d=4",
+    "Final report and PPT deferred by user"
+  ]
+}

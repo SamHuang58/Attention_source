@@ -1,0 +1,2 @@
+FATAL: experiments/v2_contract_verified/source/tb/tb_attention.sv:93: done alignment
+       Time: 17917000  Scope: tb_attention.run_case

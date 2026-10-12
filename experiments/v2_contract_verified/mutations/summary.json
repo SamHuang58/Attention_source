@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "detected": [
+    {
+      "defect": "lut_entry",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "done_alignment",
+      "status": "DETECTED",
+      "expected_diagnostic": "done alignment"
+    },
+    {
+      "defect": "output_sign",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "output_rounding",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "extra_output_at_final_input",
+      "status": "DETECTED"
+    },
+    {
+      "defect": "false_divide_by_zero_on_completion",
+      "status": "DETECTED"
+    }
+  ],
+  "qualification": "Six selected defects; this is not comprehensive mutation coverage"
+}

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec '/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/tools/DeliveryWaveforms.app/Contents/MacOS/surfer' '/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/delivery_full/demo/results/attention.vcd' -c '/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/delivery_full/demo/signals.sucl'

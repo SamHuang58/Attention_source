@@ -1,0 +1,1656 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "started_utc": "20261008T115741_069422Z",
+  "parameters": {
+    "input": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/docs/learning_input.json",
+    "name": "step2_check",
+    "seeds": [
+      20260910,
+      20260922,
+      8675309
+    ],
+    "random": 256,
+    "groups": 32,
+    "max_stall": 7,
+    "netlist_stall": 2,
+    "timeout": 900,
+    "skip_netlist": true,
+    "skip_mutations": false
+  },
+  "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "platform": "darwin",
+  "scope": "S=8,d=4; v2 UQ1.4 exp LUT, signed int8 output, nearest ties away from zero; zero-delay functional simulation",
+  "commands": [
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-V"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/iverilog_version.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/step2_check/build/tb_attention.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/source/rtl/attention_ip.sv",
+        "experiments/step2_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/tb_attention_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_netlist",
+        "-o",
+        "experiments/step2_check/build/tb_ports.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/source/rtl/attention_ip.sv",
+        "experiments/step2_check/source/tb/tb_netlist.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/tb_ports_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/step2_check/source/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/python_tests.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.431
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/step2_check/source/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/python_optimized_tests.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.445
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_exp_exhaustive",
+        "-o",
+        "experiments/step2_check/build/tb_exp_exhaustive.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/tb/tb_exp_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/tb_exp_exhaustive_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_exp_exhaustive.vvp",
+        "+EXPECTED=experiments/step2_check/build/independent_lut.txt"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/lut_all_addresses.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.438
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=1",
+        "-o",
+        "experiments/step2_check/build/divider_w1.vvp",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w1_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.023
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/divider_w1.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w1.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.006
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=2",
+        "-o",
+        "experiments/step2_check/build/divider_w2.vvp",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w2_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.012
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/divider_w2.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w2.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.006
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=4",
+        "-o",
+        "experiments/step2_check/build/divider_w4.vvp",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w4_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.011
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/divider_w4.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w4.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.012
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=8",
+        "-o",
+        "experiments/step2_check/build/divider_w8.vvp",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w8_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.012
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/divider_w8.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w8.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.953
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=16",
+        "-o",
+        "experiments/step2_check/build/divider_w16.vvp",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w16_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.023
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/divider_w16.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w16.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.09
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=36",
+        "-o",
+        "experiments/step2_check/build/divider_w36.vvp",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w36_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.013
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/divider_w36.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/divider_w36.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.198
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/seed_20260910/results",
+        "+SEED=20260910",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=7"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/seed_20260910_rtl.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 1.236
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+SEED=20260910",
+        "+WATCHDOG_CYCLES=2000000",
+        "+RESULTS=experiments/step2_check/seed_20260910/replay",
+        "+MAX_STALL=7",
+        "+NO_WAVE"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/seed_20260910_replay.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 1.184
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_ports.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/seed_20260910/results",
+        "+SEED=20260910",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=2"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/seed_20260910_rtl_ports.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.648
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260922/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/seed_20260922/results",
+        "+SEED=20260922",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=7"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/seed_20260922_rtl.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 1.304
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260922/build/vectors.txt",
+        "+SEED=20260922",
+        "+WATCHDOG_CYCLES=2000000",
+        "+RESULTS=experiments/step2_check/seed_20260922/replay",
+        "+MAX_STALL=7",
+        "+NO_WAVE"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/seed_20260922_replay.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 1.19
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_ports.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260922/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/seed_20260922/results",
+        "+SEED=20260922",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=2"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/seed_20260922_rtl_ports.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.671
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/step2_check/seed_8675309/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/seed_8675309/results",
+        "+SEED=8675309",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=7"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/seed_8675309_rtl.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 1.246
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/step2_check/seed_8675309/build/vectors.txt",
+        "+SEED=8675309",
+        "+WATCHDOG_CYCLES=2000000",
+        "+RESULTS=experiments/step2_check/seed_8675309/replay",
+        "+MAX_STALL=7",
+        "+NO_WAVE"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/seed_8675309_replay.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 1.236
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_ports.vvp",
+        "+VECTORS=experiments/step2_check/seed_8675309/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/seed_8675309/results",
+        "+SEED=8675309",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=2"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/seed_8675309_rtl_ports.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.655
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/step2_check/build/mutant_lut_entry.vvp",
+        "experiments/step2_check/mutations/lut_entry.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/source/rtl/attention_ip.sv",
+        "experiments/step2_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_lut_entry_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_lut_entry.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=3"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_lut_entry.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.022
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/step2_check/build/mutant_done_alignment.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/mutations/done_alignment.sv",
+        "experiments/step2_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_done_alignment_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_done_alignment.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=3"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_done_alignment.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/step2_check/build/mutant_output_sign.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/mutations/output_sign.sv",
+        "experiments/step2_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_output_sign_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.023
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_output_sign.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=3"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_output_sign.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/step2_check/build/mutant_output_rounding.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/mutations/output_rounding.sv",
+        "experiments/step2_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_output_rounding_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.023
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_output_rounding.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=3"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_output_rounding.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.023
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/step2_check/build/mutant_lost_q.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/mutations/lost_q.sv",
+        "experiments/step2_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_lost_q_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_lost_q.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=3"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_lost_q.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.029
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/step2_check/build/mutant_lost_v.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/mutations/lost_v.sv",
+        "experiments/step2_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_lost_v_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_lost_v.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=3"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_lost_v.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.012
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/step2_check/build/mutant_ignore_q_valid.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/mutations/ignore_q_valid.sv",
+        "experiments/step2_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_ignore_q_valid_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.021
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_ignore_q_valid.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=3"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_ignore_q_valid.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/step2_check/build/mutant_ignore_kv_valid.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/mutations/ignore_kv_valid.sv",
+        "experiments/step2_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_ignore_kv_valid_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.024
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_ignore_kv_valid.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=3"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_ignore_kv_valid.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.023
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_netlist",
+        "-o",
+        "experiments/step2_check/build/mutant_early_output.vvp",
+        "experiments/step2_check/source/rtl/exp_lut.sv",
+        "experiments/step2_check/source/rtl/unsigned_divider.sv",
+        "experiments/step2_check/mutations/early_output.sv",
+        "experiments/step2_check/source/tb/tb_netlist.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_early_output_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.023
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_early_output.vvp",
+        "+VECTORS=experiments/step2_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=3"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_early_output.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.01
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=1",
+        "-o",
+        "experiments/step2_check/build/mutant_divzero_flag.vvp",
+        "experiments/step2_check/mutations/bad_divzero_flag.sv",
+        "experiments/step2_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_divzero_flag_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.011
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/mutant_divzero_flag.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/mutant_divzero_flag.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.006
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/step2_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/step2_check/demo/build/vectors.txt",
+        "+RESULTS=experiments/step2_check/demo/results",
+        "+DEMO",
+        "+TRACE_LIMIT=2",
+        "+SEED=20260922"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/step2_check/logs/demo_rtl.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.024
+    }
+  ],
+  "source_sha256": {
+    "rtl/attention_ip.sv": "a929662f81737c8df96dbb9e6e25cbe98332e0e7c5a6d25874712682faf7c966",
+    "rtl/exp_lut.sv": "df4de33a409d8356c94d53d95430fd5ae88cd9d1b7414405bf8b2c13193f58a7",
+    "rtl/unsigned_divider.sv": "84f498693c967dfa55fe9b20a95a090f60dc7bc1863078ac626a9114b35e1fed",
+    "tb/tb_attention.sv": "3d29df933687784ac7480325b144d3d9a5741e25b1b1d9c2de74ef7f2e5162e6",
+    "tb/tb_divider.sv": "168f2e8982e5f47bcd202a4e30582e4c4706b3e83f491cbb47a852cacd95912d",
+    "tb/tb_divider_exhaustive.sv": "6c9c09cd3e53ac03ab782abd99792fdd115a0f7b018c49d29c00818106421690",
+    "tb/tb_exp_exhaustive.sv": "0b29156239cd996e84cdbfa6c68e551c10549aa9c3c166304c2a10c791cb195c",
+    "tb/tb_netlist.sv": "cd2c8665451a449176bf0ee8e8822616e8dbefd375093324d5a6293be9cd20e9",
+    "model/golden.py": "20c76b1c1cc62d68ad2b352436fabe9813363c61300af25d1b916ab467c96b7d",
+    "model/research_validation.py": "d9d43d384710e7f2ead2c08fa3c91ee4c264ea7b527ed6363753584882989d69",
+    "scripts/demo.py": "d3b523e17959274b1efa923e9d711335b0db8757be3714b055b614ac0e20da03",
+    "scripts/demo_artifacts.py": "90eed6a9bc8b837864c9370fa8d7185eef125e5403cb60bcbfafa3a899c5363b",
+    "scripts/fetch_iverilog.py": "7cb316485146400b9bb995ff711952dde53c26ec7993ceb43df3c2fd5edbde12",
+    "scripts/launch.py": "5349edd80c7e0dc4cffe88c8279dfdbf049a111e39552dd4890a17d70c5d6e1d",
+    "scripts/run.py": "023a4031f9d3c881e19ce2c2b4b7d9c5768d517264d056e8e757b5293c41fdca",
+    "scripts/run_research.py": "348c8929983e3461c417695a35659d4e240a2529a351ff6f40e7ad313f227076",
+    "scripts/setup_simulation.ps1": "12769a58a6909d6472c47d5b0d4e0406a498f99ed21ea875fd3d7b02bb86a168",
+    "scripts/synth.ys": "47bf59849479b1f35d8547e729a5049f58654f64c5179480d6fc39c86af3b5fc",
+    "tests/test_reference.py": "b9cd5d33c3d656fa7086399d71bb46f5651c94035381ceae379c866535f8129b",
+    "tests/test_runner.py": "128cceb3d30601170b39a5e35bdfa1e6fa9681b444e2cc446fc62781e61b0469",
+    "requirements-simulation.lock.txt": "f260119c89ea65c71e05d799a7e993222f636baa504b99ef844353feb4146b1a"
+  },
+  "seed_runs": [
+    {
+      "seed": 20260910,
+      "folder": "experiments/step2_check/seed_20260910",
+      "summary": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "base_cycles": 264,
+        "min_cycles": 264,
+        "max_cycles": 428,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.1645609490075262,
+        "netlist_cases": 0,
+        "seed": 20260910,
+        "reset_states": 8,
+        "replay": "PASS",
+        "clock_period_ns": 10,
+        "reference": "Independent 80-digit decimal audit; project-defined LUT",
+        "synthesis": "NOT RUN"
+      },
+      "numerical": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.1645609490075262,
+        "rmse": 3.220373659161168,
+        "p99_abs_error": 13.035060106068453,
+        "worst_case": "lut_distance_4",
+        "worst_case_index": 13,
+        "worst_dimension": 0,
+        "decimal_precision": 80,
+        "sampled_validation_only": true,
+        "scope": "Sampled validation of supplied cases; no exhaustive input-domain proof.",
+        "independent_lut": [
+          16,
+          6,
+          2,
+          1
+        ],
+        "conservative_abs_error_bound": 128.0,
+        "conservative_abs_error_bound_decimal": "128.0",
+        "quantile_method": "nearest rank",
+        "convex_tolerance": 0.0,
+        "internal_reference_fields_checked": [
+          "scores",
+          "max_score",
+          "weights",
+          "L",
+          "acc",
+          "output_int"
+        ],
+        "rtl_fields_checked": [
+          "L",
+          "o0",
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "metamorphic_relations_checked": 224,
+        "metamorphic_relation_counts": {
+          "constant_values": 32,
+          "key_translation": 32,
+          "qk_feature_permutation": 32,
+          "qk_negation": 32,
+          "token_permutation": 32,
+          "value_negation": 32,
+          "value_permutation": 32
+        },
+        "strata": {
+          "adversarial": {
+            "cases": 32,
+            "outputs": 128,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 10.561974364122497,
+            "rmse": 11.405794452273915,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "adversarial_000",
+            "worst_case_index": 543,
+            "worst_dimension": 0
+          },
+          "directed": {
+            "cases": 31,
+            "outputs": 124,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 2.624221023936616,
+            "rmse": 6.510160729906922,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "lut_distance_4",
+            "worst_case_index": 13,
+            "worst_dimension": 0
+          },
+          "metamorphic": {
+            "cases": 256,
+            "outputs": 1024,
+            "max_abs_error": 3.726727601610955,
+            "mean_abs_error": 0.405212917172342,
+            "rmse": 0.8362652338908855,
+            "p99_abs_error": 3.201560853382813,
+            "worst_case": "metamorphic_012_base",
+            "worst_case_index": 383,
+            "worst_dimension": 3
+          },
+          "random_full_int8": {
+            "cases": 86,
+            "outputs": 344,
+            "max_abs_error": 0.4500174145075289,
+            "mean_abs_error": 0.002652319606971604,
+            "rmse": 0.02865278197030635,
+            "p99_abs_error": 0.09148705679548665,
+            "worst_case": "random_0_0195",
+            "worst_case_index": 226,
+            "worst_dimension": 2
+          },
+          "random_near_ties": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 6.4492612765987305,
+            "mean_abs_error": 1.0049983681981958,
+            "rmse": 1.460594753861937,
+            "p99_abs_error": 4.690182836484684,
+            "worst_case": "random_2_0242",
+            "worst_case_index": 273,
+            "worst_dimension": 1
+          },
+          "random_small_scores": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 7.800876570883932,
+            "mean_abs_error": 0.716482902425963,
+            "rmse": 1.2174316443031752,
+            "p99_abs_error": 4.522229488628272,
+            "worst_case": "random_1_0184",
+            "worst_case_index": 215,
+            "worst_dimension": 3
+          }
+        },
+        "detailed_errors_file": "high_precision_errors.csv",
+        "metamorphic_checks_file": "metamorphic_checks.csv",
+        "failures": []
+      },
+      "vectors_sha256": "73d54a51e4afa1b7b3ef4adafe5635577ed1a605b6731817dea08374e4a10a59",
+      "rtl_results_sha256": "aeb887c7f54c2f5cdf0c5afca673290a0853dec877c91cf2cb98cd0f21ed8cc0"
+    },
+    {
+      "seed": 20260922,
+      "folder": "experiments/step2_check/seed_20260922",
+      "summary": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "base_cycles": 264,
+        "min_cycles": 264,
+        "max_cycles": 435,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.0879327990025167,
+        "netlist_cases": 0,
+        "seed": 20260922,
+        "reset_states": 8,
+        "replay": "PASS",
+        "clock_period_ns": 10,
+        "reference": "Independent 80-digit decimal audit; project-defined LUT",
+        "synthesis": "NOT RUN"
+      },
+      "numerical": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.0879327990025167,
+        "rmse": 3.148317170854808,
+        "p99_abs_error": 13.281676573983521,
+        "worst_case": "lut_distance_4",
+        "worst_case_index": 13,
+        "worst_dimension": 0,
+        "decimal_precision": 80,
+        "sampled_validation_only": true,
+        "scope": "Sampled validation of supplied cases; no exhaustive input-domain proof.",
+        "independent_lut": [
+          16,
+          6,
+          2,
+          1
+        ],
+        "conservative_abs_error_bound": 128.0,
+        "conservative_abs_error_bound_decimal": "128.0",
+        "quantile_method": "nearest rank",
+        "convex_tolerance": 0.0,
+        "internal_reference_fields_checked": [
+          "scores",
+          "max_score",
+          "weights",
+          "L",
+          "acc",
+          "output_int"
+        ],
+        "rtl_fields_checked": [
+          "L",
+          "o0",
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "metamorphic_relations_checked": 224,
+        "metamorphic_relation_counts": {
+          "constant_values": 32,
+          "key_translation": 32,
+          "qk_feature_permutation": 32,
+          "qk_negation": 32,
+          "token_permutation": 32,
+          "value_negation": 32,
+          "value_permutation": 32
+        },
+        "strata": {
+          "adversarial": {
+            "cases": 32,
+            "outputs": 128,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 10.379797719225955,
+            "rmse": 11.184315742665152,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "adversarial_000",
+            "worst_case_index": 543,
+            "worst_dimension": 0
+          },
+          "directed": {
+            "cases": 31,
+            "outputs": 124,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 2.624221023936616,
+            "rmse": 6.510160729906922,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "lut_distance_4",
+            "worst_case_index": 13,
+            "worst_dimension": 0
+          },
+          "metamorphic": {
+            "cases": 256,
+            "outputs": 1024,
+            "max_abs_error": 3.5265015851196746,
+            "mean_abs_error": 0.2644491120171595,
+            "rmse": 0.5979549905895514,
+            "p99_abs_error": 2.2857523281172805,
+            "worst_case": "metamorphic_024_token_permutation",
+            "worst_case_index": 480,
+            "worst_dimension": 2
+          },
+          "random_full_int8": {
+            "cases": 86,
+            "outputs": 344,
+            "max_abs_error": 1.8454056235106543e-22,
+            "mean_abs_error": 1.5602532806049383e-24,
+            "rmse": 1.5840958751206646e-23,
+            "p99_abs_error": 3.5088698475202585e-23,
+            "worst_case": "random_0_0141",
+            "worst_case_index": 172,
+            "worst_dimension": 1
+          },
+          "random_near_ties": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 6.3141114504245675,
+            "mean_abs_error": 0.8065779699984879,
+            "rmse": 1.1984465550938732,
+            "p99_abs_error": 3.7950217039852885,
+            "worst_case": "random_2_0020",
+            "worst_case_index": 51,
+            "worst_dimension": 1
+          },
+          "random_small_scores": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 8.628352854884591,
+            "mean_abs_error": 0.8917515357990251,
+            "rmse": 1.4101879844496625,
+            "p99_abs_error": 4.585327328424223,
+            "worst_case": "random_1_0196",
+            "worst_case_index": 227,
+            "worst_dimension": 0
+          }
+        },
+        "detailed_errors_file": "high_precision_errors.csv",
+        "metamorphic_checks_file": "metamorphic_checks.csv",
+        "failures": []
+      },
+      "vectors_sha256": "041a14a34ebfe51112733c356da72d5bc00277ab2e780ed1f078997110ab608f",
+      "rtl_results_sha256": "954d10343de12bf560298961850abf199f251c484144ddbdb0c30b43a7d8f2b2"
+    },
+    {
+      "seed": 8675309,
+      "folder": "experiments/step2_check/seed_8675309",
+      "summary": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "base_cycles": 264,
+        "min_cycles": 264,
+        "max_cycles": 425,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.220563226944487,
+        "netlist_cases": 0,
+        "seed": 8675309,
+        "reset_states": 8,
+        "replay": "PASS",
+        "clock_period_ns": 10,
+        "reference": "Independent 80-digit decimal audit; project-defined LUT",
+        "synthesis": "NOT RUN"
+      },
+      "numerical": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.220563226944487,
+        "rmse": 3.38459955428334,
+        "p99_abs_error": 14.487454277562344,
+        "worst_case": "lut_distance_4",
+        "worst_case_index": 13,
+        "worst_dimension": 0,
+        "decimal_precision": 80,
+        "sampled_validation_only": true,
+        "scope": "Sampled validation of supplied cases; no exhaustive input-domain proof.",
+        "independent_lut": [
+          16,
+          6,
+          2,
+          1
+        ],
+        "conservative_abs_error_bound": 128.0,
+        "conservative_abs_error_bound_decimal": "128.0",
+        "quantile_method": "nearest rank",
+        "convex_tolerance": 0.0,
+        "internal_reference_fields_checked": [
+          "scores",
+          "max_score",
+          "weights",
+          "L",
+          "acc",
+          "output_int"
+        ],
+        "rtl_fields_checked": [
+          "L",
+          "o0",
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "metamorphic_relations_checked": 224,
+        "metamorphic_relation_counts": {
+          "constant_values": 32,
+          "key_translation": 32,
+          "qk_feature_permutation": 32,
+          "qk_negation": 32,
+          "token_permutation": 32,
+          "value_negation": 32,
+          "value_permutation": 32
+        },
+        "strata": {
+          "adversarial": {
+            "cases": 32,
+            "outputs": 128,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 11.429396482998946,
+            "rmse": 12.174006184675406,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "adversarial_000",
+            "worst_case_index": 543,
+            "worst_dimension": 0
+          },
+          "directed": {
+            "cases": 31,
+            "outputs": 124,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 2.624221023936616,
+            "rmse": 6.510160729906922,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "lut_distance_4",
+            "worst_case_index": 13,
+            "worst_dimension": 0
+          },
+          "metamorphic": {
+            "cases": 256,
+            "outputs": 1024,
+            "max_abs_error": 6.404729805277193,
+            "mean_abs_error": 0.43788355092906317,
+            "rmse": 0.9617568557634072,
+            "p99_abs_error": 4.90707703409268,
+            "worst_case": "metamorphic_031_token_permutation",
+            "worst_case_index": 536,
+            "worst_dimension": 0
+          },
+          "random_full_int8": {
+            "cases": 86,
+            "outputs": 344,
+            "max_abs_error": 8.11162955912125e-63,
+            "mean_abs_error": 6.642560305481948e-65,
+            "rmse": 6.544330925850621e-64,
+            "p99_abs_error": 3.23404838631631e-63,
+            "worst_case": "random_0_0090",
+            "worst_case_index": 121,
+            "worst_dimension": 2
+          },
+          "random_near_ties": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 6.012227989418985,
+            "mean_abs_error": 0.838862806694375,
+            "rmse": 1.2848500952265953,
+            "p99_abs_error": 5.025395937639326,
+            "worst_case": "random_2_0236",
+            "worst_case_index": 267,
+            "worst_dimension": 1
+          },
+          "random_small_scores": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 6.107324377206253,
+            "mean_abs_error": 0.839185749273137,
+            "rmse": 1.3431819408067363,
+            "p99_abs_error": 4.360508518023943,
+            "worst_case": "random_1_0166",
+            "worst_case_index": 197,
+            "worst_dimension": 1
+          }
+        },
+        "detailed_errors_file": "high_precision_errors.csv",
+        "metamorphic_checks_file": "metamorphic_checks.csv",
+        "failures": []
+      },
+      "vectors_sha256": "9f9ab8f52bfda7f3a08800dc7db93b17642003a080e05d106354f8386ce7a126",
+      "rtl_results_sha256": "7b558aaf1365d76eeceddbbad7d4721290afa3de8ada4232fa9124e003574a05"
+    }
+  ],
+  "git_commit": "e24ab8f3bcfef4770fd79ed4ce47f81d4c6e8501",
+  "git_dirty": true,
+  "elapsed_seconds": 12.973,
+  "simulator": "Icarus Verilog version 13.0 (stable) (v13_0)",
+  "simulator_sha256": "5df81b269e1ff2c965dd00ad5a8071ca17717f416003b3661a18b2dde430e73c",
+  "vvp_sha256": "1a9bdf1f40102f64f015514f5069f99a5dd9f9f38de343743ef4c169fb358392",
+  "arithmetic": {
+    "lut_addresses": 524288,
+    "divider_widths": {
+      "1": {
+        "cases": 5,
+        "reset_positions": 1,
+        "all_operand_pairs": true
+      },
+      "2": {
+        "cases": 18,
+        "reset_positions": 2,
+        "all_operand_pairs": true
+      },
+      "4": {
+        "cases": 260,
+        "reset_positions": 4,
+        "all_operand_pairs": true
+      },
+      "8": {
+        "cases": 65544,
+        "reset_positions": 8,
+        "all_operand_pairs": true
+      },
+      "16": {
+        "cases": 2100,
+        "reset_positions": 16,
+        "all_operand_pairs": false
+      },
+      "36": {
+        "cases": 2160,
+        "reset_positions": 36,
+        "all_operand_pairs": false
+      }
+    }
+  },
+  "mutation_checks": [
+    {
+      "defect": "lut_entry",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "done_alignment",
+      "status": "DETECTED",
+      "expected_diagnostic": "done alignment"
+    },
+    {
+      "defect": "output_sign",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "output_rounding",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "lost_q",
+      "status": "DETECTED",
+      "expected_diagnostic": "Q data capture"
+    },
+    {
+      "defect": "lost_v",
+      "status": "DETECTED",
+      "expected_diagnostic": "KV data capture"
+    },
+    {
+      "defect": "ignore_q_valid",
+      "status": "DETECTED",
+      "expected_diagnostic": "load counters advanced without handshake"
+    },
+    {
+      "defect": "ignore_kv_valid",
+      "status": "DETECTED",
+      "expected_diagnostic": "load counters advanced without handshake"
+    },
+    {
+      "defect": "extra_output_at_final_input",
+      "status": "DETECTED"
+    },
+    {
+      "defect": "false_divide_by_zero_on_completion",
+      "status": "DETECTED"
+    }
+  ],
+  "demo": {
+    "status": "PASS",
+    "folder": "experiments/step2_check/demo",
+    "input_sha256": "9ffec45203344305317bc13a970da0d30403d84c4cecc2cad4caed77b83df113",
+    "expected": [
+      3,
+      1,
+      -1,
+      1
+    ],
+    "actual": [
+      [
+        3,
+        1,
+        -1,
+        1
+      ],
+      [
+        3,
+        1,
+        -1,
+        1
+      ]
+    ],
+    "cycles": [
+      264,
+      270
+    ]
+  },
+  "artifact_sha256": {
+    "build/divider_w1.vvp": "9cfa6515c2387373f4c33e3c4b0b9fb45c60341882f7b096f5e69748b96a3ac8",
+    "build/divider_w16.vvp": "b12ac0b2318df8fb2656e59116ce5c40acd2dafb3685e382cc84f3f8372c1229",
+    "build/divider_w2.vvp": "a353ae1145913512da810fda7d27ec67469977bab082facfee93a0275ec34784",
+    "build/divider_w36.vvp": "10b9e4743f41ab894cf73930eb0cd248f1dd38876fbda5cb7370b86e2422594d",
+    "build/divider_w4.vvp": "be3a80a503f164751111667f1e4c3b12afff9d0bf28ace457a17e76a303f7d14",
+    "build/divider_w8.vvp": "ae26017d2d69b6887f30978eaf5c87ef22fa86032d4d876af30ec4231e0883d0",
+    "build/independent_lut.txt": "01af3ac9ffff978ce328fc5c933e8ff86f8c89993ba31e96ebc3b2baec33cf59",
+    "build/mutant_divzero_flag.vvp": "f005cd0ae2150c3ddbab08c54939fc96a59e5a23afce3fc6772994b75d0896ab",
+    "build/mutant_done_alignment.vvp": "8f86f857f6966837ce6b3d164242bcd1f8d73deacf9de91330670c058dad63f0",
+    "build/mutant_early_output.vvp": "5aa327734f883f54b0fbbd47f2eb0376a69f60978021056aad5d09f1f0b2ef91",
+    "build/mutant_ignore_kv_valid.vvp": "f4e4641259c99bea1e5aed6f81e183223ff3587ab27eaf5203953ca1e1e0d7c3",
+    "build/mutant_ignore_q_valid.vvp": "58906b74e7e35d14e7131153ba1ce29d9ed74969c86cb9cdeda084cc2331dd7b",
+    "build/mutant_lost_q.vvp": "9e23fbea2e0fd6c2abc5dec84d3dfa9014ec1e8ece6d5e0da1f5a4aee1c3f532",
+    "build/mutant_lost_v.vvp": "b7645a17f230db3ad86c706ff830f6c75cd6bbdade4952d2c15f89e8fdf0e966",
+    "build/mutant_lut_entry.vvp": "9d42efade865b3fc92febfdc7744891f00d5a10c6ba4e33811d8548e0dcf92b0",
+    "build/mutant_output_rounding.vvp": "b64aea1c66086f0818612149aaee8181e8ef90c4e9038d3dcb860158fb584fea",
+    "build/mutant_output_sign.vvp": "1f24ed2b7442fc82f501a95352be48a2f457702adb3b31d3ffab5a2d8920c3fb",
+    "build/tb_attention.vvp": "e2a82e9ed022292cd7f2968ecce0d32fc251fe7955de31842cca8b566029b413",
+    "build/tb_exp_exhaustive.vvp": "6b86f4a05865851176c1e053e5928523c62917f6c5764cdc23075d0ae095a89e",
+    "build/tb_ports.vvp": "0607bdce66320c27dc775ef61b1519441f0ed8362c7788f9d234e8239f518b60",
+    "demo/build/vectors.txt": "48fdc97c0a2134923577d6c8c798d79d8d1db9f609389e71841c910ae816c4cc",
+    "demo/input.json": "9ffec45203344305317bc13a970da0d30403d84c4cecc2cad4caed77b83df113",
+    "demo/output.svg": "22dd307f30a40af09ad1be9cfd693bde853c1d1f6d312750c570d0291aa4a815",
+    "demo/pause.svg": "bbd4ff6c202c44a9e70342b96625d889e8f59ada76b852fdeba27b499d722a7e",
+    "demo/result.txt": "c2674a3c3ff2dffc16236c3c3b2301a6d2120200d8d35140450ea793f39d3ed8",
+    "demo/results/accuracy.csv": "48f379d444f02c913e1b608993014d9f17e20fd20fb20ba75a9bb30132060476",
+    "demo/results/attention.vcd": "1b8ccc1e8589257eef10b2c5b8b20fdc261144a6779613f0be5b1102046eb52e",
+    "demo/results/cycle_trace.csv": "c10c0f1c504ebdbbfcea2d492075b35e5419426cf016e063f8f54e574fd1d52c",
+    "demo/results/functional_coverage.json": "0e84be52fa4db81250e09bca2f85f76dbdd4bbec6c958d132d7b618d2cf1530e",
+    "demo/results/golden_cases.json": "491b993985b9200bb17a9bb3bfe78eed125e10ff26c818e25e3d2911296c86a8",
+    "demo/results/high_precision_errors.csv": "881ff10c480918800f4c944a6051546d112c42e175948f8f9f534472d40762d1",
+    "demo/results/metamorphic_checks.csv": "1d043372fb29f54c60b0ece356cafb1281e83c82825bc694e797610095cfeabd",
+    "demo/results/numeric_validation.json": "570bdb713e5d87280226634eaf04e01cccb592c6111c695a69856af78e40d327",
+    "demo/results/rtl_results.csv": "b1f1ea740d0ca623933f44e53bf99228136dab1ced2ca9a406824971705f9df3",
+    "demo/signals.sucl": "79a446554a5781f97ecaced7bfd6d3992a0db7ad4c2a5de3f7c9c2ec67dd89e0",
+    "logs/demo_rtl.log": "d15c82076d66b7a7d082cb297cf07a5b9a54cb1916143c0e70ff80ff983672d7",
+    "logs/divider_w1.log": "354eec02fbdd1565b420514a52663f7439eea30bc7a6a43f01982b2e5fe61615",
+    "logs/divider_w16.log": "58b5f19213dd83eeeeb7598768ba59d116e635ffd5b1da5c9ff10562672f029a",
+    "logs/divider_w16_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/divider_w1_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/divider_w2.log": "80d62682d4ea723409af8d068a292197a76dc6176df0c8a37e30c71a215250a2",
+    "logs/divider_w2_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/divider_w36.log": "cf41426c7e04a7d69e2fdefbc9381d555bde3a71acee92c5b3994d1ae3329fc2",
+    "logs/divider_w36_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/divider_w4.log": "c14806bfa9ac9b578b33bb6cc3fa78900044a259dcddbaf2a29b8aa4d3e296f8",
+    "logs/divider_w4_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/divider_w8.log": "e9d045ea7277108f28486eb8174470b52588a2de135371d4e3f6999967d43f6b",
+    "logs/divider_w8_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/iverilog_version.log": "ca23091099109d3237b10e6336dbb5b325dda94c3c52cd4111d924bd60227f5d",
+    "logs/lut_all_addresses.log": "3fa4dabed325a03331434a8e8782f7c17d383ef4b8e2910d7f31239872e3629a",
+    "logs/mutant_divzero_flag.log": "db384b01632c36272ba370fa63737aae1bed706cc1bf550d66a4b1fe60984f88",
+    "logs/mutant_divzero_flag_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/mutant_done_alignment.log": "f2a0f5394f4e878f186b64a831b81e3e607fc4d52b5abb2967139d3a4f5ab751",
+    "logs/mutant_done_alignment_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/mutant_early_output.log": "0937cbf7d90b8944945bb64691c17a7d2b055671adc2d411d3436d05c7c6bfb6",
+    "logs/mutant_early_output_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/mutant_ignore_kv_valid.log": "b7131f8f15bff92a2118f85a79854bb94937e03512772f50065d52a3241e4b85",
+    "logs/mutant_ignore_kv_valid_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/mutant_ignore_q_valid.log": "2e3436c624aecb73ad86695cadfebca7863710d8e2454b992b12a4e52ea55e3d",
+    "logs/mutant_ignore_q_valid_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/mutant_lost_q.log": "70d8c80ceaecf5ca3861d4eaef93be4364b7e2f566d24335e5f19a16a9a05aca",
+    "logs/mutant_lost_q_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/mutant_lost_v.log": "16ed941f62f90b4d50d865c2effd3bde6941bc83ed4e7aa33cd6374228a1caf4",
+    "logs/mutant_lost_v_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/mutant_lut_entry.log": "4033fa2b87ddf4eaa7d72e6420a6363f54173c433a58d41e558686069702a0b7",
+    "logs/mutant_lut_entry_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/mutant_output_rounding.log": "be64839beaeae465a910f03508db74137a91da23b5f5606803990f2d28ba52f0",
+    "logs/mutant_output_rounding_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/mutant_output_sign.log": "eff0b50241c38df417a7def27560bca01594778e95aa0fa98e77c35d07bb6e79",
+    "logs/mutant_output_sign_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/python_optimized_tests.log": "8f9cf5a2eb0e4a1fd22b9fa0cae05d2b19a0008357f9a249f47920514447c032",
+    "logs/python_tests.log": "5781bf3ff831b42360466fe60111855c16bd2e5fee4fd419c02b22f589b96d8c",
+    "logs/seed_20260910_replay.log": "99539e11ba715f6ec090ecdd419627ada8e88d51461a129bcecc38b477a9fa00",
+    "logs/seed_20260910_rtl.log": "927b459eccb62ec361e7a97d75055269f44afb9d74446709bcfd2df7e9736de9",
+    "logs/seed_20260910_rtl_ports.log": "0885cffb6fa8564b1b93c2a99bc330f33513625705f805fa58fe199c610fe441",
+    "logs/seed_20260922_replay.log": "1b5888490cfa6a4a647ae76477691fbefda8328a19d20f7d00d29badf553b150",
+    "logs/seed_20260922_rtl.log": "c39bce75a3a8bf6bf130f9dea74ceb22a4c6d0df419aac450053e6ea2f9f47c9",
+    "logs/seed_20260922_rtl_ports.log": "66ed59615c13d168eadb37a03012108128e7f521d412cbfa64c7abeb76630058",
+    "logs/seed_8675309_replay.log": "2a5131c98aa281f9342f7103fad02168c700e1a96be745dc38892752b9b93607",
+    "logs/seed_8675309_rtl.log": "021b9c66bce676f6ce7ac442d128a34cb4bbd0ac8e45b0a3c2fc22c3f69b3568",
+    "logs/seed_8675309_rtl_ports.log": "a91ea36a6f2399c14cc1c9edc79a283011e58dc82617f132f749b7169504485e",
+    "logs/tb_attention_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/tb_exp_exhaustive_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/tb_ports_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutations/bad_divzero_flag.sv": "5bdf4245008ad47e6696db7fdb3922759e988a2159b75d3f8f253b69bc3ffc5f",
+    "mutations/done_alignment.sv": "d1ab96ed422fa44969086d078db516e44a08a0c91f60f018d0157a4dac50ca0a",
+    "mutations/early_output.sv": "e7e7ba2bcdd71b5eb615ade13c89f0dd247c628591dbca1f931ad23b46ebf1c9",
+    "mutations/ignore_kv_valid.sv": "de01f5bb0eceae043b86bc01bb417bee15a297e64e9e8e156f08c01bb329d88c",
+    "mutations/ignore_q_valid.sv": "f807502ce2a427e24a5adf62944c1a0f87bd7ac1129089fe232083bca8114e5b",
+    "mutations/lost_q.sv": "7b476a3f76af0ab996d5d745b5cbb6700b25f810aee4979f9ef14637d9c2978b",
+    "mutations/lost_v.sv": "140e44dd94174f88b2a1c37e34981471b08cbb362015cafa1eadea430332abd9",
+    "mutations/lut_entry.sv": "e7a5d0d63d831efbef39e6a0c6a9db0e289d98b81636d5a94bca7b462ea562a8",
+    "mutations/observations/cycle_trace.csv": "341ead821078a79ae3b7c065e36b73d1a4f80f7349dcefbce252a7f6d0f7e824",
+    "mutations/observations/netlist_results.csv": "f0614d0ccbaedae6c91625ee9b111a30678c2e8bbc05ee1ecacfa2794892a8b9",
+    "mutations/observations/rtl_results.csv": "774f5d56eca432478d08c969b625a3bdcdeb79509e33a4c3f5d177604bdb7c0e",
+    "mutations/output_rounding.sv": "f43fd6b72ce8d58d489a2189226e76cfcbedab32b40b5cfb6a49b812f73a42b9",
+    "mutations/output_sign.sv": "a929647241e5afd600c68159409b3b211cd73108a4bfd525c30e0347a76f2f51",
+    "mutations/summary.json": "d8d4c1582b43c3b2039977b9029ec205b4d0af7a65497be37e0a668733d5829e",
+    "seed_20260910/build/vectors.txt": "73d54a51e4afa1b7b3ef4adafe5635577ed1a605b6731817dea08374e4a10a59",
+    "seed_20260910/relations.json": "5072c43dc4b17873c9e5f1cf24a2f7246cf4e75070ab415db9496dd306842c6f",
+    "seed_20260910/replay/cycle_trace.csv": "341ead821078a79ae3b7c065e36b73d1a4f80f7349dcefbce252a7f6d0f7e824",
+    "seed_20260910/replay/functional_coverage.json": "ba3755016e7d675963467fea8f05d1d757bcb9be4aacb8616e2015f2b45fed00",
+    "seed_20260910/replay/rtl_results.csv": "aeb887c7f54c2f5cdf0c5afca673290a0853dec877c91cf2cb98cd0f21ed8cc0",
+    "seed_20260910/results/accuracy.csv": "7fb30dcd89033b9cad838ce690a587007534b60d870c807a28ecafa03caf391c",
+    "seed_20260910/results/attention.vcd": "990ab940233bc7953375eea3b250516016c7dfbfbfa4968b71f0d946c2636539",
+    "seed_20260910/results/cycle_trace.csv": "341ead821078a79ae3b7c065e36b73d1a4f80f7349dcefbce252a7f6d0f7e824",
+    "seed_20260910/results/functional_coverage.json": "ba3755016e7d675963467fea8f05d1d757bcb9be4aacb8616e2015f2b45fed00",
+    "seed_20260910/results/golden_cases.json": "5632c931190688ffc5a366d89afb3198365b36644a0f9e27c2b7e94952b3d9b4",
+    "seed_20260910/results/high_precision_errors.csv": "6e9ad7072099ff5321580b838338acb059851b6eefb668f86bc1fe912a072feb",
+    "seed_20260910/results/metamorphic_checks.csv": "13b14778c630ed60ce3c4c3e69902eef464a90de19eefab2fcf323d9bc82bcce",
+    "seed_20260910/results/netlist_results.csv": "081654588dfd88734d49828912555285d09a075fe7282f62f3af727cf002285e",
+    "seed_20260910/results/numeric_validation.json": "204cf88ec1bd9e68c3660bf08e5d2fe7d48b49808ced2bf84094c913f474a236",
+    "seed_20260910/results/numerical_audit.json": "204cf88ec1bd9e68c3660bf08e5d2fe7d48b49808ced2bf84094c913f474a236",
+    "seed_20260910/results/rtl_port_results.csv": "081654588dfd88734d49828912555285d09a075fe7282f62f3af727cf002285e",
+    "seed_20260910/results/rtl_results.csv": "aeb887c7f54c2f5cdf0c5afca673290a0853dec877c91cf2cb98cd0f21ed8cc0",
+    "seed_20260910/results/summary.json": "0e91208ab94d98492ee01fefdfe2d6478dff3097f8671bb30edacd0e7f2f8af2",
+    "seed_20260922/build/vectors.txt": "041a14a34ebfe51112733c356da72d5bc00277ab2e780ed1f078997110ab608f",
+    "seed_20260922/relations.json": "32defb092b69983f157d4dd4ad978669561bd09bb3b1d12dc61ac69d9e805265",
+    "seed_20260922/replay/cycle_trace.csv": "341ead821078a79ae3b7c065e36b73d1a4f80f7349dcefbce252a7f6d0f7e824",
+    "seed_20260922/replay/functional_coverage.json": "a7d770de4cd8dc2b477ee734946550f9770cba7bbba271ece886614254427e76",
+    "seed_20260922/replay/rtl_results.csv": "954d10343de12bf560298961850abf199f251c484144ddbdb0c30b43a7d8f2b2",
+    "seed_20260922/results/accuracy.csv": "fbb3f71cc9d3416a4b7e7a328ee404ca1ab2479f8f6150e23659e91b7756d1cf",
+    "seed_20260922/results/attention.vcd": "ef857290407493f570584f380010c457c8572737f2a75d4940fe20a10f847bdb",
+    "seed_20260922/results/cycle_trace.csv": "341ead821078a79ae3b7c065e36b73d1a4f80f7349dcefbce252a7f6d0f7e824",
+    "seed_20260922/results/functional_coverage.json": "a7d770de4cd8dc2b477ee734946550f9770cba7bbba271ece886614254427e76",
+    "seed_20260922/results/golden_cases.json": "f1e50e51966012cf40910ab03de4b64404069b6d4af4a017a81f0fcd84ae6532",
+    "seed_20260922/results/high_precision_errors.csv": "4c072d972258043f2cec207155e3a6e3b029530d75bd2eeef5b30654daf635fa",
+    "seed_20260922/results/metamorphic_checks.csv": "3bf1e4c57ee198da2dbd6b3706ee9c33879fae29bf7d243c4f1f717a96525086",
+    "seed_20260922/results/netlist_results.csv": "22c3cd27940c5d54c67379a0882dea265e8811b2369b11a08fbd940d7049f83a",
+    "seed_20260922/results/numeric_validation.json": "0feb08317974b74531ed39b4ba696328f96bcaaf30acd9f021aa9a28ea918864",
+    "seed_20260922/results/numerical_audit.json": "0feb08317974b74531ed39b4ba696328f96bcaaf30acd9f021aa9a28ea918864",
+    "seed_20260922/results/rtl_port_results.csv": "22c3cd27940c5d54c67379a0882dea265e8811b2369b11a08fbd940d7049f83a",
+    "seed_20260922/results/rtl_results.csv": "954d10343de12bf560298961850abf199f251c484144ddbdb0c30b43a7d8f2b2",
+    "seed_20260922/results/summary.json": "55b2b265da763bd433d8296954ed40a204ac63cc660ac105f0aeb0abd17e37a8",
+    "seed_8675309/build/vectors.txt": "9f9ab8f52bfda7f3a08800dc7db93b17642003a080e05d106354f8386ce7a126",
+    "seed_8675309/relations.json": "6e0cd6b555265ad2fc4e281b2304d31340346f524d27efa1173df86a4bd28186",
+    "seed_8675309/replay/cycle_trace.csv": "341ead821078a79ae3b7c065e36b73d1a4f80f7349dcefbce252a7f6d0f7e824",
+    "seed_8675309/replay/functional_coverage.json": "fff62d028aab2847231fe4625faeb727d1cebf62cd85a21e85fd9e83c42c7086",
+    "seed_8675309/replay/rtl_results.csv": "7b558aaf1365d76eeceddbbad7d4721290afa3de8ada4232fa9124e003574a05",
+    "seed_8675309/results/accuracy.csv": "885a96d803d2223b90f26f8a7673aa3a4b1bbf5c4e22fb5381dbb8667b4159fc",
+    "seed_8675309/results/attention.vcd": "0c459b276c8183eaad056c991f3d43565f611a870d0a9e27c3b6a5c4b9edd52f",
+    "seed_8675309/results/cycle_trace.csv": "341ead821078a79ae3b7c065e36b73d1a4f80f7349dcefbce252a7f6d0f7e824",
+    "seed_8675309/results/functional_coverage.json": "fff62d028aab2847231fe4625faeb727d1cebf62cd85a21e85fd9e83c42c7086",
+    "seed_8675309/results/golden_cases.json": "7fafa4a258d6c2855fe523d0103046cdade11112d5f0c2dfca462fb442642c41",
+    "seed_8675309/results/high_precision_errors.csv": "0a3172be49ddb55374be1f5662433a4ae6f668c18076214b8f8ef16076343fda",
+    "seed_8675309/results/metamorphic_checks.csv": "927a7393f90e15867c2ff5a2668686fdbf93a0f7f0e7cfb8dea1df1bcca72aa0",
+    "seed_8675309/results/netlist_results.csv": "e914f0d9a733db4a894b3e7b2adfcca79fd0b9733fff620af38c0d1f247e8f7e",
+    "seed_8675309/results/numeric_validation.json": "2b3eec91e83ad47f2edbd03a5d7dee9a16804256c312591edba90f9e37ac7f82",
+    "seed_8675309/results/numerical_audit.json": "2b3eec91e83ad47f2edbd03a5d7dee9a16804256c312591edba90f9e37ac7f82",
+    "seed_8675309/results/rtl_port_results.csv": "e914f0d9a733db4a894b3e7b2adfcca79fd0b9733fff620af38c0d1f247e8f7e",
+    "seed_8675309/results/rtl_results.csv": "7b558aaf1365d76eeceddbbad7d4721290afa3de8ada4232fa9124e003574a05",
+    "seed_8675309/results/summary.json": "fae25e581deb79508bd0e2628c389963de38cf65983ee9204da0d2b39cfee1d3"
+  },
+  "verification_scope": "RTL_ONLY",
+  "attention_cases": 1725,
+  "attention_outputs": 6900,
+  "netlist_cases": 0,
+  "max_abs_error": 28.97814299681957
+}

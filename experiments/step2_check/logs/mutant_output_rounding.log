@@ -1,0 +1,2 @@
+FATAL: experiments/step2_check/source/tb/tb_attention.sv:106: output case=1 dim=0 got=1 exp=2
+       Time: 21117000  Scope: tb_attention.run_case

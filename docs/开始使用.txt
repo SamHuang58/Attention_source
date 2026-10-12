@@ -1,0 +1,89 @@
+Attention：从输入到真实电路仿真
+
+第一次使用只做这三步：
+1. 回到 Attention_source 文件夹，双击“开始验证.command”。
+2. 等待终端出现“Attention RTL 验证：通过”。它会自动打开结果摘要和原生波形窗口。
+3. 先确认预期输出、实际输出、暂停版输出三行一致。默认应为 [3, 1, -1, 1]。
+
+这不是 HTML。Icarus Verilog 运行 RTL，Surfer 显示真实 VCD 波形。
+本机已经安装 Icarus Verilog 13.0 和 Surfer 0.7.0。首次换电脑需准备 Python 3.10+、
+Icarus Verilog 和 Surfer；macOS 可用 brew install icarus-verilog surfer。
+macOS 的 .command 不适用于 Windows；跨平台终端入口为 python scripts/demo.py。
+
+一、先看结果，再看波形
+
+每次创建一个独立 experiments/demo_时间戳 目录，不会覆盖以前的结果。
+summary.txt：本次通过/失败、检查范围、预期和实际输出。
+demo/result.txt：输入、Score、权重、L、ACC 计算表（Python 参考，已与 RTL 逐项核对）。
+demo/pause.svg：暂停片段，每拍采样一次。
+demo/output.svg：输出片段，每拍采样一次。
+demo/results/attention.vcd：完整连续波形，给 Surfer 打开。
+demo/results/cycle_trace.csv：上升沿后 1ns 的原始采样。
+logs/：逐条运行日志。manifest.json：工具版本、源码哈希、参数和验证范围。
+
+“查看上次波形.command”只打开最近一次尝试的结果，不会重跑。
+如果最近一次尝试失败，它会拒绝打开以前的通过结果，避免误认。
+
+二、波形窗口怎么读
+
+横轴是时间；每一行是一条电路信号。
+clk：时钟，每 10ns 一拍；从低到高的边沿进行寄存器更新。
+start：启动一轮，启动当拍不接收输入。
+q_valid / kv_valid：外部数据有效；data_ready：电路当前允许接收。
+state：阶段编号，0空闲、1装载Q、2装载KV、3点积、4查表、5累加、6启动除法、7等除法、8输出。
+dim：当前维度0..3；token：当前组号0..7。
+out_valid：为1时 out_data 才有效。done：和第4个输出同拍为1。
+
+默认先列出关键线。完整仿真包含两次相同输入：正常版、暂停版。
+先打开 demo/pause.svg：q_valid连续三拍为0时，dim保持1；有效输入恢复后才前进。
+再打开 demo/output.svg：四拍out_valid=1，最后一拍done=1。
+采样图不是完整连续波形，不能用它观察时钟边沿之间的变化；精确变化请看VCD。
+
+Surfer 窗口里按空格可打开命令栏，输入 zoom_fit 回到全局。
+用鼠标点击选中一条信号，在该信号右键菜单里选择显示格式：
+state/dim/token 用无符号十进制；q_in/k_in/v_in/out_data 用有符号十进制。
+先查看配置好的关键线，不必一次阅读电路内部所有信号。
+
+三、如何换输入
+
+编辑 docs/learning_input.json，只修改数值：
+q 必须有4个整数；k、v各8行，每行4个整数；范围-128..127。
+不要修改电路代码。保存后再次双击“开始验证.command”。
+新输入也会运行正常版和固定暂停版，自动与参考答案核对。
+输入非法会报错，不能把上一轮结果当成这一轮通过。
+
+默认参考：Score=[0,-1,-2,-3,-4,-5,-6,-7]，
+权重编码=[16,6,2,1,0,0,0,0]，实际权重需除16。
+L编码=25，ACC编码=[66,28,-34,24]，最终输出=[3,1,-1,1]。
+
+四、通过究竟代表什么
+
+完整入口先测 3 个固定随机种子，共 1725 个定向/随机/变换/极端案例。
+Score、Weight、L、ACC、O逐项比较，同时检查复位、暂停、忙时启动、输出数量和done对齐。
+每个输入在接收边沿检查是否存入；暂停时检查该位置和计数器不变。
+同一个可执行电路、输入、种子再运行一次，逐字节比较输出、采样和覆盖记录。
+10种错误注入测试必须都失败在预期检查位置，才说明检查确实能发现这些错误。
+之后才执行你选择的演示输入。
+
+通过结论只限于本次测试范围，不代表所有可能输入的数学证明。
+原生波形是仿真结果，不代表 FPGA 实测。此日常入口不做综合；完整交付已另行通过通用综合与网表仿真，见“交付说明.txt”。尚未做物理时序或上板。
+4位小数的权重会量化，与真正浮点softmax的误差单独记录；这不同于RTL计算错误。
+
+五、失败怎么办
+
+先看summary.txt，里面给出失败信息和日志位置。
+Q/KV data capture：输入未正确写入；检查输入阶段、位置编号和写使能。
+load counters advanced without handshake：暂停时位置编号错误地推进。
+output case / ACC mismatch：计算或数据传递不一致。
+done alignment / early output：输出完成信号或有效信号时序错误。
+reproducibility mismatch：同条件重跑记录不一致，不能宣布结果可复现。
+不要删掉失败目录；里面的输入、源码快照和日志用于定位问题。
+
+六、如何重跑留存版本
+
+原始命令和每条工具调用保存在manifest.json，固定种子保存在parameters。
+独立版本可复制实验目录中的source到新目录，把demo/input.json复制进去，
+在该源码目录运行：python3 scripts/run_research.py --skip-netlist --input input.json --name rerun。
+这会使用默认固定的三个种子；如果原实验用了不同参数，按原manifest的parameters填写。
+每次用新名字；比较数值、周期和覆盖结论，不要求运行时间或带日期的VCD文件字节相同。
+Git用于追溯版本，源码SHA256用于确认实际运行的是哪一份代码。

@@ -1,0 +1,2 @@
+LUT PASS: all 524288 input addresses; high-precision reference and monotonicity
+experiments/v2_contract_verified/source/tb/tb_exp_exhaustive.sv:20: $finish called at 524288000 (1ps)

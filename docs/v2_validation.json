@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "verification_scope": "RTL_ONLY",
+  "specification": "2026数字组考核v2.pdf",
+  "specification_sha256": "50e7bc04bcddce49b0c85869feb07196092c15a764e1d526bd4f574fb04ca12a",
+  "baseline_commit": "459323e",
+  "experiment": "experiments/v2_contract_verified",
+  "started_utc": "20261008T113413_938912Z",
+  "simulator": "Icarus Verilog version 13.0 (stable) (v13_0)",
+  "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "reproduce_from": "Attention_source",
+  "command": "python3 scripts/run_research.py --name v2_contract_rerun --skip-netlist",
+  "python_tests": 18,
+  "python_optimized_tests": 18,
+  "attention_cases": 1725,
+  "attention_outputs": 6900,
+  "netlist_cases": 0,
+  "base_cycles": 264,
+  "arithmetic": {
+    "lut_addresses": 524288,
+    "divider_widths": {
+      "1": {
+        "cases": 5,
+        "reset_positions": 1,
+        "all_operand_pairs": true
+      },
+      "2": {
+        "cases": 18,
+        "reset_positions": 2,
+        "all_operand_pairs": true
+      },
+      "4": {
+        "cases": 260,
+        "reset_positions": 4,
+        "all_operand_pairs": true
+      },
+      "8": {
+        "cases": 65544,
+        "reset_positions": 8,
+        "all_operand_pairs": true
+      },
+      "16": {
+        "cases": 2100,
+        "reset_positions": 16,
+        "all_operand_pairs": false
+      },
+      "36": {
+        "cases": 2160,
+        "reset_positions": 36,
+        "all_operand_pairs": false
+      }
+    }
+  },
+  "mutation_checks": [
+    {
+      "defect": "lut_entry",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "done_alignment",
+      "status": "DETECTED",
+      "expected_diagnostic": "done alignment"
+    },
+    {
+      "defect": "output_sign",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "output_rounding",
+      "status": "DETECTED",
+      "expected_diagnostic": "output case="
+    },
+    {
+      "defect": "extra_output_at_final_input",
+      "status": "DETECTED"
+    },
+    {
+      "defect": "false_divide_by_zero_on_completion",
+      "status": "DETECTED"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": 20260910,
+      "summary": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "base_cycles": 264,
+        "min_cycles": 264,
+        "max_cycles": 428,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.1645609490075262,
+        "netlist_cases": 0,
+        "seed": 20260910,
+        "reset_states": 8,
+        "clock_period_ns": 10,
+        "reference": "Independent 80-digit decimal audit; project-defined LUT",
+        "synthesis": "NOT RUN"
+      },
+      "max_abs_error_vs_float": 28.97814299681957,
+      "metamorphic_relations_checked": 224,
+      "vectors_sha256": "73d54a51e4afa1b7b3ef4adafe5635577ed1a605b6731817dea08374e4a10a59",
+      "rtl_results_sha256": "aeb887c7f54c2f5cdf0c5afca673290a0853dec877c91cf2cb98cd0f21ed8cc0"
+    },
+    {
+      "seed": 20260922,
+      "summary": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "base_cycles": 264,
+        "min_cycles": 264,
+        "max_cycles": 435,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.0879327990025167,
+        "netlist_cases": 0,
+        "seed": 20260922,
+        "reset_states": 8,
+        "clock_period_ns": 10,
+        "reference": "Independent 80-digit decimal audit; project-defined LUT",
+        "synthesis": "NOT RUN"
+      },
+      "max_abs_error_vs_float": 28.97814299681957,
+      "metamorphic_relations_checked": 224,
+      "vectors_sha256": "041a14a34ebfe51112733c356da72d5bc00277ab2e780ed1f078997110ab608f",
+      "rtl_results_sha256": "954d10343de12bf560298961850abf199f251c484144ddbdb0c30b43a7d8f2b2"
+    },
+    {
+      "seed": 8675309,
+      "summary": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "base_cycles": 264,
+        "min_cycles": 264,
+        "max_cycles": 425,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.220563226944487,
+        "netlist_cases": 0,
+        "seed": 8675309,
+        "reset_states": 8,
+        "clock_period_ns": 10,
+        "reference": "Independent 80-digit decimal audit; project-defined LUT",
+        "synthesis": "NOT RUN"
+      },
+      "max_abs_error_vs_float": 28.97814299681957,
+      "metamorphic_relations_checked": 224,
+      "vectors_sha256": "9f9ab8f52bfda7f3a08800dc7db93b17642003a080e05d106354f8386ce7a126",
+      "rtl_results_sha256": "7b558aaf1365d76eeceddbbad7d4721290afa3de8ada4232fa9124e003574a05"
+    }
+  ],
+  "max_abs_error_vs_float": 28.97814299681957,
+  "qualification": "RTL matches the documented v2 integer contract. Floating-point comparison measures 4-bit weight quantization error, not RTL/model mismatch. No synthesis, gate-netlist, board or hidden-case acceptance claim.",
+  "source_sha256": {
+    "rtl/attention_ip.sv": "a929662f81737c8df96dbb9e6e25cbe98332e0e7c5a6d25874712682faf7c966",
+    "rtl/exp_lut.sv": "df4de33a409d8356c94d53d95430fd5ae88cd9d1b7414405bf8b2c13193f58a7",
+    "rtl/unsigned_divider.sv": "84f498693c967dfa55fe9b20a95a090f60dc7bc1863078ac626a9114b35e1fed",
+    "tb/tb_attention.sv": "b63709740782f022ac9fba0893ec79a0f5e12a0770c88fca7791fd3451bc3435",
+    "tb/tb_divider.sv": "168f2e8982e5f47bcd202a4e30582e4c4706b3e83f491cbb47a852cacd95912d",
+    "tb/tb_divider_exhaustive.sv": "6c9c09cd3e53ac03ab782abd99792fdd115a0f7b018c49d29c00818106421690",
+    "tb/tb_exp_exhaustive.sv": "0b29156239cd996e84cdbfa6c68e551c10549aa9c3c166304c2a10c791cb195c",
+    "tb/tb_netlist.sv": "cd2c8665451a449176bf0ee8e8822616e8dbefd375093324d5a6293be9cd20e9",
+    "model/golden.py": "20c76b1c1cc62d68ad2b352436fabe9813363c61300af25d1b916ab467c96b7d",
+    "model/research_validation.py": "d9d43d384710e7f2ead2c08fa3c91ee4c264ea7b527ed6363753584882989d69",
+    "scripts/fetch_iverilog.py": "7cb316485146400b9bb995ff711952dde53c26ec7993ceb43df3c2fd5edbde12",
+    "scripts/launch.py": "5349edd80c7e0dc4cffe88c8279dfdbf049a111e39552dd4890a17d70c5d6e1d",
+    "scripts/run.py": "023a4031f9d3c881e19ce2c2b4b7d9c5768d517264d056e8e757b5293c41fdca",
+    "scripts/run_research.py": "83a0a8bd9e29d3ec33e47f046ce1c699dd42592521c7393a8e0fa9f5dc5424c0",
+    "scripts/setup_simulation.ps1": "12769a58a6909d6472c47d5b0d4e0406a498f99ed21ea875fd3d7b02bb86a168",
+    "scripts/synth.ys": "47bf59849479b1f35d8547e729a5049f58654f64c5179480d6fc39c86af3b5fc",
+    "tests/test_reference.py": "b9cd5d33c3d656fa7086399d71bb46f5651c94035381ceae379c866535f8129b",
+    "tests/test_runner.py": "128cceb3d30601170b39a5e35bdfa1e6fa9681b444e2cc446fc62781e61b0469",
+    "requirements-simulation.lock.txt": "f260119c89ea65c71e05d799a7e993222f636baa504b99ef844353feb4146b1a"
+  },
+  "experiment_manifest_sha256": "64355286858b9fa8a92ef2149396014ef1630f70c028f049ed8377bc8b756c77",
+  "prior_failed_run": "experiments/v2_contract_check retained: the LUT mutation was caught at output comparison before the old expected weight diagnostic. Diagnostic expectation was corrected; final run passed all six injected defects."
+}

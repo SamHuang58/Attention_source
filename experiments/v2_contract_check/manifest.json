@@ -1,0 +1,994 @@
+{
+  "schema_version": 1,
+  "status": "FAIL",
+  "started_utc": "20261008T113241_042604Z",
+  "parameters": {
+    "name": "v2_contract_check",
+    "seeds": [
+      20260910,
+      20260922,
+      8675309
+    ],
+    "random": 256,
+    "groups": 32,
+    "max_stall": 7,
+    "netlist_stall": 2,
+    "timeout": 900,
+    "skip_netlist": true,
+    "skip_mutations": false
+  },
+  "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "platform": "darwin",
+  "scope": "S=8,d=4; v2 UQ1.4 exp LUT, signed int8 output, nearest ties away from zero; zero-delay functional simulation",
+  "commands": [
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-V"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/iverilog_version.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 3.871
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/v2_contract_check/build/tb_attention.vvp",
+        "experiments/v2_contract_check/source/rtl/exp_lut.sv",
+        "experiments/v2_contract_check/source/rtl/unsigned_divider.sv",
+        "experiments/v2_contract_check/source/rtl/attention_ip.sv",
+        "experiments/v2_contract_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/tb_attention_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.134
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_netlist",
+        "-o",
+        "experiments/v2_contract_check/build/tb_ports.vvp",
+        "experiments/v2_contract_check/source/rtl/exp_lut.sv",
+        "experiments/v2_contract_check/source/rtl/unsigned_divider.sv",
+        "experiments/v2_contract_check/source/rtl/attention_ip.sv",
+        "experiments/v2_contract_check/source/tb/tb_netlist.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/tb_ports_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/v2_contract_check/source/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/python_tests.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.401
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/v2_contract_check/source/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/python_optimized_tests.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.615
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_exp_exhaustive",
+        "-o",
+        "experiments/v2_contract_check/build/tb_exp_exhaustive.vvp",
+        "experiments/v2_contract_check/source/rtl/exp_lut.sv",
+        "experiments/v2_contract_check/source/tb/tb_exp_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/tb_exp_exhaustive_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/tb_exp_exhaustive.vvp",
+        "+EXPECTED=experiments/v2_contract_check/build/independent_lut.txt"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/lut_all_addresses.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.566
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=1",
+        "-o",
+        "experiments/v2_contract_check/build/divider_w1.vvp",
+        "experiments/v2_contract_check/source/rtl/unsigned_divider.sv",
+        "experiments/v2_contract_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w1_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/divider_w1.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w1.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.005
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=2",
+        "-o",
+        "experiments/v2_contract_check/build/divider_w2.vvp",
+        "experiments/v2_contract_check/source/rtl/unsigned_divider.sv",
+        "experiments/v2_contract_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w2_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/divider_w2.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w2.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.01
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=4",
+        "-o",
+        "experiments/v2_contract_check/build/divider_w4.vvp",
+        "experiments/v2_contract_check/source/rtl/unsigned_divider.sv",
+        "experiments/v2_contract_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w4_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/divider_w4.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w4.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.01
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=8",
+        "-o",
+        "experiments/v2_contract_check/build/divider_w8.vvp",
+        "experiments/v2_contract_check/source/rtl/unsigned_divider.sv",
+        "experiments/v2_contract_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w8_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/divider_w8.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w8.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.991
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=16",
+        "-o",
+        "experiments/v2_contract_check/build/divider_w16.vvp",
+        "experiments/v2_contract_check/source/rtl/unsigned_divider.sv",
+        "experiments/v2_contract_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w16_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/divider_w16.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w16.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.077
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_divider_exhaustive",
+        "-Ptb_divider_exhaustive.W=36",
+        "-o",
+        "experiments/v2_contract_check/build/divider_w36.vvp",
+        "experiments/v2_contract_check/source/rtl/unsigned_divider.sv",
+        "experiments/v2_contract_check/source/tb/tb_divider_exhaustive.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w36_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/divider_w36.vvp"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/divider_w36.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.187
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/v2_contract_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/v2_contract_check/seed_20260910/results",
+        "+SEED=20260910",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=7"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/seed_20260910_rtl.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 1.113
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/tb_ports.vvp",
+        "+VECTORS=experiments/v2_contract_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/v2_contract_check/seed_20260910/results",
+        "+SEED=20260910",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=2"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/seed_20260910_rtl_ports.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.674
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/v2_contract_check/seed_20260922/build/vectors.txt",
+        "+RESULTS=experiments/v2_contract_check/seed_20260922/results",
+        "+SEED=20260922",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=7"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/seed_20260922_rtl.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 1.061
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/tb_ports.vvp",
+        "+VECTORS=experiments/v2_contract_check/seed_20260922/build/vectors.txt",
+        "+RESULTS=experiments/v2_contract_check/seed_20260922/results",
+        "+SEED=20260922",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=2"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/seed_20260922_rtl_ports.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.674
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/tb_attention.vvp",
+        "+VECTORS=experiments/v2_contract_check/seed_8675309/build/vectors.txt",
+        "+RESULTS=experiments/v2_contract_check/seed_8675309/results",
+        "+SEED=8675309",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=7"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/seed_8675309_rtl.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 1.056
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/tb_ports.vvp",
+        "+VECTORS=experiments/v2_contract_check/seed_8675309/build/vectors.txt",
+        "+RESULTS=experiments/v2_contract_check/seed_8675309/results",
+        "+SEED=8675309",
+        "+WATCHDOG_CYCLES=2000000",
+        "+MAX_STALL=2"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/seed_8675309_rtl_ports.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.678
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-B",
+        "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_attention",
+        "-o",
+        "experiments/v2_contract_check/build/mutant_lut_entry.vvp",
+        "experiments/v2_contract_check/mutations/lut_entry.sv",
+        "experiments/v2_contract_check/source/rtl/unsigned_divider.sv",
+        "experiments/v2_contract_check/source/rtl/attention_ip.sv",
+        "experiments/v2_contract_check/source/tb/tb_attention.sv"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/mutant_lut_entry_compile.log",
+      "expected_failure": false,
+      "status": "FINISHED",
+      "exit_code": 0,
+      "wall_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "experiments/v2_contract_check/build/mutant_lut_entry.vvp",
+        "+VECTORS=experiments/v2_contract_check/seed_20260910/build/vectors.txt",
+        "+RESULTS=experiments/v2_contract_check/mutations/observations",
+        "+NO_WAVE",
+        "+MAX_STALL=0"
+      ],
+      "cwd": "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source",
+      "log": "experiments/v2_contract_check/logs/mutant_lut_entry.log",
+      "expected_failure": true,
+      "status": "FINISHED",
+      "exit_code": 1,
+      "wall_seconds": 0.02
+    }
+  ],
+  "source_sha256": {
+    "rtl/attention_ip.sv": "a929662f81737c8df96dbb9e6e25cbe98332e0e7c5a6d25874712682faf7c966",
+    "rtl/exp_lut.sv": "df4de33a409d8356c94d53d95430fd5ae88cd9d1b7414405bf8b2c13193f58a7",
+    "rtl/unsigned_divider.sv": "84f498693c967dfa55fe9b20a95a090f60dc7bc1863078ac626a9114b35e1fed",
+    "tb/tb_attention.sv": "b63709740782f022ac9fba0893ec79a0f5e12a0770c88fca7791fd3451bc3435",
+    "tb/tb_divider.sv": "168f2e8982e5f47bcd202a4e30582e4c4706b3e83f491cbb47a852cacd95912d",
+    "tb/tb_divider_exhaustive.sv": "6c9c09cd3e53ac03ab782abd99792fdd115a0f7b018c49d29c00818106421690",
+    "tb/tb_exp_exhaustive.sv": "0b29156239cd996e84cdbfa6c68e551c10549aa9c3c166304c2a10c791cb195c",
+    "tb/tb_netlist.sv": "cd2c8665451a449176bf0ee8e8822616e8dbefd375093324d5a6293be9cd20e9",
+    "model/golden.py": "20c76b1c1cc62d68ad2b352436fabe9813363c61300af25d1b916ab467c96b7d",
+    "model/research_validation.py": "d9d43d384710e7f2ead2c08fa3c91ee4c264ea7b527ed6363753584882989d69",
+    "scripts/fetch_iverilog.py": "7cb316485146400b9bb995ff711952dde53c26ec7993ceb43df3c2fd5edbde12",
+    "scripts/launch.py": "5349edd80c7e0dc4cffe88c8279dfdbf049a111e39552dd4890a17d70c5d6e1d",
+    "scripts/run.py": "023a4031f9d3c881e19ce2c2b4b7d9c5768d517264d056e8e757b5293c41fdca",
+    "scripts/run_research.py": "cda7fe8993580d67c8380270922b153b8049b91087ed8b41871aa8169abdbe41",
+    "scripts/setup_simulation.ps1": "12769a58a6909d6472c47d5b0d4e0406a498f99ed21ea875fd3d7b02bb86a168",
+    "scripts/synth.ys": "47bf59849479b1f35d8547e729a5049f58654f64c5179480d6fc39c86af3b5fc",
+    "tests/test_reference.py": "b9cd5d33c3d656fa7086399d71bb46f5651c94035381ceae379c866535f8129b",
+    "tests/test_runner.py": "128cceb3d30601170b39a5e35bdfa1e6fa9681b444e2cc446fc62781e61b0469",
+    "requirements-simulation.lock.txt": "f260119c89ea65c71e05d799a7e993222f636baa504b99ef844353feb4146b1a"
+  },
+  "seed_runs": [
+    {
+      "seed": 20260910,
+      "folder": "experiments/v2_contract_check/seed_20260910",
+      "summary": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "base_cycles": 264,
+        "min_cycles": 264,
+        "max_cycles": 428,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.1645609490075262,
+        "netlist_cases": 0,
+        "seed": 20260910,
+        "reset_states": 8,
+        "clock_period_ns": 10,
+        "reference": "Independent 80-digit decimal audit; project-defined LUT",
+        "synthesis": "NOT RUN"
+      },
+      "numerical": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.1645609490075262,
+        "rmse": 3.220373659161168,
+        "p99_abs_error": 13.035060106068453,
+        "worst_case": "lut_distance_4",
+        "worst_case_index": 13,
+        "worst_dimension": 0,
+        "decimal_precision": 80,
+        "sampled_validation_only": true,
+        "scope": "Sampled validation of supplied cases; no exhaustive input-domain proof.",
+        "independent_lut": [
+          16,
+          6,
+          2,
+          1
+        ],
+        "conservative_abs_error_bound": 128.0,
+        "conservative_abs_error_bound_decimal": "128.0",
+        "quantile_method": "nearest rank",
+        "convex_tolerance": 0.0,
+        "internal_reference_fields_checked": [
+          "scores",
+          "max_score",
+          "weights",
+          "L",
+          "acc",
+          "output_int"
+        ],
+        "rtl_fields_checked": [
+          "L",
+          "o0",
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "metamorphic_relations_checked": 224,
+        "metamorphic_relation_counts": {
+          "constant_values": 32,
+          "key_translation": 32,
+          "qk_feature_permutation": 32,
+          "qk_negation": 32,
+          "token_permutation": 32,
+          "value_negation": 32,
+          "value_permutation": 32
+        },
+        "strata": {
+          "adversarial": {
+            "cases": 32,
+            "outputs": 128,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 10.561974364122497,
+            "rmse": 11.405794452273915,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "adversarial_000",
+            "worst_case_index": 543,
+            "worst_dimension": 0
+          },
+          "directed": {
+            "cases": 31,
+            "outputs": 124,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 2.624221023936616,
+            "rmse": 6.510160729906922,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "lut_distance_4",
+            "worst_case_index": 13,
+            "worst_dimension": 0
+          },
+          "metamorphic": {
+            "cases": 256,
+            "outputs": 1024,
+            "max_abs_error": 3.726727601610955,
+            "mean_abs_error": 0.405212917172342,
+            "rmse": 0.8362652338908855,
+            "p99_abs_error": 3.201560853382813,
+            "worst_case": "metamorphic_012_base",
+            "worst_case_index": 383,
+            "worst_dimension": 3
+          },
+          "random_full_int8": {
+            "cases": 86,
+            "outputs": 344,
+            "max_abs_error": 0.4500174145075289,
+            "mean_abs_error": 0.002652319606971604,
+            "rmse": 0.02865278197030635,
+            "p99_abs_error": 0.09148705679548665,
+            "worst_case": "random_0_0195",
+            "worst_case_index": 226,
+            "worst_dimension": 2
+          },
+          "random_near_ties": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 6.4492612765987305,
+            "mean_abs_error": 1.0049983681981958,
+            "rmse": 1.460594753861937,
+            "p99_abs_error": 4.690182836484684,
+            "worst_case": "random_2_0242",
+            "worst_case_index": 273,
+            "worst_dimension": 1
+          },
+          "random_small_scores": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 7.800876570883932,
+            "mean_abs_error": 0.716482902425963,
+            "rmse": 1.2174316443031752,
+            "p99_abs_error": 4.522229488628272,
+            "worst_case": "random_1_0184",
+            "worst_case_index": 215,
+            "worst_dimension": 3
+          }
+        },
+        "detailed_errors_file": "high_precision_errors.csv",
+        "metamorphic_checks_file": "metamorphic_checks.csv",
+        "failures": []
+      },
+      "vectors_sha256": "73d54a51e4afa1b7b3ef4adafe5635577ed1a605b6731817dea08374e4a10a59",
+      "rtl_results_sha256": "aeb887c7f54c2f5cdf0c5afca673290a0853dec877c91cf2cb98cd0f21ed8cc0"
+    },
+    {
+      "seed": 20260922,
+      "folder": "experiments/v2_contract_check/seed_20260922",
+      "summary": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "base_cycles": 264,
+        "min_cycles": 264,
+        "max_cycles": 435,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.0879327990025167,
+        "netlist_cases": 0,
+        "seed": 20260922,
+        "reset_states": 8,
+        "clock_period_ns": 10,
+        "reference": "Independent 80-digit decimal audit; project-defined LUT",
+        "synthesis": "NOT RUN"
+      },
+      "numerical": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.0879327990025167,
+        "rmse": 3.148317170854808,
+        "p99_abs_error": 13.281676573983521,
+        "worst_case": "lut_distance_4",
+        "worst_case_index": 13,
+        "worst_dimension": 0,
+        "decimal_precision": 80,
+        "sampled_validation_only": true,
+        "scope": "Sampled validation of supplied cases; no exhaustive input-domain proof.",
+        "independent_lut": [
+          16,
+          6,
+          2,
+          1
+        ],
+        "conservative_abs_error_bound": 128.0,
+        "conservative_abs_error_bound_decimal": "128.0",
+        "quantile_method": "nearest rank",
+        "convex_tolerance": 0.0,
+        "internal_reference_fields_checked": [
+          "scores",
+          "max_score",
+          "weights",
+          "L",
+          "acc",
+          "output_int"
+        ],
+        "rtl_fields_checked": [
+          "L",
+          "o0",
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "metamorphic_relations_checked": 224,
+        "metamorphic_relation_counts": {
+          "constant_values": 32,
+          "key_translation": 32,
+          "qk_feature_permutation": 32,
+          "qk_negation": 32,
+          "token_permutation": 32,
+          "value_negation": 32,
+          "value_permutation": 32
+        },
+        "strata": {
+          "adversarial": {
+            "cases": 32,
+            "outputs": 128,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 10.379797719225955,
+            "rmse": 11.184315742665152,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "adversarial_000",
+            "worst_case_index": 543,
+            "worst_dimension": 0
+          },
+          "directed": {
+            "cases": 31,
+            "outputs": 124,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 2.624221023936616,
+            "rmse": 6.510160729906922,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "lut_distance_4",
+            "worst_case_index": 13,
+            "worst_dimension": 0
+          },
+          "metamorphic": {
+            "cases": 256,
+            "outputs": 1024,
+            "max_abs_error": 3.5265015851196746,
+            "mean_abs_error": 0.2644491120171595,
+            "rmse": 0.5979549905895514,
+            "p99_abs_error": 2.2857523281172805,
+            "worst_case": "metamorphic_024_token_permutation",
+            "worst_case_index": 480,
+            "worst_dimension": 2
+          },
+          "random_full_int8": {
+            "cases": 86,
+            "outputs": 344,
+            "max_abs_error": 1.8454056235106543e-22,
+            "mean_abs_error": 1.5602532806049383e-24,
+            "rmse": 1.5840958751206646e-23,
+            "p99_abs_error": 3.5088698475202585e-23,
+            "worst_case": "random_0_0141",
+            "worst_case_index": 172,
+            "worst_dimension": 1
+          },
+          "random_near_ties": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 6.3141114504245675,
+            "mean_abs_error": 0.8065779699984879,
+            "rmse": 1.1984465550938732,
+            "p99_abs_error": 3.7950217039852885,
+            "worst_case": "random_2_0020",
+            "worst_case_index": 51,
+            "worst_dimension": 1
+          },
+          "random_small_scores": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 8.628352854884591,
+            "mean_abs_error": 0.8917515357990251,
+            "rmse": 1.4101879844496625,
+            "p99_abs_error": 4.585327328424223,
+            "worst_case": "random_1_0196",
+            "worst_case_index": 227,
+            "worst_dimension": 0
+          }
+        },
+        "detailed_errors_file": "high_precision_errors.csv",
+        "metamorphic_checks_file": "metamorphic_checks.csv",
+        "failures": []
+      },
+      "vectors_sha256": "041a14a34ebfe51112733c356da72d5bc00277ab2e780ed1f078997110ab608f",
+      "rtl_results_sha256": "954d10343de12bf560298961850abf199f251c484144ddbdb0c30b43a7d8f2b2"
+    },
+    {
+      "seed": 8675309,
+      "folder": "experiments/v2_contract_check/seed_8675309",
+      "summary": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "base_cycles": 264,
+        "min_cycles": 264,
+        "max_cycles": 425,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.220563226944487,
+        "netlist_cases": 0,
+        "seed": 8675309,
+        "reset_states": 8,
+        "clock_period_ns": 10,
+        "reference": "Independent 80-digit decimal audit; project-defined LUT",
+        "synthesis": "NOT RUN"
+      },
+      "numerical": {
+        "status": "PASS",
+        "cases": 575,
+        "outputs": 2300,
+        "max_abs_error": 28.97814299681957,
+        "mean_abs_error": 1.220563226944487,
+        "rmse": 3.38459955428334,
+        "p99_abs_error": 14.487454277562344,
+        "worst_case": "lut_distance_4",
+        "worst_case_index": 13,
+        "worst_dimension": 0,
+        "decimal_precision": 80,
+        "sampled_validation_only": true,
+        "scope": "Sampled validation of supplied cases; no exhaustive input-domain proof.",
+        "independent_lut": [
+          16,
+          6,
+          2,
+          1
+        ],
+        "conservative_abs_error_bound": 128.0,
+        "conservative_abs_error_bound_decimal": "128.0",
+        "quantile_method": "nearest rank",
+        "convex_tolerance": 0.0,
+        "internal_reference_fields_checked": [
+          "scores",
+          "max_score",
+          "weights",
+          "L",
+          "acc",
+          "output_int"
+        ],
+        "rtl_fields_checked": [
+          "L",
+          "o0",
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "metamorphic_relations_checked": 224,
+        "metamorphic_relation_counts": {
+          "constant_values": 32,
+          "key_translation": 32,
+          "qk_feature_permutation": 32,
+          "qk_negation": 32,
+          "token_permutation": 32,
+          "value_negation": 32,
+          "value_permutation": 32
+        },
+        "strata": {
+          "adversarial": {
+            "cases": 32,
+            "outputs": 128,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 11.429396482998946,
+            "rmse": 12.174006184675406,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "adversarial_000",
+            "worst_case_index": 543,
+            "worst_dimension": 0
+          },
+          "directed": {
+            "cases": 31,
+            "outputs": 124,
+            "max_abs_error": 28.97814299681957,
+            "mean_abs_error": 2.624221023936616,
+            "rmse": 6.510160729906922,
+            "p99_abs_error": 28.97814299681957,
+            "worst_case": "lut_distance_4",
+            "worst_case_index": 13,
+            "worst_dimension": 0
+          },
+          "metamorphic": {
+            "cases": 256,
+            "outputs": 1024,
+            "max_abs_error": 6.404729805277193,
+            "mean_abs_error": 0.43788355092906317,
+            "rmse": 0.9617568557634072,
+            "p99_abs_error": 4.90707703409268,
+            "worst_case": "metamorphic_031_token_permutation",
+            "worst_case_index": 536,
+            "worst_dimension": 0
+          },
+          "random_full_int8": {
+            "cases": 86,
+            "outputs": 344,
+            "max_abs_error": 8.11162955912125e-63,
+            "mean_abs_error": 6.642560305481948e-65,
+            "rmse": 6.544330925850621e-64,
+            "p99_abs_error": 3.23404838631631e-63,
+            "worst_case": "random_0_0090",
+            "worst_case_index": 121,
+            "worst_dimension": 2
+          },
+          "random_near_ties": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 6.012227989418985,
+            "mean_abs_error": 0.838862806694375,
+            "rmse": 1.2848500952265953,
+            "p99_abs_error": 5.025395937639326,
+            "worst_case": "random_2_0236",
+            "worst_case_index": 267,
+            "worst_dimension": 1
+          },
+          "random_small_scores": {
+            "cases": 85,
+            "outputs": 340,
+            "max_abs_error": 6.107324377206253,
+            "mean_abs_error": 0.839185749273137,
+            "rmse": 1.3431819408067363,
+            "p99_abs_error": 4.360508518023943,
+            "worst_case": "random_1_0166",
+            "worst_case_index": 197,
+            "worst_dimension": 1
+          }
+        },
+        "detailed_errors_file": "high_precision_errors.csv",
+        "metamorphic_checks_file": "metamorphic_checks.csv",
+        "failures": []
+      },
+      "vectors_sha256": "9f9ab8f52bfda7f3a08800dc7db93b17642003a080e05d106354f8386ce7a126",
+      "rtl_results_sha256": "7b558aaf1365d76eeceddbbad7d4721290afa3de8ada4232fa9124e003574a05"
+    }
+  ],
+  "elapsed_seconds": 12.656,
+  "simulator": "Icarus Verilog version 13.0 (stable) (v13_0)",
+  "simulator_sha256": "5df81b269e1ff2c965dd00ad5a8071ca17717f416003b3661a18b2dde430e73c",
+  "vvp_sha256": "1a9bdf1f40102f64f015514f5069f99a5dd9f9f38de343743ef4c169fb358392",
+  "arithmetic": {
+    "lut_addresses": 524288,
+    "divider_widths": {
+      "1": {
+        "cases": 5,
+        "reset_positions": 1,
+        "all_operand_pairs": true
+      },
+      "2": {
+        "cases": 18,
+        "reset_positions": 2,
+        "all_operand_pairs": true
+      },
+      "4": {
+        "cases": 260,
+        "reset_positions": 4,
+        "all_operand_pairs": true
+      },
+      "8": {
+        "cases": 65544,
+        "reset_positions": 8,
+        "all_operand_pairs": true
+      },
+      "16": {
+        "cases": 2100,
+        "reset_positions": 16,
+        "all_operand_pairs": false
+      },
+      "36": {
+        "cases": 2160,
+        "reset_positions": 36,
+        "all_operand_pairs": false
+      }
+    }
+  },
+  "error": "mutation lut_entry: failure was unrelated to injected defect"
+}

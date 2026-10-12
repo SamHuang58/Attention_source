@@ -1,0 +1,2 @@
+FATAL: experiments/ppt_20261009_evidence/source/tb/tb_netlist.sv:75: netlist final KV handshake
+       Time: 407000  Scope: tb_netlist

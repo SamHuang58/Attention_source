@@ -1,0 +1,2 @@
+FATAL: experiments/demo_20261008T121114_569553Z/source/tb/tb_netlist.sv:75: netlist final KV handshake
+       Time: 407000  Scope: tb_netlist

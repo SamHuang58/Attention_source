@@ -1,0 +1,99 @@
+{
+   "creator": "Yosys 0.69+post (git sha1 143eb14f9cc55d6f8927e68523b0c9d2166ed02c, Release, AppleClang clang++ 21.0.0.21000101)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\attention_ip": {
+         "num_wires":         1978,
+         "num_wire_bits":     5630,
+         "num_pub_wires":     128,
+         "num_pub_wire_bits": 1221,
+         "num_ports":         12,
+         "num_port_bits":     40,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         4607,
+         "num_submodules":       2,
+         "num_cells_by_type": {
+            "$_AND_": 1731,
+            "$_DFFE_PN0P_": 125,
+            "$_DFFE_PN1P_": 1,
+            "$_DFFE_PP_": 760,
+            "$_DFF_PN0_": 2,
+            "$_MUX_": 230,
+            "$_NOT_": 163,
+            "$_OR_": 1131,
+            "$_XOR_": 464,
+            "$paramod\\unsigned_divider\\W=s32'00000000000000000000000000100100": 1,
+            "exp_lut": 1
+         }
+      },
+      "$paramod\\unsigned_divider\\W=s32'00000000000000000000000000100100": {
+         "num_wires":         163,
+         "num_wire_bits":     851,
+         "num_pub_wires":     16,
+         "num_pub_wire_bits": 302,
+         "num_ports":         9,
+         "num_port_bits":     114,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         696,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 154,
+            "$_DFFE_PN0P_": 151,
+            "$_DFF_PN0_": 2,
+            "$_MUX_": 152,
+            "$_NOT_": 49,
+            "$_OR_": 112,
+            "$_XOR_": 76
+         }
+      },
+      "\\exp_lut": {
+         "num_wires":         30,
+         "num_wire_bits":     108,
+         "num_pub_wires":     2,
+         "num_pub_wire_bits": 24,
+         "num_ports":         2,
+         "num_port_bits":     24,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         47,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_MUX_": 4,
+            "$_NOT_": 6,
+            "$_OR_": 37
+         }
+      }
+   },
+      "design": {
+         "num_wires":         2171,
+         "num_wire_bits":     6589,
+         "num_pub_wires":     146,
+         "num_pub_wire_bits": 1547,
+         "num_ports":         23,
+         "num_port_bits":     178,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5350,
+         "num_submodules":       2,
+         "num_cells_by_type": {
+            "$_AND_": 1885,
+            "$_DFFE_PN0P_": 276,
+            "$_DFFE_PN1P_": 1,
+            "$_DFFE_PP_": 760,
+            "$_DFF_PN0_": 4,
+            "$_MUX_": 386,
+            "$_NOT_": 218,
+            "$_OR_": 1280,
+            "$_XOR_": 540,
+            "$paramod\\unsigned_divider\\W=s32'00000000000000000000000000100100": 1,
+            "exp_lut": 1
+         }
+      }
+}
+

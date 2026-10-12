@@ -1,0 +1,18 @@
+variable_add tb_attention.clk
+variable_add tb_attention.rst_n
+variable_add tb_attention.start
+variable_add tb_attention.q_valid
+variable_add tb_attention.kv_valid
+variable_add tb_attention.data_ready
+variable_add tb_attention.q_in
+variable_add tb_attention.k_in
+variable_add tb_attention.v_in
+variable_add tb_attention.dut.state
+variable_add tb_attention.dut.token
+variable_add tb_attention.dut.dim
+variable_add tb_attention.dut.weight_sum
+variable_add tb_attention.debug_acc0
+variable_add tb_attention.out_valid
+variable_add tb_attention.out_data
+variable_add tb_attention.done
+zoom_fit

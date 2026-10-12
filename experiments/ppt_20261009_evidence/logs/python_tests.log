@@ -1,0 +1,26 @@
+test_failed_attempt_does_not_display_previous_demo (test_demo.DemoTests.test_failed_attempt_does_not_display_previous_demo) ... ok
+test_replay_detects_changed_output_timing_and_coverage (test_demo.DemoTests.test_replay_detects_changed_output_timing_and_coverage) ... ok
+test_view_refuses_failed_run (test_demo.DemoTests.test_view_refuses_failed_run) ... ok
+test_audit_detects_actual_rtl_mismatch_and_missing_case (test_reference.ReferenceContractTests.test_audit_detects_actual_rtl_mismatch_and_missing_case) ... ok
+test_audit_detects_corrupted_reference_and_records_failure (test_reference.ReferenceContractTests.test_audit_detects_corrupted_reference_and_records_failure) ... ok
+test_evaluate_is_pure_and_preserves_inputs (test_reference.ReferenceContractTests.test_evaluate_is_pure_and_preserves_inputs) ... ok
+test_generator_rejects_invalid_case_counts (test_reference.ReferenceContractTests.test_generator_rejects_invalid_case_counts) ... ok
+test_independent_lut_matches_known_rounded_exponentials (test_reference.ReferenceContractTests.test_independent_lut_matches_known_rounded_exponentials) ... ok
+test_known_average_and_extreme_constant_cases (test_reference.ReferenceContractTests.test_known_average_and_extreme_constant_cases) ... ok
+test_metamorphic_inputs_and_actual_output_relations (test_reference.ReferenceContractTests.test_metamorphic_inputs_and_actual_output_relations) ... ok
+test_rejects_non_int8_and_malformed_inputs (test_reference.ReferenceContractTests.test_rejects_non_int8_and_malformed_inputs) ... ok
+test_relation_claim_is_checked_against_inputs (test_reference.ReferenceContractTests.test_relation_claim_is_checked_against_inputs) ... ok
+test_seed_reproduces_vectors_without_overwriting_custom_input (test_reference.ReferenceContractTests.test_seed_reproduces_vectors_without_overwriting_custom_input) ... ok
+test_v2_preserves_fractional_weights_and_zero_tail (test_reference.ReferenceContractTests.test_v2_preserves_fractional_weights_and_zero_tail) ... ok
+test_v2_rounding_at_int8_endpoints (test_reference.ReferenceContractTests.test_v2_rounding_at_int8_endpoints) ... ok
+test_v2_rounding_halves_neighbors_and_odd_denominator (test_reference.ReferenceContractTests.test_v2_rounding_halves_neighbors_and_odd_denominator) ... ok
+test_command_failure_and_mutation_false_positive_are_rejected (test_runner.RunnerFailureTests.test_command_failure_and_mutation_false_positive_are_rejected) ... ok
+test_command_timeout_is_recorded (test_runner.RunnerFailureTests.test_command_timeout_is_recorded) ... ok
+test_failed_run_retains_diagnostics_and_does_not_replace_latest_pass (test_runner.RunnerFailureTests.test_failed_run_retains_diagnostics_and_does_not_replace_latest_pass) ... ok
+test_missing_reordered_or_incorrect_observations_fail (test_runner.RunnerFailureTests.test_missing_reordered_or_incorrect_observations_fail) ... ok
+test_run_directory_cannot_overwrite_previous_results (test_runner.RunnerFailureTests.test_run_directory_cannot_overwrite_previous_results) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.353s
+
+OK

@@ -1,0 +1,2 @@
+NETLIST PASS: 575 cases, 2300 outputs, base latency=264; stalls and earliest restart checked; functional zero-delay simulation
+experiments/demo_20261008T121114_569553Z/source/tb/tb_netlist.sv:95: $finish called at 1729747000 (1ps)

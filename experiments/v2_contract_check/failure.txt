@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/scripts/run_research.py", line 390, in main
+    experiment.mutation_checks(first_work)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/scripts/run_research.py", line 303, in mutation_checks
+    require(expected_message in output, f'mutation {name}: failure was unrelated to injected defect')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samhuang/Desktop/Codex Project/数字组/Attention_source/scripts/run_research.py", line 38, in require
+    raise RuntimeError(message)
+RuntimeError: mutation lut_entry: failure was unrelated to injected defect

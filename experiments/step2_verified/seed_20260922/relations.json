@@ -1,0 +1,2210 @@
+[
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_000_base",
+    "derived": "metamorphic_000_token_permutation",
+    "permutation": [
+      2,
+      4,
+      6,
+      3,
+      5,
+      0,
+      1,
+      7
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_000_base",
+    "derived": "metamorphic_000_qk_feature_permutation",
+    "permutation": [
+      3,
+      1,
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_000_base",
+    "derived": "metamorphic_000_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_000_base",
+    "derived": "metamorphic_000_key_translation",
+    "shift": [
+      -4,
+      -4,
+      -2,
+      -2
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_000_base",
+    "derived": "metamorphic_000_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_000_base",
+    "derived": "metamorphic_000_value_permutation",
+    "permutation": [
+      2,
+      3,
+      1,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_000_base",
+    "derived": "metamorphic_000_constant_values",
+    "constants": [
+      -105,
+      80,
+      -104,
+      -28
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_001_base",
+    "derived": "metamorphic_001_token_permutation",
+    "permutation": [
+      0,
+      4,
+      1,
+      7,
+      3,
+      6,
+      5,
+      2
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_001_base",
+    "derived": "metamorphic_001_qk_feature_permutation",
+    "permutation": [
+      3,
+      2,
+      0,
+      1
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_001_base",
+    "derived": "metamorphic_001_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_001_base",
+    "derived": "metamorphic_001_key_translation",
+    "shift": [
+      1,
+      -3,
+      -1,
+      -3
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_001_base",
+    "derived": "metamorphic_001_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_001_base",
+    "derived": "metamorphic_001_value_permutation",
+    "permutation": [
+      2,
+      3,
+      0,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_001_base",
+    "derived": "metamorphic_001_constant_values",
+    "constants": [
+      -74,
+      -80,
+      -77,
+      -8
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_002_base",
+    "derived": "metamorphic_002_token_permutation",
+    "permutation": [
+      6,
+      3,
+      1,
+      4,
+      7,
+      0,
+      5,
+      2
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_002_base",
+    "derived": "metamorphic_002_qk_feature_permutation",
+    "permutation": [
+      1,
+      3,
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_002_base",
+    "derived": "metamorphic_002_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_002_base",
+    "derived": "metamorphic_002_key_translation",
+    "shift": [
+      -3,
+      0,
+      -1,
+      1
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_002_base",
+    "derived": "metamorphic_002_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_002_base",
+    "derived": "metamorphic_002_value_permutation",
+    "permutation": [
+      3,
+      1,
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_002_base",
+    "derived": "metamorphic_002_constant_values",
+    "constants": [
+      -124,
+      -5,
+      46,
+      -108
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_003_base",
+    "derived": "metamorphic_003_token_permutation",
+    "permutation": [
+      1,
+      5,
+      3,
+      6,
+      4,
+      2,
+      7,
+      0
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_003_base",
+    "derived": "metamorphic_003_qk_feature_permutation",
+    "permutation": [
+      1,
+      2,
+      0,
+      3
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_003_base",
+    "derived": "metamorphic_003_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_003_base",
+    "derived": "metamorphic_003_key_translation",
+    "shift": [
+      -2,
+      2,
+      -1,
+      -3
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_003_base",
+    "derived": "metamorphic_003_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_003_base",
+    "derived": "metamorphic_003_value_permutation",
+    "permutation": [
+      3,
+      0,
+      2,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_003_base",
+    "derived": "metamorphic_003_constant_values",
+    "constants": [
+      -17,
+      93,
+      45,
+      -5
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_004_base",
+    "derived": "metamorphic_004_token_permutation",
+    "permutation": [
+      3,
+      5,
+      6,
+      2,
+      7,
+      1,
+      0,
+      4
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_004_base",
+    "derived": "metamorphic_004_qk_feature_permutation",
+    "permutation": [
+      2,
+      1,
+      3,
+      0
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_004_base",
+    "derived": "metamorphic_004_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_004_base",
+    "derived": "metamorphic_004_key_translation",
+    "shift": [
+      0,
+      1,
+      3,
+      -1
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_004_base",
+    "derived": "metamorphic_004_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_004_base",
+    "derived": "metamorphic_004_value_permutation",
+    "permutation": [
+      1,
+      2,
+      3,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_004_base",
+    "derived": "metamorphic_004_constant_values",
+    "constants": [
+      -107,
+      116,
+      -44,
+      -59
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_005_base",
+    "derived": "metamorphic_005_token_permutation",
+    "permutation": [
+      1,
+      0,
+      5,
+      7,
+      4,
+      2,
+      6,
+      3
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_005_base",
+    "derived": "metamorphic_005_qk_feature_permutation",
+    "permutation": [
+      0,
+      3,
+      1,
+      2
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_005_base",
+    "derived": "metamorphic_005_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_005_base",
+    "derived": "metamorphic_005_key_translation",
+    "shift": [
+      -3,
+      -1,
+      3,
+      4
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_005_base",
+    "derived": "metamorphic_005_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_005_base",
+    "derived": "metamorphic_005_value_permutation",
+    "permutation": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_005_base",
+    "derived": "metamorphic_005_constant_values",
+    "constants": [
+      -126,
+      81,
+      -8,
+      -102
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_006_base",
+    "derived": "metamorphic_006_token_permutation",
+    "permutation": [
+      3,
+      0,
+      6,
+      1,
+      4,
+      5,
+      7,
+      2
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_006_base",
+    "derived": "metamorphic_006_qk_feature_permutation",
+    "permutation": [
+      3,
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_006_base",
+    "derived": "metamorphic_006_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_006_base",
+    "derived": "metamorphic_006_key_translation",
+    "shift": [
+      1,
+      4,
+      4,
+      1
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_006_base",
+    "derived": "metamorphic_006_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_006_base",
+    "derived": "metamorphic_006_value_permutation",
+    "permutation": [
+      0,
+      3,
+      2,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_006_base",
+    "derived": "metamorphic_006_constant_values",
+    "constants": [
+      76,
+      -94,
+      -4,
+      -79
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_007_base",
+    "derived": "metamorphic_007_token_permutation",
+    "permutation": [
+      2,
+      6,
+      5,
+      3,
+      1,
+      7,
+      4,
+      0
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_007_base",
+    "derived": "metamorphic_007_qk_feature_permutation",
+    "permutation": [
+      1,
+      0,
+      3,
+      2
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_007_base",
+    "derived": "metamorphic_007_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_007_base",
+    "derived": "metamorphic_007_key_translation",
+    "shift": [
+      1,
+      2,
+      1,
+      -4
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_007_base",
+    "derived": "metamorphic_007_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_007_base",
+    "derived": "metamorphic_007_value_permutation",
+    "permutation": [
+      0,
+      2,
+      1,
+      3
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_007_base",
+    "derived": "metamorphic_007_constant_values",
+    "constants": [
+      -36,
+      -50,
+      37,
+      -107
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_008_base",
+    "derived": "metamorphic_008_token_permutation",
+    "permutation": [
+      4,
+      1,
+      7,
+      3,
+      5,
+      0,
+      2,
+      6
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_008_base",
+    "derived": "metamorphic_008_qk_feature_permutation",
+    "permutation": [
+      0,
+      2,
+      1,
+      3
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_008_base",
+    "derived": "metamorphic_008_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_008_base",
+    "derived": "metamorphic_008_key_translation",
+    "shift": [
+      2,
+      -1,
+      2,
+      4
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_008_base",
+    "derived": "metamorphic_008_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_008_base",
+    "derived": "metamorphic_008_value_permutation",
+    "permutation": [
+      2,
+      3,
+      0,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_008_base",
+    "derived": "metamorphic_008_constant_values",
+    "constants": [
+      19,
+      -68,
+      87,
+      -106
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_009_base",
+    "derived": "metamorphic_009_token_permutation",
+    "permutation": [
+      1,
+      5,
+      2,
+      4,
+      3,
+      0,
+      6,
+      7
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_009_base",
+    "derived": "metamorphic_009_qk_feature_permutation",
+    "permutation": [
+      1,
+      0,
+      3,
+      2
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_009_base",
+    "derived": "metamorphic_009_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_009_base",
+    "derived": "metamorphic_009_key_translation",
+    "shift": [
+      -2,
+      -4,
+      -4,
+      0
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_009_base",
+    "derived": "metamorphic_009_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_009_base",
+    "derived": "metamorphic_009_value_permutation",
+    "permutation": [
+      0,
+      3,
+      2,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_009_base",
+    "derived": "metamorphic_009_constant_values",
+    "constants": [
+      61,
+      32,
+      8,
+      -34
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_010_base",
+    "derived": "metamorphic_010_token_permutation",
+    "permutation": [
+      7,
+      1,
+      5,
+      6,
+      3,
+      2,
+      0,
+      4
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_010_base",
+    "derived": "metamorphic_010_qk_feature_permutation",
+    "permutation": [
+      2,
+      0,
+      3,
+      1
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_010_base",
+    "derived": "metamorphic_010_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_010_base",
+    "derived": "metamorphic_010_key_translation",
+    "shift": [
+      4,
+      2,
+      1,
+      0
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_010_base",
+    "derived": "metamorphic_010_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_010_base",
+    "derived": "metamorphic_010_value_permutation",
+    "permutation": [
+      2,
+      3,
+      0,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_010_base",
+    "derived": "metamorphic_010_constant_values",
+    "constants": [
+      32,
+      57,
+      -103,
+      123
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_011_base",
+    "derived": "metamorphic_011_token_permutation",
+    "permutation": [
+      0,
+      2,
+      5,
+      1,
+      3,
+      7,
+      6,
+      4
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_011_base",
+    "derived": "metamorphic_011_qk_feature_permutation",
+    "permutation": [
+      0,
+      1,
+      3,
+      2
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_011_base",
+    "derived": "metamorphic_011_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_011_base",
+    "derived": "metamorphic_011_key_translation",
+    "shift": [
+      -4,
+      -2,
+      -1,
+      1
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_011_base",
+    "derived": "metamorphic_011_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_011_base",
+    "derived": "metamorphic_011_value_permutation",
+    "permutation": [
+      0,
+      3,
+      2,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_011_base",
+    "derived": "metamorphic_011_constant_values",
+    "constants": [
+      123,
+      -46,
+      -60,
+      -126
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_012_base",
+    "derived": "metamorphic_012_token_permutation",
+    "permutation": [
+      4,
+      3,
+      5,
+      2,
+      0,
+      1,
+      7,
+      6
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_012_base",
+    "derived": "metamorphic_012_qk_feature_permutation",
+    "permutation": [
+      3,
+      2,
+      0,
+      1
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_012_base",
+    "derived": "metamorphic_012_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_012_base",
+    "derived": "metamorphic_012_key_translation",
+    "shift": [
+      -3,
+      4,
+      -3,
+      2
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_012_base",
+    "derived": "metamorphic_012_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_012_base",
+    "derived": "metamorphic_012_value_permutation",
+    "permutation": [
+      3,
+      2,
+      1,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_012_base",
+    "derived": "metamorphic_012_constant_values",
+    "constants": [
+      21,
+      -35,
+      100,
+      73
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_013_base",
+    "derived": "metamorphic_013_token_permutation",
+    "permutation": [
+      3,
+      0,
+      5,
+      2,
+      7,
+      4,
+      6,
+      1
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_013_base",
+    "derived": "metamorphic_013_qk_feature_permutation",
+    "permutation": [
+      1,
+      0,
+      3,
+      2
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_013_base",
+    "derived": "metamorphic_013_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_013_base",
+    "derived": "metamorphic_013_key_translation",
+    "shift": [
+      0,
+      -2,
+      4,
+      -4
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_013_base",
+    "derived": "metamorphic_013_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_013_base",
+    "derived": "metamorphic_013_value_permutation",
+    "permutation": [
+      3,
+      2,
+      0,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_013_base",
+    "derived": "metamorphic_013_constant_values",
+    "constants": [
+      -78,
+      72,
+      95,
+      78
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_014_base",
+    "derived": "metamorphic_014_token_permutation",
+    "permutation": [
+      0,
+      1,
+      3,
+      4,
+      7,
+      6,
+      2,
+      5
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_014_base",
+    "derived": "metamorphic_014_qk_feature_permutation",
+    "permutation": [
+      3,
+      0,
+      2,
+      1
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_014_base",
+    "derived": "metamorphic_014_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_014_base",
+    "derived": "metamorphic_014_key_translation",
+    "shift": [
+      1,
+      0,
+      2,
+      2
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_014_base",
+    "derived": "metamorphic_014_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_014_base",
+    "derived": "metamorphic_014_value_permutation",
+    "permutation": [
+      2,
+      0,
+      3,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_014_base",
+    "derived": "metamorphic_014_constant_values",
+    "constants": [
+      58,
+      49,
+      6,
+      -125
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_015_base",
+    "derived": "metamorphic_015_token_permutation",
+    "permutation": [
+      0,
+      2,
+      7,
+      3,
+      6,
+      4,
+      5,
+      1
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_015_base",
+    "derived": "metamorphic_015_qk_feature_permutation",
+    "permutation": [
+      1,
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_015_base",
+    "derived": "metamorphic_015_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_015_base",
+    "derived": "metamorphic_015_key_translation",
+    "shift": [
+      0,
+      1,
+      4,
+      0
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_015_base",
+    "derived": "metamorphic_015_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_015_base",
+    "derived": "metamorphic_015_value_permutation",
+    "permutation": [
+      3,
+      0,
+      2,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_015_base",
+    "derived": "metamorphic_015_constant_values",
+    "constants": [
+      123,
+      -13,
+      54,
+      49
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_016_base",
+    "derived": "metamorphic_016_token_permutation",
+    "permutation": [
+      6,
+      5,
+      0,
+      1,
+      3,
+      2,
+      7,
+      4
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_016_base",
+    "derived": "metamorphic_016_qk_feature_permutation",
+    "permutation": [
+      2,
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_016_base",
+    "derived": "metamorphic_016_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_016_base",
+    "derived": "metamorphic_016_key_translation",
+    "shift": [
+      4,
+      -2,
+      -1,
+      2
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_016_base",
+    "derived": "metamorphic_016_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_016_base",
+    "derived": "metamorphic_016_value_permutation",
+    "permutation": [
+      3,
+      0,
+      2,
+      1
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_016_base",
+    "derived": "metamorphic_016_constant_values",
+    "constants": [
+      13,
+      89,
+      -31,
+      -67
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_017_base",
+    "derived": "metamorphic_017_token_permutation",
+    "permutation": [
+      2,
+      6,
+      5,
+      4,
+      7,
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_017_base",
+    "derived": "metamorphic_017_qk_feature_permutation",
+    "permutation": [
+      3,
+      2,
+      1,
+      0
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_017_base",
+    "derived": "metamorphic_017_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_017_base",
+    "derived": "metamorphic_017_key_translation",
+    "shift": [
+      -4,
+      0,
+      1,
+      4
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_017_base",
+    "derived": "metamorphic_017_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_017_base",
+    "derived": "metamorphic_017_value_permutation",
+    "permutation": [
+      3,
+      1,
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_017_base",
+    "derived": "metamorphic_017_constant_values",
+    "constants": [
+      -115,
+      -16,
+      56,
+      33
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_018_base",
+    "derived": "metamorphic_018_token_permutation",
+    "permutation": [
+      5,
+      6,
+      3,
+      2,
+      4,
+      0,
+      7,
+      1
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_018_base",
+    "derived": "metamorphic_018_qk_feature_permutation",
+    "permutation": [
+      1,
+      3,
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_018_base",
+    "derived": "metamorphic_018_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_018_base",
+    "derived": "metamorphic_018_key_translation",
+    "shift": [
+      -3,
+      3,
+      -4,
+      1
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_018_base",
+    "derived": "metamorphic_018_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_018_base",
+    "derived": "metamorphic_018_value_permutation",
+    "permutation": [
+      3,
+      2,
+      1,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_018_base",
+    "derived": "metamorphic_018_constant_values",
+    "constants": [
+      49,
+      109,
+      1,
+      69
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_019_base",
+    "derived": "metamorphic_019_token_permutation",
+    "permutation": [
+      5,
+      7,
+      3,
+      0,
+      6,
+      4,
+      1,
+      2
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_019_base",
+    "derived": "metamorphic_019_qk_feature_permutation",
+    "permutation": [
+      2,
+      3,
+      0,
+      1
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_019_base",
+    "derived": "metamorphic_019_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_019_base",
+    "derived": "metamorphic_019_key_translation",
+    "shift": [
+      1,
+      4,
+      -3,
+      0
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_019_base",
+    "derived": "metamorphic_019_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_019_base",
+    "derived": "metamorphic_019_value_permutation",
+    "permutation": [
+      3,
+      1,
+      0,
+      2
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_019_base",
+    "derived": "metamorphic_019_constant_values",
+    "constants": [
+      -28,
+      -11,
+      77,
+      79
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_020_base",
+    "derived": "metamorphic_020_token_permutation",
+    "permutation": [
+      4,
+      7,
+      0,
+      3,
+      5,
+      2,
+      1,
+      6
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_020_base",
+    "derived": "metamorphic_020_qk_feature_permutation",
+    "permutation": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_020_base",
+    "derived": "metamorphic_020_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_020_base",
+    "derived": "metamorphic_020_key_translation",
+    "shift": [
+      -2,
+      -3,
+      0,
+      -1
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_020_base",
+    "derived": "metamorphic_020_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_020_base",
+    "derived": "metamorphic_020_value_permutation",
+    "permutation": [
+      1,
+      3,
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_020_base",
+    "derived": "metamorphic_020_constant_values",
+    "constants": [
+      -93,
+      -14,
+      -118,
+      21
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_021_base",
+    "derived": "metamorphic_021_token_permutation",
+    "permutation": [
+      4,
+      3,
+      7,
+      5,
+      2,
+      0,
+      6,
+      1
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_021_base",
+    "derived": "metamorphic_021_qk_feature_permutation",
+    "permutation": [
+      3,
+      2,
+      0,
+      1
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_021_base",
+    "derived": "metamorphic_021_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_021_base",
+    "derived": "metamorphic_021_key_translation",
+    "shift": [
+      0,
+      1,
+      2,
+      -3
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_021_base",
+    "derived": "metamorphic_021_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_021_base",
+    "derived": "metamorphic_021_value_permutation",
+    "permutation": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_021_base",
+    "derived": "metamorphic_021_constant_values",
+    "constants": [
+      97,
+      -107,
+      -66,
+      -56
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_022_base",
+    "derived": "metamorphic_022_token_permutation",
+    "permutation": [
+      2,
+      5,
+      3,
+      1,
+      4,
+      7,
+      6,
+      0
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_022_base",
+    "derived": "metamorphic_022_qk_feature_permutation",
+    "permutation": [
+      1,
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_022_base",
+    "derived": "metamorphic_022_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_022_base",
+    "derived": "metamorphic_022_key_translation",
+    "shift": [
+      -3,
+      -4,
+      3,
+      -3
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_022_base",
+    "derived": "metamorphic_022_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_022_base",
+    "derived": "metamorphic_022_value_permutation",
+    "permutation": [
+      1,
+      2,
+      3,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_022_base",
+    "derived": "metamorphic_022_constant_values",
+    "constants": [
+      -80,
+      3,
+      -14,
+      -115
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_023_base",
+    "derived": "metamorphic_023_token_permutation",
+    "permutation": [
+      7,
+      0,
+      6,
+      2,
+      3,
+      1,
+      5,
+      4
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_023_base",
+    "derived": "metamorphic_023_qk_feature_permutation",
+    "permutation": [
+      3,
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_023_base",
+    "derived": "metamorphic_023_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_023_base",
+    "derived": "metamorphic_023_key_translation",
+    "shift": [
+      -4,
+      1,
+      -2,
+      -4
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_023_base",
+    "derived": "metamorphic_023_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_023_base",
+    "derived": "metamorphic_023_value_permutation",
+    "permutation": [
+      1,
+      3,
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_023_base",
+    "derived": "metamorphic_023_constant_values",
+    "constants": [
+      126,
+      96,
+      58,
+      -35
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_024_base",
+    "derived": "metamorphic_024_token_permutation",
+    "permutation": [
+      3,
+      6,
+      2,
+      0,
+      7,
+      5,
+      4,
+      1
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_024_base",
+    "derived": "metamorphic_024_qk_feature_permutation",
+    "permutation": [
+      1,
+      3,
+      0,
+      2
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_024_base",
+    "derived": "metamorphic_024_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_024_base",
+    "derived": "metamorphic_024_key_translation",
+    "shift": [
+      -2,
+      -3,
+      -4,
+      -4
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_024_base",
+    "derived": "metamorphic_024_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_024_base",
+    "derived": "metamorphic_024_value_permutation",
+    "permutation": [
+      1,
+      2,
+      0,
+      3
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_024_base",
+    "derived": "metamorphic_024_constant_values",
+    "constants": [
+      -123,
+      -14,
+      98,
+      -4
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_025_base",
+    "derived": "metamorphic_025_token_permutation",
+    "permutation": [
+      4,
+      6,
+      1,
+      3,
+      2,
+      5,
+      7,
+      0
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_025_base",
+    "derived": "metamorphic_025_qk_feature_permutation",
+    "permutation": [
+      3,
+      2,
+      1,
+      0
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_025_base",
+    "derived": "metamorphic_025_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_025_base",
+    "derived": "metamorphic_025_key_translation",
+    "shift": [
+      4,
+      -3,
+      -4,
+      4
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_025_base",
+    "derived": "metamorphic_025_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_025_base",
+    "derived": "metamorphic_025_value_permutation",
+    "permutation": [
+      0,
+      2,
+      1,
+      3
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_025_base",
+    "derived": "metamorphic_025_constant_values",
+    "constants": [
+      -119,
+      11,
+      -8,
+      111
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_026_base",
+    "derived": "metamorphic_026_token_permutation",
+    "permutation": [
+      0,
+      5,
+      7,
+      4,
+      1,
+      2,
+      6,
+      3
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_026_base",
+    "derived": "metamorphic_026_qk_feature_permutation",
+    "permutation": [
+      1,
+      3,
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_026_base",
+    "derived": "metamorphic_026_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_026_base",
+    "derived": "metamorphic_026_key_translation",
+    "shift": [
+      0,
+      -2,
+      -3,
+      -4
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_026_base",
+    "derived": "metamorphic_026_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_026_base",
+    "derived": "metamorphic_026_value_permutation",
+    "permutation": [
+      3,
+      2,
+      1,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_026_base",
+    "derived": "metamorphic_026_constant_values",
+    "constants": [
+      126,
+      -85,
+      -77,
+      -55
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_027_base",
+    "derived": "metamorphic_027_token_permutation",
+    "permutation": [
+      7,
+      1,
+      5,
+      0,
+      2,
+      4,
+      3,
+      6
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_027_base",
+    "derived": "metamorphic_027_qk_feature_permutation",
+    "permutation": [
+      1,
+      2,
+      3,
+      0
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_027_base",
+    "derived": "metamorphic_027_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_027_base",
+    "derived": "metamorphic_027_key_translation",
+    "shift": [
+      -1,
+      1,
+      1,
+      -1
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_027_base",
+    "derived": "metamorphic_027_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_027_base",
+    "derived": "metamorphic_027_value_permutation",
+    "permutation": [
+      3,
+      1,
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_027_base",
+    "derived": "metamorphic_027_constant_values",
+    "constants": [
+      77,
+      46,
+      -84,
+      -36
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_028_base",
+    "derived": "metamorphic_028_token_permutation",
+    "permutation": [
+      6,
+      4,
+      3,
+      7,
+      2,
+      0,
+      1,
+      5
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_028_base",
+    "derived": "metamorphic_028_qk_feature_permutation",
+    "permutation": [
+      1,
+      2,
+      3,
+      0
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_028_base",
+    "derived": "metamorphic_028_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_028_base",
+    "derived": "metamorphic_028_key_translation",
+    "shift": [
+      4,
+      -3,
+      0,
+      2
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_028_base",
+    "derived": "metamorphic_028_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_028_base",
+    "derived": "metamorphic_028_value_permutation",
+    "permutation": [
+      1,
+      3,
+      0,
+      2
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_028_base",
+    "derived": "metamorphic_028_constant_values",
+    "constants": [
+      -12,
+      117,
+      110,
+      7
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_029_base",
+    "derived": "metamorphic_029_token_permutation",
+    "permutation": [
+      7,
+      5,
+      3,
+      6,
+      1,
+      4,
+      0,
+      2
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_029_base",
+    "derived": "metamorphic_029_qk_feature_permutation",
+    "permutation": [
+      0,
+      2,
+      1,
+      3
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_029_base",
+    "derived": "metamorphic_029_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_029_base",
+    "derived": "metamorphic_029_key_translation",
+    "shift": [
+      -3,
+      2,
+      -1,
+      2
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_029_base",
+    "derived": "metamorphic_029_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_029_base",
+    "derived": "metamorphic_029_value_permutation",
+    "permutation": [
+      1,
+      3,
+      0,
+      2
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_029_base",
+    "derived": "metamorphic_029_constant_values",
+    "constants": [
+      16,
+      120,
+      61,
+      -17
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_030_base",
+    "derived": "metamorphic_030_token_permutation",
+    "permutation": [
+      5,
+      4,
+      7,
+      2,
+      1,
+      0,
+      3,
+      6
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_030_base",
+    "derived": "metamorphic_030_qk_feature_permutation",
+    "permutation": [
+      1,
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_030_base",
+    "derived": "metamorphic_030_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_030_base",
+    "derived": "metamorphic_030_key_translation",
+    "shift": [
+      -3,
+      -1,
+      1,
+      2
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_030_base",
+    "derived": "metamorphic_030_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_030_base",
+    "derived": "metamorphic_030_value_permutation",
+    "permutation": [
+      2,
+      1,
+      0,
+      3
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_030_base",
+    "derived": "metamorphic_030_constant_values",
+    "constants": [
+      39,
+      -126,
+      -102,
+      52
+    ]
+  },
+  {
+    "kind": "token_permutation",
+    "base": "metamorphic_031_base",
+    "derived": "metamorphic_031_token_permutation",
+    "permutation": [
+      1,
+      4,
+      6,
+      5,
+      2,
+      3,
+      7,
+      0
+    ]
+  },
+  {
+    "kind": "qk_feature_permutation",
+    "base": "metamorphic_031_base",
+    "derived": "metamorphic_031_qk_feature_permutation",
+    "permutation": [
+      0,
+      3,
+      2,
+      1
+    ]
+  },
+  {
+    "kind": "qk_negation",
+    "base": "metamorphic_031_base",
+    "derived": "metamorphic_031_qk_negation"
+  },
+  {
+    "kind": "key_translation",
+    "base": "metamorphic_031_base",
+    "derived": "metamorphic_031_key_translation",
+    "shift": [
+      1,
+      -2,
+      0,
+      0
+    ]
+  },
+  {
+    "kind": "value_negation",
+    "base": "metamorphic_031_base",
+    "derived": "metamorphic_031_value_negation"
+  },
+  {
+    "kind": "value_permutation",
+    "base": "metamorphic_031_base",
+    "derived": "metamorphic_031_value_permutation",
+    "permutation": [
+      1,
+      0,
+      3,
+      2
+    ]
+  },
+  {
+    "kind": "constant_values",
+    "base": "metamorphic_031_base",
+    "derived": "metamorphic_031_constant_values",
+    "constants": [
+      -78,
+      58,
+      -33,
+      -82
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+Experiment: /Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/step2_release
+[iverilog_version]
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+[tb_attention_compile]
+[tb_ports_compile]
+[python_tests]
+OK
+[python_optimized_tests]
+OK
+[tb_exp_exhaustive_compile]
+[lut_all_addresses]
+LUT PASS: all 524288 input addresses; high-precision reference and monotonicity
+[divider_w1_compile]
+[divider_w1]
+DIVIDER EXHAUSTIVE PASS: W=1 cases=5 reset_positions=1
+[divider_w2_compile]
+[divider_w2]
+DIVIDER EXHAUSTIVE PASS: W=2 cases=18 reset_positions=2
+[divider_w4_compile]
+[divider_w4]
+DIVIDER EXHAUSTIVE PASS: W=4 cases=260 reset_positions=4
+[divider_w8_compile]
+[divider_w8]
+DIVIDER EXHAUSTIVE PASS: W=8 cases=65544 reset_positions=8
+[divider_w16_compile]
+[divider_w16]
+DIVIDER EXHAUSTIVE PASS: W=16 cases=2100 reset_positions=16
+[divider_w36_compile]
+[divider_w36]
+DIVIDER EXHAUSTIVE PASS: W=36 cases=2160 reset_positions=36
+GOLDEN PASS: 575 cases; LUT=[16, 6, 2, 1]; max_abs_error=28.978142997
+[seed_20260910_rtl]
+ATTENTION PASS: 575 cases, 2300 outputs, Score/Weight/L/ACC exact; 8 reset states; base latency=264
+[seed_20260910_replay]
+ATTENTION PASS: 575 cases, 2300 outputs, Score/Weight/L/ACC exact; 8 reset states; base latency=264
+[seed_20260910_rtl_ports]
+NETLIST PASS: 575 cases, 2300 outputs, base latency=264; stalls and earliest restart checked; functional zero-delay simulation
+GOLDEN PASS: 575 cases; LUT=[16, 6, 2, 1]; max_abs_error=28.978142997
+[seed_20260922_rtl]
+ATTENTION PASS: 575 cases, 2300 outputs, Score/Weight/L/ACC exact; 8 reset states; base latency=264
+[seed_20260922_replay]
+ATTENTION PASS: 575 cases, 2300 outputs, Score/Weight/L/ACC exact; 8 reset states; base latency=264
+[seed_20260922_rtl_ports]
+NETLIST PASS: 575 cases, 2300 outputs, base latency=264; stalls and earliest restart checked; functional zero-delay simulation
+GOLDEN PASS: 575 cases; LUT=[16, 6, 2, 1]; max_abs_error=28.978142997
+[seed_8675309_rtl]
+ATTENTION PASS: 575 cases, 2300 outputs, Score/Weight/L/ACC exact; 8 reset states; base latency=264
+[seed_8675309_replay]
+ATTENTION PASS: 575 cases, 2300 outputs, Score/Weight/L/ACC exact; 8 reset states; base latency=264
+[seed_8675309_rtl_ports]
+NETLIST PASS: 575 cases, 2300 outputs, base latency=264; stalls and earliest restart checked; functional zero-delay simulation
+[mutant_lut_entry_compile]
+[mutant_lut_entry]
+       Time: 17887000  Scope: tb_attention.run_case
+[mutant_done_alignment_compile]
+[mutant_done_alignment]
+       Time: 17917000  Scope: tb_attention.run_case
+[mutant_output_sign_compile]
+[mutant_output_sign]
+       Time: 17907000  Scope: tb_attention.run_case
+[mutant_output_rounding_compile]
+[mutant_output_rounding]
+       Time: 21117000  Scope: tb_attention.run_case
+[mutant_lost_q_compile]
+[mutant_lost_q]
+       Time: 116000  Scope: tb_attention
+[mutant_lost_v_compile]
+[mutant_lost_v]
+       Time: 266000  Scope: tb_attention
+[mutant_ignore_q_valid_compile]
+[mutant_ignore_q_valid]
+       Time: 17946000  Scope: tb_attention
+[mutant_ignore_kv_valid_compile]
+[mutant_ignore_kv_valid]
+       Time: 18066000  Scope: tb_attention
+[mutant_early_output_compile]
+[mutant_early_output]
+       Time: 407000  Scope: tb_netlist
+[mutant_divzero_flag_compile]
+[mutant_divzero_flag]
+       Time: 67000  Scope: tb_divider_exhaustive.check_division
+GOLDEN PASS: 1 cases; LUT=[16, 6, 2, 1]; max_abs_error=0.304589109
+[demo_rtl]
+ATTENTION PASS: 2 cases, 8 outputs, Score/Weight/L/ACC exact; 0 reset states; base latency=264
+RESEARCH PASS: 1725 cases; 0 netlist cases; /Users/samhuang/Desktop/Codex Project/数字组/Attention_source/experiments/step2_release

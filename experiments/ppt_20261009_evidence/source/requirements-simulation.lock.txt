@@ -1,0 +1,7 @@
+# Windows portable synthesis environment used for the research regression.
+# The reference model and runner themselves use only Python's standard library.
+click==8.5.0
+platformdirs==4.11.12
+wasmtime==47.0.1
+yowasp-runtime==1.96
+yowasp-yosys==0.69.0.0.post1233
